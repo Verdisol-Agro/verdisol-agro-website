@@ -1,0 +1,138 @@
+import { Link } from "react-router-dom";
+import { Leaf, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+
+const quickLinks = [
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Projects", to: "/projects" },
+  { label: "Contact", to: "/contact" },
+];
+
+const services = [
+  "Land Survey & Mapping",
+  "Soil Analysis",
+  "Crop Advisory",
+  "Irrigation Planning",
+  "Agricultural Consulting",
+  "Project Management",
+];
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-[#1F5D3A] text-white">
+      {/* Main footer content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+          {/* Brand column */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-2.5 mb-5">
+              <div className="w-9 h-9 rounded-lg bg-white/15 flex items-center justify-center">
+                <Leaf className="w-5 h-5 text-white" strokeWidth={2} />
+              </div>
+              <div className="leading-tight">
+                <span className="block text-white font-bold text-base">
+                  VerdiSol Agro
+                </span>
+                <span className="block text-white/60 text-[10px] font-medium tracking-widest uppercase">
+                  (Pvt) Ltd
+                </span>
+              </div>
+            </div>
+            <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-xs">
+              Professional agricultural surveying and advisory services. Committed to sustainable and productive farming solutions across Pakistan.
+            </p>
+            {/* WhatsApp Button */}
+            <a
+              href="https://wa.me/92XXXXXXXXXX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#25D366] text-white text-sm font-semibold hover:bg-[#1fb355] transition-colors shadow-sm"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Chat on WhatsApp
+            </a>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-widest mb-5 pb-2 border-b border-white/20">
+              Quick Links
+            </h3>
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-white/70 text-sm hover:text-white transition-colors hover:pl-1 inline-block duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-widest mb-5 pb-2 border-b border-white/20">
+              Services
+            </h3>
+            <ul className="space-y-2.5">
+              {services.map((service) => (
+                <li key={service}>
+                  <span className="text-white/70 text-sm">
+                    {service}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-widest mb-5 pb-2 border-b border-white/20">
+              Contact Us
+            </h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#8B5E3C] mt-0.5 flex-shrink-0" />
+                <span className="text-white/70 text-sm leading-relaxed">
+                  [Office Address Placeholder],<br />
+                  Pakistan
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-[#8B5E3C] flex-shrink-0" />
+                <span className="text-white/70 text-sm">
+                  +92 XXX XXX XXXX
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-[#8B5E3C] flex-shrink-0" />
+                <span className="text-white/70 text-sm">
+                  info@verdisolagro.com
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/15">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-white/50 text-xs text-center sm:text-left">
+            &copy; {currentYear} VerdiSol Agro (Pvt) Ltd. All rights reserved.
+          </p>
+          <p className="text-white/40 text-xs">
+            Cultivating Growth. Sustaining Earth.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
