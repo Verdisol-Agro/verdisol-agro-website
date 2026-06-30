@@ -296,7 +296,7 @@ const SERVICES: ServiceDetailProps[] = [
     description:
       "Our land use planning service transforms raw land into productive, profitable operations. We design enterprise zoning layouts, assess soil capability, and develop investment-ready implementation plans that align with international agricultural standards.",
     bullets: [
-      "Enterprise zoning maps — cattle, poultry, irrigation, horticulture, plantation",
+      "Enterprise zoning maps and strategic land allocation for agricultural enterprises and agri-tourism developments, designed to maximise land productivity and investment potential.",
       "Land capability analysis and soil productivity assessment",
       "Investment appraisal and financial feasibility reports",
       "Strategic implementation planning and phased rollout",
