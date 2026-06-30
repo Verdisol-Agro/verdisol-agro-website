@@ -1,0 +1,206 @@
+Now build the complete premium Home page for VerdiSol Agro (Pvt) Ltd.
+
+Use the existing React + TypeScript + Tailwind project structure.
+Do NOT change routing or layout components.
+Only build the Home page content.
+
+The homepage must be modern, premium, responsive, and visually strong.
+
+Use Framer Motion for animations and Lucide React icons.
+
+---
+
+# HOMEPAGE SECTIONS (IN ORDER)
+
+## 1. HERO SECTION (FULL SCREEN)
+
+Create a full-width hero section with:
+
+Background imagery:
+- Agricultural drone (DJI Mavic 3 Multispectral / Mavic 3M)
+- Zimbabwe farmland
+- Tractor working in field
+- Irrigation lines or green crops
+
+Overlay a dark gradient for readability.
+
+Text:
+
+Headline:
+Water Surveys & Agricultural Solutions
+
+Subtext:
+Helping farmers, investors and landowners make informed decisions through precision agriculture, drone technology, GIS mapping, land development and agricultural consultancy.
+
+Buttons:
+Primary: Request a Survey
+Secondary: Explore Services
+
+Add:
+- Subtle floating animation on hero elements
+- Scroll down indicator
+
+---
+
+## 2. CREDIBILITY / STATISTICS SECTION
+
+Create animated counters:
+
+- 600+ Clients Served
+- Projects Across Zimbabwe
+- Multiple Provinces Covered
+- Professional GIS & Drone Specialists
+
+Add clean icons and soft card layout.
+
+---
+
+## 3. ZIMBABWE COVERAGE STRIP
+
+Create a clean visual section showing:
+
+“Serving clients across Zimbabwe”
+
+Highlight provinces:
+Harare, Bulawayo, Mashonaland East, West, Central, Midlands, Manicaland, Masvingo, Matabeleland North, Matabeleland South
+
+Use a simple map placeholder or styled grid.
+
+---
+
+## 4. SERVICES PREVIEW SECTION
+
+Create 6 premium service cards with icons:
+
+Each card links later to Services page.
+
+Services:
+
+1. Underground Water Surveys
+2. Drone Surveying
+3. Aerial Mapping
+4. Land Use Planning
+5. Farm Assessments & Valuations
+6. Boundary Pegging
+
+Each card includes:
+- Title
+- Short description
+- Hover animation
+- Icon
+
+---
+
+## 5. ABOUT PREVIEW SECTION
+
+Create a split layout:
+
+Left: image placeholder (farm + drone)
+Right: text
+
+Text:
+VerdiSol Agro is a multidisciplinary agricultural consultancy combining GIS specialists, drone operators, and agricultural advisors.
+
+We integrate drone technology, GIS mapping, agricultural science, and international land-use planning standards with local expertise.
+
+Button: Learn More
+
+---
+
+## 6. WHY CHOOSE VERDISOL
+
+Create feature cards:
+
+- 600+ clients served
+- Nationwide coverage
+- Drone & GIS expertise
+- Precision mapping
+- Practical agricultural solutions
+- International standards
+- Reliable reporting
+
+Use icons + soft hover effects.
+
+---
+
+## 7. FEATURED PROJECTS PREVIEW
+
+Create 3 project cards:
+
+- 450 ha Water Survey
+- Commercial Farm Planning
+- Boundary Verification Project
+
+Each card:
+- Image placeholder
+- Title
+- Short description
+- Location tag
+
+---
+
+## 8. DRONE VIDEO SECTION
+
+Create a premium section titled:
+
+Drone Operations
+
+Add a large video placeholder with play button overlay.
+
+Include description:
+Drone technology enables accurate mapping, water detection, land analysis, and agricultural planning.
+
+---
+
+## 9. TESTIMONIALS SECTION
+
+Create a slider/carousel (simple version is fine):
+
+Include placeholder testimonials:
+- Farmer
+- Agribusiness investor
+- Institutional client
+
+Each includes:
+Name
+Location
+Review text
+
+---
+
+## 10. CALL TO ACTION SECTION
+
+Create a strong CTA banner:
+
+Text:
+Need a professional agricultural survey?
+
+Button:
+Request a Survey
+
+Keep design clean and premium.
+
+---
+
+## DESIGN REQUIREMENTS
+
+- Fully responsive (mobile first)
+- Clean spacing and layout
+- Bottle green + earth tones
+- Smooth Framer Motion animations
+- Lucide icons only
+- Rounded cards
+- Soft shadows
+- Modern typography (Inter/Poppins)
+- No clutter
+
+---
+
+## IMPORTANT RULES
+
+- Do NOT break routing or layout
+- Do NOT rebuild Navbar or Footer
+- Only build Home page (Home.tsx or equivalent)
+- Use reusable components where possible
+- Ensure no TypeScript errors
+- Ensure production-ready code
