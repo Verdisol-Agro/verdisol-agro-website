@@ -123,7 +123,10 @@ function Hero() {
           >
             Helping farmers, investors and landowners make informed decisions through
             precision agriculture, drone technology, GIS mapping, land development and
-            agricultural consultancy.
+            agricultural consultancy.{" "}
+            <span className="text-white/60">
+              Based in Zimbabwe, serving agricultural projects across Africa.
+            </span>
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -246,13 +249,13 @@ function CoverageSection() {
           className="text-center mb-10"
         >
           <motion.span variants={fadeUp} className="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-sm font-medium tracking-wide mb-4">
-            Nationwide Reach
+            Zimbabwe · Africa
           </motion.span>
           <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-white mb-3">
-            Serving Clients Across Zimbabwe
+            Based in Zimbabwe, Serving Africa
           </motion.h2>
           <motion.p variants={fadeUp} className="text-white/70 max-w-xl mx-auto">
-            From Harare to Bulawayo and everywhere in between — our teams are active in all 10 provinces.
+            VerdiSol Agro (Pvt) Ltd is an agricultural consultancy based in Zimbabwe, operating across projects in Africa.
           </motion.p>
         </motion.div>
 
@@ -467,8 +470,8 @@ function AboutPreview() {
 /* ────────────────────────────────────────────────────────────────────────── */
 
 const FEATURES = [
-  { icon: Users, title: "600+ Clients Served", desc: "Trusted by farmers, investors, and institutions across Zimbabwe." },
-  { icon: Globe, title: "Nationwide Coverage", desc: "Active teams in all 10 provinces, ready to deploy anywhere." },
+  { icon: Users, title: "600+ Clients Served", desc: "Trusted by farmers, investors, and institutions across Africa." },
+  { icon: Globe, title: "Africa Coverage", desc: "Based in Zimbabwe, delivering agricultural projects across Africa." },
   { icon: Plane, title: "Drone & GIS Expertise", desc: "DJI Mavic 3 Multispectral and survey-grade GIS equipment." },
   { icon: Gauge, title: "Precision Mapping", desc: "Centimeter-accurate outputs for confident decision-making." },
   { icon: CheckCircle2, title: "Practical Solutions", desc: "Recommendations grounded in local farming realities." },
