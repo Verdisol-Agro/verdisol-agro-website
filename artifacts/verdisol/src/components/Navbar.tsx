@@ -38,13 +38,13 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img
               src="/verdisol-logo.png"
               alt="VerdiSol Agro (Pvt) Ltd"
-              className="block w-[104px] sm:w-[116px] lg:w-[120px] h-auto"
+              className="block w-[128px] sm:w-[132px] lg:w-[160px] h-auto"
             />
           </Link>
 

@@ -33,7 +33,7 @@ export default function Footer() {
               <img
                 src="/verdisol-logo.png"
                 alt="VerdiSol Agro (Pvt) Ltd"
-                className="block w-40 h-auto"
+                className="block w-44 h-auto"
               />
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-xs">
