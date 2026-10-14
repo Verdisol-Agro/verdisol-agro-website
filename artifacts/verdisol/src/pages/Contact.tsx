@@ -57,7 +57,7 @@ function InViewSection({
   );
 }
 
-const WHATSAPP_URL = "https://wa.me/263XXXXXXXXX";
+const WHATSAPP_URL = "https://wa.me/263777226654";
 
 /* ─── 1. Hero ────────────────────────────────────────────────────────────── */
 
@@ -65,7 +65,8 @@ function PageHero() {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden bg-[#1F5D3A]">
       {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-10"
+      <div
+        className="absolute inset-0 opacity-10"
         style={{
           backgroundImage: `radial-gradient(circle at 25% 50%, #4CAF73 0%, transparent 50%),
                             radial-gradient(circle at 75% 20%, #8B5E3C 0%, transparent 40%)`,
@@ -94,8 +95,9 @@ function PageHero() {
           transition={{ duration: 0.55, delay: 0.2 }}
           className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
         >
-          Get in touch for agricultural surveys, drone mapping, GIS analysis, land
-          development planning, and consultancy services across Africa and beyond.
+          Get in touch for agricultural surveys, drone mapping, GIS analysis,
+          land development planning, and consultancy services across Africa and
+          beyond.
         </motion.p>
       </div>
     </section>
@@ -136,7 +138,9 @@ function ContactForm() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -163,10 +167,21 @@ function ContactForm() {
         </div>
         <h3 className="text-2xl font-bold text-gray-900 mb-3">Request Sent!</h3>
         <p className="text-gray-500 max-w-sm">
-          Thank you for contacting VerdiSol Agro. We typically respond within 24 hours.
+          Thank you for contacting VerdiSol Agro. We typically respond within 24
+          hours.
         </p>
         <button
-          onClick={() => { setSubmitted(false); setForm({ fullName: "", phone: "", email: "", location: "", service: "", message: "" }); }}
+          onClick={() => {
+            setSubmitted(false);
+            setForm({
+              fullName: "",
+              phone: "",
+              email: "",
+              location: "",
+              service: "",
+              message: "",
+            });
+          }}
           className="mt-8 px-5 py-2.5 rounded-lg border border-[#1F5D3A] text-[#1F5D3A] text-sm font-semibold hover:bg-[#1F5D3A] hover:text-white transition-colors"
         >
           Send Another Request
@@ -205,7 +220,7 @@ function ContactForm() {
             required
             value={form.phone}
             onChange={handleChange}
-            placeholder="+263 7XX XXX XXX"
+            placeholder="+263777226654"
             className={inputCls}
           />
         </div>
@@ -253,7 +268,9 @@ function ContactForm() {
         >
           <option value="">Select a service…</option>
           {SERVICE_OPTIONS.map((s) => (
-            <option key={s} value={s}>{s}</option>
+            <option key={s} value={s}>
+              {s}
+            </option>
           ))}
         </select>
       </div>
@@ -280,9 +297,24 @@ function ContactForm() {
       >
         {loading ? (
           <>
-            <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+            <svg
+              className="animate-spin w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v8z"
+              />
             </svg>
             Sending…
           </>
@@ -308,11 +340,14 @@ function ContactDetails() {
     <div className="space-y-6">
       {/* Intro */}
       <div className="mb-8">
-        <h3 className="text-xl font-bold text-gray-900 mb-3">Contact Information</h3>
+        <h3 className="text-xl font-bold text-gray-900 mb-3">
+          Contact Information
+        </h3>
         <p className="text-gray-500 text-sm leading-relaxed">
-          We are available to support agricultural projects across Africa. Contact VerdiSol
-          Agro for professional surveying, mapping, and agricultural consultancy services.
-          We typically respond within 24 hours.
+          We are available to support agricultural projects across Africa.
+          Contact VerdiSol Agro for professional surveying, mapping, and
+          agricultural consultancy services. We typically respond within 24
+          hours.
         </p>
       </div>
 
@@ -327,7 +362,7 @@ function ContactDetails() {
         {
           icon: Phone,
           label: "Phone",
-          value: "+263 XXX XXX XXX",
+          value: "+263 777 226 6654",
           sub: null,
         },
         {
@@ -370,7 +405,9 @@ function ContactDetails() {
 
       {/* Service response list */}
       <div className="mt-8 pt-6 border-t border-gray-100">
-        <h4 className="text-sm font-semibold text-gray-700 mb-4">We respond to enquiries related to:</h4>
+        <h4 className="text-sm font-semibold text-gray-700 mb-4">
+          We respond to enquiries related to:
+        </h4>
         <ul className="space-y-2">
           {[
             { icon: Droplets, label: "Water Surveys" },
@@ -379,7 +416,10 @@ function ContactDetails() {
             { icon: Layers, label: "Land Development" },
             { icon: TrendingUp, label: "Agricultural Investment Projects" },
           ].map(({ icon: Icon, label }) => (
-            <li key={label} className="flex items-center gap-3 text-sm text-gray-600">
+            <li
+              key={label}
+              className="flex items-center gap-3 text-sm text-gray-600"
+            >
               <CheckCircle2 className="w-4 h-4 text-[#1F5D3A] flex-shrink-0" />
               {label}
             </li>
@@ -413,7 +453,10 @@ function MapSection() {
     <section className="py-16 bg-[#F5F0E8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <InViewSection className="mb-8 text-center">
-          <motion.h2 variants={fadeUp} className="text-2xl font-bold text-gray-900 mb-2">
+          <motion.h2
+            variants={fadeUp}
+            className="text-2xl font-bold text-gray-900 mb-2"
+          >
             Our Location
           </motion.h2>
           <motion.p variants={fadeUp} className="text-gray-500 text-sm">
@@ -447,12 +490,36 @@ function MapSection() {
 /* ─── 8. Why Contact VerdiSol ────────────────────────────────────────────── */
 
 const WHY = [
-  { icon: ClipboardList, title: "Professional Agricultural Consultancy", desc: "Expert agronomists, GIS specialists, and drone operators working together." },
-  { icon: Plane, title: "Drone & GIS Specialists", desc: "DJI Mavic 3 Multispectral and survey-grade equipment on every project." },
-  { icon: Globe, title: "Continent Coverage", desc: "Active across Zimbabwe and expanding to support clients across Africa." },
-  { icon: Gauge, title: "Data-Driven Decision Making", desc: "Every recommendation backed by field data and technical analysis." },
-  { icon: FileCheck, title: "Reliable Reporting & Analysis", desc: "Bank-ready, investor-grade reports delivered on time, every time." },
-  { icon: Users, title: "600+ Clients Served", desc: "Trusted by farmers, investors, and institutions across Zimbabwe." },
+  {
+    icon: ClipboardList,
+    title: "Professional Agricultural Consultancy",
+    desc: "Expert agronomists, GIS specialists, and drone operators working together.",
+  },
+  {
+    icon: Plane,
+    title: "Drone & GIS Specialists",
+    desc: "DJI Mavic 3 Multispectral and survey-grade equipment on every project.",
+  },
+  {
+    icon: Globe,
+    title: "Continent Coverage",
+    desc: "Active across Zimbabwe and expanding to support clients across Africa.",
+  },
+  {
+    icon: Gauge,
+    title: "Data-Driven Decision Making",
+    desc: "Every recommendation backed by field data and technical analysis.",
+  },
+  {
+    icon: FileCheck,
+    title: "Reliable Reporting & Analysis",
+    desc: "Bank-ready, investor-grade reports delivered on time, every time.",
+  },
+  {
+    icon: Users,
+    title: "600+ Clients Served",
+    desc: "Trusted by farmers, investors, and institutions across Zimbabwe.",
+  },
 ];
 
 function WhyContact() {
@@ -460,10 +527,16 @@ function WhyContact() {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <InViewSection className="text-center mb-10">
-          <motion.span variants={fadeUp} className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4">
+          <motion.span
+            variants={fadeUp}
+            className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4"
+          >
             Why VerdiSol Agro
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-2xl lg:text-3xl font-bold text-gray-900">
+          <motion.h2
+            variants={fadeUp}
+            className="text-2xl lg:text-3xl font-bold text-gray-900"
+          >
             Why Contact VerdiSol Agro?
           </motion.h2>
         </InViewSection>
@@ -479,7 +552,9 @@ function WhyContact() {
                 <Icon className="w-5 h-5 text-[#1F5D3A]" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 text-sm mb-1">{title}</h3>
+                <h3 className="font-semibold text-gray-900 text-sm mb-1">
+                  {title}
+                </h3>
                 <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
               </div>
             </motion.div>
@@ -503,13 +578,23 @@ function CTASection() {
           initial="hidden"
           animate={inView ? "show" : "hidden"}
         >
-          <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-white mb-4">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl lg:text-4xl font-bold text-white mb-4"
+          >
             Need a Professional Agricultural Solution?
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-white/70 text-lg max-w-xl mx-auto mb-10">
-            We help farmers and investors make informed land and agricultural decisions.
+          <motion.p
+            variants={fadeUp}
+            className="text-white/70 text-lg max-w-xl mx-auto mb-10"
+          >
+            We help farmers and investors make informed land and agricultural
+            decisions.
           </motion.p>
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
             <a
               href="#contact-form"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-[#1F5D3A] font-bold text-base hover:bg-[#F5F0E8] transition-colors shadow-lg"

@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, useInView, animate, useMotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  useInView,
+  animate,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import {
   ChevronDown,
   Droplets,
@@ -28,7 +34,13 @@ import Layout from "@/components/Layout";
 /* Helpers                                                                   */
 /* ────────────────────────────────────────────────────────────────────────── */
 
-function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
+function AnimatedCounter({
+  target,
+  suffix = "",
+}: {
+  target: number;
+  suffix?: string;
+}) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true });
   const count = useMotionValue(0);
@@ -73,7 +85,10 @@ function Hero() {
   const [slide, setSlide] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setSlide((s) => (s + 1) % HERO_IMAGES.length), 5000);
+    const id = setInterval(
+      () => setSlide((s) => (s + 1) % HERO_IMAGES.length),
+      5000,
+    );
     return () => clearInterval(id);
   }, []);
 
@@ -96,11 +111,7 @@ function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={stagger}
-        >
+        <motion.div initial="hidden" animate="show" variants={stagger}>
           <motion.span
             variants={fadeUp}
             className="inline-block px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium tracking-wider mb-8"
@@ -112,24 +123,29 @@ function Hero() {
             variants={fadeUp}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6"
           >
-            Water Surveys &{" "}
-            <span className="text-[#4CAF73]">Agricultural</span>{" "}
-            Solutions
+            VERDISOL AGRO(PVT) LIMITED &{" "}
+            <span className="text-[#4CAF73]">
+              Revolutionising farming with Drone
+            </span>{" "}
+            Technology
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-10"
           >
-            Helping farmers, investors and landowners make informed decisions through
-            precision agriculture, drone technology, GIS mapping, land development and
-            agricultural consultancy.{" "}
+            Helping farmers, investors and landowners make informed decisions
+            through precision agriculture, drone technology, GIS mapping, land
+            development and agricultural consultancy.{" "}
             <span className="text-white/60">
               Based in Zimbabwe, serving agricultural projects across Africa.
             </span>
           </motion.p>
 
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-[#1F5D3A] text-white font-semibold text-base hover:bg-[#174d2f] transition-all shadow-lg hover:shadow-xl"
@@ -248,14 +264,24 @@ function CoverageSection() {
           animate={inView ? "show" : "hidden"}
           className="text-center mb-10"
         >
-          <motion.span variants={fadeUp} className="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-sm font-medium tracking-wide mb-4">
+          <motion.span
+            variants={fadeUp}
+            className="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-sm font-medium tracking-wide mb-4"
+          >
             Zimbabwe · Africa
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-white mb-3">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl lg:text-4xl font-bold text-white mb-3"
+          >
             Based in Zimbabwe, Serving Africa
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-white/70 max-w-xl mx-auto">
-            VerdiSol Agro (Pvt) Ltd is an agricultural consultancy based in Zimbabwe, operating across projects in Africa.
+          <motion.p
+            variants={fadeUp}
+            className="text-white/70 max-w-xl mx-auto"
+          >
+            VerdiSol Agro (Pvt) Ltd is an agricultural consultancy based in
+            Zimbabwe, operating across projects in Africa.
           </motion.p>
         </motion.div>
 
@@ -337,14 +363,24 @@ function ServicesSection() {
           animate={inView ? "show" : "hidden"}
           className="text-center mb-14"
         >
-          <motion.span variants={fadeUp} className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4">
+          <motion.span
+            variants={fadeUp}
+            className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4"
+          >
             What We Offer
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
+          >
             Our Core Services
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-gray-500 max-w-2xl mx-auto">
-            Precision-driven agricultural solutions powered by drone technology and expert GIS analysis.
+          <motion.p
+            variants={fadeUp}
+            className="text-gray-500 max-w-2xl mx-auto"
+          >
+            Precision-driven agricultural solutions powered by drone technology
+            and expert GIS analysis.
           </motion.p>
         </motion.div>
 
@@ -367,7 +403,9 @@ function ServicesSection() {
               <h3 className="text-gray-900 font-semibold text-lg mb-3 group-hover:text-[#1F5D3A] transition-colors">
                 {title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                {description}
+              </p>
               <div className="flex items-center gap-1 mt-5 text-[#1F5D3A] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                 Learn more <ArrowRight className="w-3.5 h-3.5" />
               </div>
@@ -375,7 +413,12 @@ function ServicesSection() {
           ))}
         </motion.div>
 
-        <motion.div variants={fadeUp} initial="hidden" animate={inView ? "show" : "hidden"} className="text-center mt-12">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+          className="text-center mt-12"
+        >
           <Link
             to="/services"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-[#1F5D3A] text-[#1F5D3A] font-semibold hover:bg-[#1F5D3A] hover:text-white transition-all"
@@ -417,7 +460,9 @@ function AboutPreview() {
             {/* Floating badge */}
             <div className="absolute -bottom-5 -right-4 bg-[#1F5D3A] text-white px-5 py-3.5 rounded-xl shadow-lg">
               <div className="text-2xl font-bold">10+</div>
-              <div className="text-xs text-white/80 font-medium">Years Experience</div>
+              <div className="text-xs text-white/80 font-medium">
+                Years Experience
+              </div>
             </div>
           </motion.div>
 
@@ -427,25 +472,47 @@ function AboutPreview() {
             initial="hidden"
             animate={inView ? "show" : "hidden"}
           >
-            <motion.span variants={fadeUp} className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-5">
+            <motion.span
+              variants={fadeUp}
+              className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-5"
+            >
               About VerdiSol Agro
             </motion.span>
-            <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight"
+            >
               Multidisciplinary Expertise,{" "}
               <span className="text-[#1F5D3A]">Local Knowledge</span>
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed mb-4">
-              VerdiSol Agro is a multidisciplinary agricultural consultancy combining GIS
-              specialists, drone operators, and agricultural advisors.
+            <motion.p
+              variants={fadeUp}
+              className="text-gray-600 leading-relaxed mb-4"
+            >
+              VerdiSol Agro is a multidisciplinary agricultural consultancy
+              combining GIS specialists, drone operators, and agricultural
+              advisors.
             </motion.p>
-            <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed mb-8">
-              We integrate drone technology, GIS mapping, agricultural science, and
-              international land-use planning standards with deep local expertise — giving
-              our clients reliable, actionable insights for every project.
+            <motion.p
+              variants={fadeUp}
+              className="text-gray-600 leading-relaxed mb-8"
+            >
+              We integrate drone technology, GIS mapping, agricultural science,
+              and international land-use planning standards with deep local
+              expertise — giving our clients reliable, actionable insights for
+              every project.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mb-8">
-              {["GIS Mapping", "Drone Technology", "Agricultural Science", "Land Planning"].map((tag) => (
-                <span key={tag} className="px-3 py-1 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium">
+              {[
+                "GIS Mapping",
+                "Drone Technology",
+                "Agricultural Science",
+                "Land Planning",
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium"
+                >
                   {tag}
                 </span>
               ))}
@@ -470,12 +537,36 @@ function AboutPreview() {
 /* ────────────────────────────────────────────────────────────────────────── */
 
 const FEATURES = [
-  { icon: Users, title: "600+ Clients Served", desc: "Trusted by farmers, investors, and institutions across Africa." },
-  { icon: Globe, title: "Africa Coverage", desc: "Based in Zimbabwe, delivering agricultural projects across Africa." },
-  { icon: Plane, title: "Drone & GIS Expertise", desc: "DJI Mavic 3 Multispectral and survey-grade GIS equipment." },
-  { icon: Gauge, title: "Precision Mapping", desc: "Centimeter-accurate outputs for confident decision-making." },
-  { icon: CheckCircle2, title: "Practical Solutions", desc: "Recommendations grounded in local farming realities." },
-  { icon: FileCheck, title: "International Standards", desc: "Reports that meet global agricultural and surveying benchmarks." },
+  {
+    icon: Users,
+    title: "600+ Clients Served",
+    desc: "Trusted by farmers, investors, and institutions across Africa.",
+  },
+  {
+    icon: Globe,
+    title: "Africa Coverage",
+    desc: "Based in Zimbabwe, delivering agricultural projects across Africa.",
+  },
+  {
+    icon: Plane,
+    title: "Drone & GIS Expertise",
+    desc: "DJI Mavic 3 Multispectral and survey-grade GIS equipment.",
+  },
+  {
+    icon: Gauge,
+    title: "Precision Mapping",
+    desc: "Centimeter-accurate outputs for confident decision-making.",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Practical Solutions",
+    desc: "Recommendations grounded in local farming realities.",
+  },
+  {
+    icon: FileCheck,
+    title: "International Standards",
+    desc: "Reports that meet global agricultural and surveying benchmarks.",
+  },
 ];
 
 function WhyVerdiSol() {
@@ -491,14 +582,24 @@ function WhyVerdiSol() {
           animate={inView ? "show" : "hidden"}
           className="text-center mb-14"
         >
-          <motion.span variants={fadeUp} className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4">
+          <motion.span
+            variants={fadeUp}
+            className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4"
+          >
             Why Choose Us
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
+          >
             Why Choose VerdiSol Agro?
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-gray-500 max-w-xl mx-auto">
-            Precision, reliability, and practical expertise — all under one roof.
+          <motion.p
+            variants={fadeUp}
+            className="text-gray-500 max-w-xl mx-auto"
+          >
+            Precision, reliability, and practical expertise — all under one
+            roof.
           </motion.p>
         </motion.div>
 
@@ -535,7 +636,8 @@ function WhyVerdiSol() {
 
 const PROJECTS = [
   {
-    image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=700&q=80",
+    image:
+      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=700&q=80",
     title: "450 ha Water Survey",
     description:
       "Comprehensive geophysical underground water survey for a large-scale commercial farming operation.",
@@ -543,7 +645,8 @@ const PROJECTS = [
     tag: "Water Survey",
   },
   {
-    image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=700&q=80",
+    image:
+      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=700&q=80",
     title: "Commercial Farm Planning",
     description:
       "Full farm planning and irrigation design for a 200 ha commercial tobacco and maize operation.",
@@ -551,7 +654,8 @@ const PROJECTS = [
     tag: "Land Planning",
   },
   {
-    image: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=700&q=80",
+    image:
+      "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=700&q=80",
     title: "Boundary Verification Project",
     description:
       "Precision GPS boundary pegging and GIS mapping to resolve land tenure and ownership disputes.",
@@ -574,10 +678,16 @@ function FeaturedProjects() {
           className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12"
         >
           <div>
-            <motion.span variants={fadeUp} className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4">
+            <motion.span
+              variants={fadeUp}
+              className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4"
+            >
               Our Work
             </motion.span>
-            <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl lg:text-4xl font-bold text-gray-900"
+            >
               Featured Projects
             </motion.h2>
           </div>
@@ -615,8 +725,12 @@ function FeaturedProjects() {
                 <span className="inline-block px-3 py-1 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-xs font-medium mb-3">
                   {tag}
                 </span>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{description}</p>
+                <h3 className="font-bold text-gray-900 text-lg mb-2">
+                  {title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                  {description}
+                </p>
                 <div className="flex items-center gap-1.5 text-[#8B5E3C] text-sm font-medium">
                   <MapPin className="w-3.5 h-3.5" />
                   {location}
@@ -647,15 +761,25 @@ function DroneVideoSection() {
           animate={inView ? "show" : "hidden"}
           className="text-center mb-12"
         >
-          <motion.span variants={fadeUp} className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4">
+          <motion.span
+            variants={fadeUp}
+            className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4"
+          >
             Technology in Action
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
+          >
             Drone Operations
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-gray-500 max-w-2xl mx-auto">
-            Drone technology enables accurate mapping, water detection, land analysis, and
-            agricultural planning — transforming how we see and manage the land.
+          <motion.p
+            variants={fadeUp}
+            className="text-gray-500 max-w-2xl mx-auto"
+          >
+            Drone technology enables accurate mapping, water detection, land
+            analysis, and agricultural planning — transforming how we see and
+            manage the land.
           </motion.p>
         </motion.div>
 
@@ -723,7 +847,8 @@ function Testimonials() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
-  const prev = () => setActive((a) => (a - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  const prev = () =>
+    setActive((a) => (a - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
   const next = () => setActive((a) => (a + 1) % TESTIMONIALS.length);
 
   return (
@@ -735,10 +860,16 @@ function Testimonials() {
           animate={inView ? "show" : "hidden"}
           className="text-center mb-12"
         >
-          <motion.span variants={fadeUp} className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4">
+          <motion.span
+            variants={fadeUp}
+            className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4"
+          >
             Client Stories
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-gray-900">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl lg:text-4xl font-bold text-gray-900"
+          >
             What Our Clients Say
           </motion.h2>
         </motion.div>
@@ -768,15 +899,23 @@ function Testimonials() {
                   </span>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">{TESTIMONIALS[active].name}</div>
+                  <div className="font-semibold text-gray-900">
+                    {TESTIMONIALS[active].name}
+                  </div>
                   <div className="text-sm text-gray-500">
-                    {TESTIMONIALS[active].role} · {TESTIMONIALS[active].location}
+                    {TESTIMONIALS[active].role} ·{" "}
+                    {TESTIMONIALS[active].location}
                   </div>
                 </div>
                 <div className="ml-auto flex gap-0.5">
-                  {Array.from({ length: TESTIMONIALS[active].rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-[#F59E0B] fill-[#F59E0B]" />
-                  ))}
+                  {Array.from({ length: TESTIMONIALS[active].rating }).map(
+                    (_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 text-[#F59E0B] fill-[#F59E0B]"
+                      />
+                    ),
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -830,13 +969,23 @@ function CTASection() {
           initial="hidden"
           animate={inView ? "show" : "hidden"}
         >
-          <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-5 leading-tight">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-5 leading-tight"
+          >
             Need a Professional Agricultural Survey?
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-white/70 text-lg max-w-xl mx-auto mb-10">
-            Talk to our team today. We'll assess your needs and recommend the right solution for your land.
+          <motion.p
+            variants={fadeUp}
+            className="text-white/70 text-lg max-w-xl mx-auto mb-10"
+          >
+            Talk to our team today. We'll assess your needs and recommend the
+            right solution for your land.
           </motion.p>
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-[#1F5D3A] font-bold text-base hover:bg-[#F5F0E8] transition-colors shadow-lg"

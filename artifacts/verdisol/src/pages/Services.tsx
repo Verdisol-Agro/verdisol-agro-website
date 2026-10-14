@@ -33,7 +33,13 @@ const stagger = {
   show: { transition: { staggerChildren: 0.1 } },
 };
 
-function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Section({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
@@ -89,8 +95,8 @@ function PageHero() {
           transition={{ duration: 0.55, delay: 0.2 }}
           className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
         >
-          Precision agriculture, GIS solutions, drone surveying, land development and
-          agricultural consultancy services across Zimbabwe.
+          Precision agriculture, GIS solutions, drone surveying, land
+          development and agricultural consultancy services across Zimbabwe.
         </motion.p>
       </div>
     </section>
@@ -112,10 +118,10 @@ function ServicesIntro() {
           transition={{ duration: 0.6 }}
           className="text-lg text-gray-600 leading-relaxed"
         >
-          VerdiSol Agro delivers data-driven agricultural and land development solutions
-          using drone technology, GIS analysis, and professional agricultural expertise. Our
-          services support farmers, investors, and institutions in making informed land and
-          investment decisions.
+          VerdiSol Agro delivers data-driven agricultural and land development
+          solutions using drone technology, GIS analysis, and professional
+          agricultural expertise. Our services support farmers, investors, and
+          institutions in making informed land and investment decisions.
         </motion.p>
       </div>
     </section>
@@ -164,21 +170,34 @@ function ServiceDetail({
         </span>
       </motion.div>
 
-      <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 leading-tight">
+      <motion.h2
+        variants={fadeUp}
+        className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 leading-tight"
+      >
         {title}
       </motion.h2>
 
-      <motion.p variants={fadeUp} className="text-[#1F5D3A] font-semibold text-base mb-4">
+      <motion.p
+        variants={fadeUp}
+        className="text-[#1F5D3A] font-semibold text-base mb-4"
+      >
         {tagline}
       </motion.p>
 
-      <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed mb-7">
+      <motion.p
+        variants={fadeUp}
+        className="text-gray-600 leading-relaxed mb-7"
+      >
         {description}
       </motion.p>
 
       <motion.ul variants={stagger} className="space-y-2.5 mb-8">
         {bullets.map((b) => (
-          <motion.li key={b} variants={fadeUp} className="flex items-start gap-3">
+          <motion.li
+            key={b}
+            variants={fadeUp}
+            className="flex items-start gap-3"
+          >
             <CheckCircle2 className="w-5 h-5 text-[#1F5D3A] flex-shrink-0 mt-0.5" />
             <span className="text-gray-700 text-sm leading-relaxed">{b}</span>
           </motion.li>
@@ -249,7 +268,8 @@ const SERVICES: ServiceDetailProps[] = [
       "GPS pegging of identified drilling points",
       "Comprehensive water survey reporting with findings",
     ],
-    image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=900&q=80",
     flipped: false,
   },
   {
@@ -267,7 +287,8 @@ const SERVICES: ServiceDetailProps[] = [
       "NDVI and multispectral crop stress mapping",
       "Rapid deployment across all Zimbabwe provinces",
     ],
-    image: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=900&q=80",
     flipped: true,
   },
   {
@@ -285,14 +306,16 @@ const SERVICES: ServiceDetailProps[] = [
       "Topographic surveys for development planning",
       "Map deliverables in multiple GIS and PDF formats",
     ],
-    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80",
     flipped: false,
   },
   {
     id: 4,
     icon: Layers,
     title: "Land Use Planning",
-    tagline: "Strategic planning to maximise land productivity and profitability.",
+    tagline:
+      "Strategic planning to maximise land productivity and profitability.",
     description:
       "Our land use planning service transforms raw land into productive, profitable operations. We design enterprise zoning layouts, assess soil capability, and develop investment-ready implementation plans that align with international agricultural standards.",
     bullets: [
@@ -304,14 +327,16 @@ const SERVICES: ServiceDetailProps[] = [
       "Equipment and infrastructure planning",
       "Full project execution strategy and timeline",
     ],
-    image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=900&q=80",
     flipped: true,
   },
   {
     id: 5,
     icon: ClipboardList,
     title: "Farm Assessments & Valuations",
-    tagline: "Professional appraisals for investment, finance, and decision-making.",
+    tagline:
+      "Professional appraisals for investment, finance, and decision-making.",
     description:
       "We conduct thorough farm inspections and produce independent valuation reports used by banks, investors, and landowners. Our assessments cover physical condition, agricultural performance, and market value — giving every stakeholder a reliable, defensible basis for decisions.",
     bullets: [
@@ -322,7 +347,8 @@ const SERVICES: ServiceDetailProps[] = [
       "Bank and finance-ready documentation",
       "Comparative market analysis and benchmarking",
     ],
-    image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=900&q=80",
     flipped: false,
   },
   {
@@ -340,7 +366,8 @@ const SERVICES: ServiceDetailProps[] = [
       "Beaconing and physical boundary marking",
       "GIS-referenced survey deliverables",
     ],
-    image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=900&q=80",
     flipped: true,
   },
   {
@@ -358,7 +385,8 @@ const SERVICES: ServiceDetailProps[] = [
       "Stakeholder and community engagement guidance",
       "Ongoing performance monitoring and advisory",
     ],
-    image: "https://images.unsplash.com/photo-1486328228599-85db4443971f?w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1486328228599-85db4443971f?w=900&q=80",
     flipped: false,
   },
 ];
@@ -406,14 +434,24 @@ function WhySection() {
     <section ref={ref} className="py-20 bg-[#1F5D3A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Section className="text-center mb-14">
-          <motion.span variants={fadeUp} className="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-sm font-medium tracking-wide mb-4">
+          <motion.span
+            variants={fadeUp}
+            className="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-sm font-medium tracking-wide mb-4"
+          >
             Our Approach
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-white mb-4">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl lg:text-4xl font-bold text-white mb-4"
+          >
             Why Our Services Work
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-white/70 max-w-xl mx-auto">
-            The principles that make every VerdiSol Agro engagement reliable, practical, and impactful.
+          <motion.p
+            variants={fadeUp}
+            className="text-white/70 max-w-xl mx-auto"
+          >
+            The principles that make every VerdiSol Agro engagement reliable,
+            practical, and impactful.
           </motion.p>
         </Section>
 
@@ -494,16 +532,29 @@ function CTASection() {
           initial="hidden"
           animate={inView ? "show" : "hidden"}
         >
-          <motion.div variants={fadeUp} className="w-16 h-16 rounded-2xl bg-[#1F5D3A]/10 flex items-center justify-center mx-auto mb-6">
+          <motion.div
+            variants={fadeUp}
+            className="w-16 h-16 rounded-2xl bg-[#1F5D3A]/10 flex items-center justify-center mx-auto mb-6"
+          >
             <Users className="w-8 h-8 text-[#1F5D3A]" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5"
+          >
             Need a Professional Agricultural Solution?
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-gray-500 text-lg max-w-xl mx-auto mb-10">
-            Talk to our team today. We'll recommend the right service for your land, budget, and goals.
+          <motion.p
+            variants={fadeUp}
+            className="text-gray-500 text-lg max-w-xl mx-auto mb-10"
+          >
+            Talk to our team today. We'll recommend the right service for your
+            land, budget, and goals.
           </motion.p>
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[#1F5D3A] text-white font-bold text-base hover:bg-[#174d2f] transition-colors shadow-md"

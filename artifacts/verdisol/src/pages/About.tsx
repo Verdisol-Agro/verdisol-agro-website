@@ -93,7 +93,7 @@ function PageHero() {
           className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
         >
           A Zimbabwean agricultural consultancy combining precision technology, GIS
-          expertise, and local knowledge to empower farmers, investors, and institutions
+          expertise and local knowledge to empower farmers, investors, and institutions
           across Africa.
         </motion.p>
       </div>
