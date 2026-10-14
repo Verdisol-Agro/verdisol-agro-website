@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -40,18 +40,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group flex-shrink-0">
-            <div className="w-9 h-9 rounded-lg bg-[#1F5D3A] flex items-center justify-center shadow-sm group-hover:bg-[#174d2f] transition-colors">
-              <Leaf className="w-5 h-5 text-white" strokeWidth={2} />
-            </div>
-            <div className="leading-tight">
-              <span className="block text-[#1F5D3A] font-bold text-base tracking-tight">
-                VerdiSol Agro
-              </span>
-              <span className="block text-[#8B5E3C] text-[10px] font-medium tracking-widest uppercase">
-                (Pvt) Ltd
-              </span>
-            </div>
+          <Link to="/" className="flex items-center flex-shrink-0">
+            <img
+              src="/verdisol-logo.png"
+              alt="VerdiSol Agro (Pvt) Ltd"
+              className="block w-[104px] sm:w-[116px] lg:w-[120px] h-auto"
+            />
           </Link>
 
           {/* Desktop Nav Links */}

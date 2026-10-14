@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Leaf, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -29,18 +29,12 @@ export default function Footer() {
 
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-white/15 flex items-center justify-center">
-                <Leaf className="w-5 h-5 text-white" strokeWidth={2} />
-              </div>
-              <div className="leading-tight">
-                <span className="block text-white font-bold text-base">
-                  VerdiSol Agro
-                </span>
-                <span className="block text-white/60 text-[10px] font-medium tracking-widest uppercase">
-                  (Pvt) Ltd
-                </span>
-              </div>
+            <div className="mb-5 w-fit rounded-md bg-white px-2 py-1.5">
+              <img
+                src="/verdisol-logo.png"
+                alt="VerdiSol Agro (Pvt) Ltd"
+                className="block w-40 h-auto"
+              />
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-xs">
               Professional agricultural surveying and advisory services. Committed to sustainable and productive farming solutions across Pakistan.
