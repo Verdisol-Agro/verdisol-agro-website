@@ -47,7 +47,7 @@ export default function Footer() {
             </p>
             {/* WhatsApp Button */}
             <a
-              href="https://wa.me/92XXXXXXXXXX"
+              href="https://wa.me/263777226654"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#25D366] text-white text-sm font-semibold hover:bg-[#1fb355] transition-colors shadow-sm"
@@ -101,14 +101,14 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#8B5E3C] mt-0.5 flex-shrink-0" />
                 <span className="text-white/70 text-sm leading-relaxed">
-                  [Office Address Placeholder],<br />
-                  Pakistan
+                  123 Borgward, Masasa,<br />
+                  Harare, Zimbabwe
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#8B5E3C] flex-shrink-0" />
                 <span className="text-white/70 text-sm">
-                  +92 XXX XXX XXXX
+                  +263 777 226 654
                 </span>
               </li>
               <li className="flex items-center gap-3">

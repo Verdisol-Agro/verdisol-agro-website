@@ -356,13 +356,13 @@ function ContactDetails() {
         {
           icon: MapPin,
           label: "Office Location",
-          value: "Msasa, Harare, Zimbabwe",
+          value: "123 Borgward, Masasa, Harare, Zimbabwe",
           sub: null,
         },
         {
           icon: Phone,
           label: "Phone",
-          value: "+263 777 226 6654",
+          value: "+263 777 226 654",
           sub: null,
         },
         {
