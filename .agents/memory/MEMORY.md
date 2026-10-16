@@ -1,0 +1,1 @@
+- [VerdiSol motto](verdisol-motto.md) — the company motto is “Redefining Farming.”

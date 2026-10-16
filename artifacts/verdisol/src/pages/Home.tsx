@@ -132,6 +132,13 @@ function Hero() {
 
           <motion.p
             variants={fadeUp}
+            className="text-xl sm:text-2xl font-semibold text-[#A5D33C] tracking-wide mb-5"
+          >
+            Redefining Farming
+          </motion.p>
+
+          <motion.p
+            variants={fadeUp}
             className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-10"
           >
             Helping farmers, investors and landowners make informed decisions
