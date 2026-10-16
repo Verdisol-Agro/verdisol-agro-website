@@ -362,13 +362,13 @@ function ContactDetails() {
         {
           icon: Phone,
           label: "Phone Numbers",
-          value: "+263 777 226 654\n+263 789 398 96",
+          value: "+263 777 226 654\n+263 789 398 96\n+263 781 939 9896",
           sub: null,
         },
         {
           icon: Mail,
           label: "Email",
-          value: "info@verdisolagro.com",
+          value: "www.verdisolagro@.com",
           sub: null,
         },
         {
