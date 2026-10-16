@@ -10,12 +10,13 @@ const quickLinks = [
 ];
 
 const services = [
-  "Land Survey & Mapping",
-  "Soil Analysis",
-  "Crop Advisory",
-  "Irrigation Planning",
-  "Agricultural Consulting",
-  "Project Management",
+  "Underground Water Surveys",
+  "Drone Surveying",
+  "Aerial Mapping",
+  "Land Use Planning",
+  "Farm Assessments & Valuations",
+  "Boundary Pegging",
+  "Agricultural Investment & Consultancy",
 ];
 
 export default function Footer() {
