@@ -44,7 +44,7 @@ export default function Footer() {
               href="https://wa.me/263777226654"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#25D366] text-white text-sm font-semibold hover:bg-[#1fb355] transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#A5D33C] text-[#1F5D3A] text-sm font-semibold hover:bg-[#8FC22F] transition-colors shadow-sm"
             >
               <MessageCircle className="w-4 h-4" />
               Chat on WhatsApp
@@ -93,20 +93,20 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#8B5E3C] mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-[#D1B766] mt-0.5 flex-shrink-0" />
                 <span className="text-white/70 text-sm leading-relaxed">
                   121 Borgward, Masasa,<br />
                   Harare, Zimbabwe
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#8B5E3C] flex-shrink-0" />
+                <Phone className="w-4 h-4 text-[#D1B766] flex-shrink-0" />
                 <span className="text-white/70 text-sm">
                   +263 777 226 654
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#8B5E3C] flex-shrink-0" />
+                <Mail className="w-4 h-4 text-[#D1B766] flex-shrink-0" />
                 <span className="text-white/70 text-sm">
                   info@verdisolagro.com
                 </span>

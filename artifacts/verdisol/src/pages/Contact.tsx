@@ -68,8 +68,8 @@ function PageHero() {
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: `radial-gradient(circle at 25% 50%, #4CAF73 0%, transparent 50%),
-                            radial-gradient(circle at 75% 20%, #8B5E3C 0%, transparent 40%)`,
+          backgroundImage: `radial-gradient(circle at 25% 50%, #A5D33C 0%, transparent 50%),
+                            radial-gradient(circle at 75% 20%, #896F32 0%, transparent 40%)`,
         }}
       />
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -397,7 +397,7 @@ function ContactDetails() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-[#25D366] text-white font-semibold hover:bg-[#1fb355] transition-colors shadow-sm mt-6 w-full justify-center"
+        className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-[#A5D33C] text-[#1F5D3A] font-semibold hover:bg-[#8FC22F] transition-colors shadow-sm mt-6 w-full justify-center"
       >
         <MessageCircle className="w-5 h-5" />
         Chat on WhatsApp
@@ -438,7 +438,7 @@ function FloatingWhatsApp() {
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-5 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-[#25D366] text-white text-sm font-semibold shadow-xl hover:bg-[#1fb355] transition-all hover:scale-105 lg:hidden"
+      className="fixed bottom-6 right-5 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-[#A5D33C] text-[#1F5D3A] text-sm font-semibold shadow-xl hover:bg-[#8FC22F] transition-all hover:scale-105 lg:hidden"
     >
       <MessageCircle className="w-5 h-5" />
       WhatsApp

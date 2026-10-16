@@ -284,7 +284,7 @@ function ProjectCard({ project }: { project: Project }) {
         <p className="text-gray-500 text-sm leading-relaxed mb-4">
           {project.description}
         </p>
-        <div className="flex items-center gap-1.5 text-[#8B5E3C] text-sm font-medium">
+        <div className="flex items-center gap-1.5 text-[#896F32] text-sm font-medium">
           <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
           {project.location}
         </div>
@@ -401,7 +401,7 @@ function CoverageSection() {
               }`}
             >
               <MapPin
-                className={`w-4 h-4 flex-shrink-0 ${active ? "text-[#4CAF73]" : "text-gray-400"}`}
+                className={`w-4 h-4 flex-shrink-0 ${active ? "text-[#A5D33C]" : "text-gray-400"}`}
               />
               <span className="text-sm font-medium">{name}</span>
             </motion.div>

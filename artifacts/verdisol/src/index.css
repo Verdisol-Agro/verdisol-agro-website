@@ -54,7 +54,7 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* VerdiSol Agro — bottle green + earth brown palette */
+  /* VerdiSol Agro — forest green, leaf green, wheat gold, and warm earth */
   --background: 0 0% 100%;
   --foreground: 220 13% 13%;
 
@@ -83,8 +83,8 @@
   --primary: 145 50% 24%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Earth brown #8B5E3C */
-  --secondary: 26 40% 39%;
+  /* Secondary: Logo wheat gold #896F32 */
+  --secondary: 43 47% 37%;
   --secondary-foreground: 0 0% 100%;
 
   /* Muted: Soft beige */
@@ -99,9 +99,9 @@
   --destructive-foreground: 0 0% 100%;
 
   --chart-1: 145 50% 24%;
-  --chart-2: 26 40% 39%;
+  --chart-2: 43 47% 37%;
   --chart-3: 145 35% 40%;
-  --chart-4: 26 30% 55%;
+  --chart-4: 43 38% 47%;
   --chart-5: 145 20% 65%;
 
   --app-font-sans: 'Poppins', 'Inter', sans-serif;
@@ -111,7 +111,9 @@
 
   /* VerdiSol custom tokens */
   --verdisol-green: #1F5D3A;
-  --verdisol-brown: #8B5E3C;
+  --verdisol-leaf: #A5D33C;
+  --verdisol-gold: #896F32;
+  --verdisol-gold-light: #D1B766;
   --verdisol-beige: #F5F0E8;
   --verdisol-light-green: #E8F2EC;
 

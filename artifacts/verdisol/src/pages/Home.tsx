@@ -124,7 +124,7 @@ function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6"
           >
             VERDISOL AGRO(PVT) LIMITED &{" "}
-            <span className="text-[#4CAF73]">
+            <span className="text-[#A5D33C]">
               Revolutionising farming with Drone
             </span>{" "}
             Technology
@@ -297,7 +297,7 @@ function CoverageSection() {
               variants={fadeUp}
               className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-colors"
             >
-              <MapPin className="w-4 h-4 text-[#4CAF73] flex-shrink-0" />
+              <MapPin className="w-4 h-4 text-[#A5D33C] flex-shrink-0" />
               <span className="text-white text-sm font-medium">{province}</span>
             </motion.div>
           ))}
@@ -731,7 +731,7 @@ function FeaturedProjects() {
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">
                   {description}
                 </p>
-                <div className="flex items-center gap-1.5 text-[#8B5E3C] text-sm font-medium">
+                <div className="flex items-center gap-1.5 text-[#896F32] text-sm font-medium">
                   <MapPin className="w-3.5 h-3.5" />
                   {location}
                 </div>
@@ -912,7 +912,7 @@ function Testimonials() {
                     (_, i) => (
                       <Star
                         key={i}
-                        className="w-4 h-4 text-[#F59E0B] fill-[#F59E0B]"
+                        className="w-4 h-4 text-[#896F32] fill-[#896F32]"
                       />
                     ),
                   )}

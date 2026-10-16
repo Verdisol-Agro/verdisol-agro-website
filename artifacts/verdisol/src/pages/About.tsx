@@ -174,7 +174,7 @@ function WhoWeAre() {
               />
             </div>
             {/* Stats badge */}
-            <div className="absolute -bottom-5 -left-4 bg-[#8B5E3C] text-white px-5 py-3.5 rounded-xl shadow-lg">
+            <div className="absolute -bottom-5 -left-4 bg-[#896F32] text-white px-5 py-3.5 rounded-xl shadow-lg">
               <div className="text-2xl font-bold">600+</div>
               <div className="text-xs text-white/80 font-medium">Clients Served</div>
             </div>
@@ -292,7 +292,7 @@ function MissionVision() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative p-10 rounded-2xl bg-[#8B5E3C] overflow-hidden"
+            className="relative p-10 rounded-2xl bg-[#896F32] overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-40 h-40 rounded-bl-full bg-white/5" />
             <div className="relative z-10">
@@ -456,7 +456,7 @@ const VALUES = [
   {
     icon: Shield,
     name: "Integrity",
-    color: "bg-[#8B5E3C]",
+    color: "bg-[#896F32]",
     desc: "We provide honest, transparent, and professional advice — even when the findings are not what a client hoped to hear.",
   },
   {
@@ -468,7 +468,7 @@ const VALUES = [
   {
     icon: Lightbulb,
     name: "Innovation",
-    color: "bg-[#8B5E3C]",
+    color: "bg-[#896F32]",
     desc: "We use modern technology and international methods to improve agricultural decision-making across Africa.",
   },
 ];

@@ -165,7 +165,7 @@ function ServiceDetail({
         <div className="w-12 h-12 rounded-xl bg-[#1F5D3A] flex items-center justify-center flex-shrink-0">
           <Icon className="w-6 h-6 text-white" />
         </div>
-        <span className="text-[#8B5E3C] text-sm font-semibold tracking-wider uppercase">
+        <span className="text-[#896F32] text-sm font-semibold tracking-wider uppercase">
           Service {String(id).padStart(2, "0")}
         </span>
       </motion.div>
