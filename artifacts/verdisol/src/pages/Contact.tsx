@@ -361,8 +361,8 @@ function ContactDetails() {
         },
         {
           icon: Phone,
-          label: "Phone",
-          value: "+263 777 226 654",
+          label: "Phone Numbers",
+          value: "+263 777 226 654\n+263 789 398 96",
           sub: null,
         },
         {
@@ -386,7 +386,9 @@ function ContactDetails() {
             <div className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-0.5">
               {label}
             </div>
-            <div className="text-gray-900 font-semibold text-sm">{value}</div>
+            <div className="text-gray-900 font-semibold text-sm whitespace-pre-line">
+              {value}
+            </div>
             {sub && <div className="text-gray-400 text-xs mt-0.5">{sub}</div>}
           </div>
         </div>

@@ -124,18 +124,11 @@ function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6"
           >
             VERDISOL AGRO(PVT) LIMITED &{" "}
-            <span className="text-[#A5D33C]">
+            <span className="text-[#8CC63F]">
               Revolutionising farming with Drone
             </span>{" "}
             Technology
           </motion.h1>
-
-          <motion.p
-            variants={fadeUp}
-            className="text-xl sm:text-2xl font-semibold text-[#A5D33C] tracking-wide mb-5"
-          >
-            Redefining Farming
-          </motion.p>
 
           <motion.p
             variants={fadeUp}
@@ -304,7 +297,7 @@ function CoverageSection() {
               variants={fadeUp}
               className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-colors"
             >
-              <MapPin className="w-4 h-4 text-[#A5D33C] flex-shrink-0" />
+              <MapPin className="w-4 h-4 text-[#8CC63F] flex-shrink-0" />
               <span className="text-white text-sm font-medium">{province}</span>
             </motion.div>
           ))}
