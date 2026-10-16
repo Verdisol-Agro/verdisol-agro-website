@@ -29,6 +29,7 @@ import {
   Quote,
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import farmlandHeroImage from "@assets/Golden_Hour_Sustainable_Farmland_Banner_1792149078371.png";
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Helpers                                                                   */
@@ -75,6 +76,7 @@ const stagger = {
 /* ────────────────────────────────────────────────────────────────────────── */
 
 const HERO_IMAGES = [
+  farmlandHeroImage,
   "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600&q=80",
   "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600&q=80",
   "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&q=80",
@@ -129,6 +131,10 @@ function Hero() {
             </span>{" "}
             Technology
           </motion.h1>
+
+          <p className="text-xl sm:text-2xl font-semibold text-[#8CC63F] tracking-wide mb-5">
+            Redefining Farming
+          </p>
 
           <motion.p
             variants={fadeUp}
