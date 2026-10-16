@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -50,6 +51,29 @@ export default function Footer() {
               <MessageCircle className="w-4 h-4" />
               Chat on WhatsApp
             </a>
+            <div className="mt-5 flex items-center gap-3">
+              <span className="text-xs text-white/60">Follow us</span>
+              <a
+                href="https://x.com/Tatenda_Agro"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="VerdiSol Agro on X (Twitter)"
+                title="X (Twitter)"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-[#A5D33C] hover:bg-[#A5D33C] hover:text-[#1F5D3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A5D33C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1F5D3A]"
+              >
+                <FaXTwitter aria-hidden="true" className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.facebook.com/share/19m36uBt4H/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="VerdiSol Agro on Facebook"
+                title="Facebook"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-[#A5D33C] hover:bg-[#A5D33C] hover:text-[#1F5D3A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A5D33C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1F5D3A]"
+              >
+                <FaFacebookF aria-hidden="true" className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
