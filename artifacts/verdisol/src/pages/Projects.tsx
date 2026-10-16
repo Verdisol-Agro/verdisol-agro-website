@@ -368,8 +368,8 @@ const PROVINCES = [
   { name: "Midlands", active: true },
   { name: "Manicaland", active: true },
   { name: "Masvingo", active: true },
-  { name: "Matabeleland North", active: false },
-  { name: "Matabeleland South", active: false },
+  { name: "Matabeleland North", active: true },
+  { name: "Matabeleland South", active: true },
 ];
 
 function CoverageSection() {
@@ -381,11 +381,11 @@ function CoverageSection() {
             Nationwide
           </motion.span>
           <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-            Projects Completed Across Zimbabwe
+            Coverage Across All Provinces of Zimbabwe
           </motion.h2>
           <motion.p variants={fadeUp} className="text-gray-500 max-w-xl mx-auto">
-            Our field teams have worked across all major provinces, delivering surveys,
-            maps, and plans from Harare to Bulawayo and beyond.
+            Our field teams provide surveys, maps, and plans across all ten provinces
+            of Zimbabwe.
           </motion.p>
         </InViewSection>
 
@@ -412,11 +412,7 @@ function CoverageSection() {
           <motion.div variants={fadeUp} className="mt-8 flex items-center justify-center gap-5 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded bg-[#1F5D3A]" />
-              <span className="text-gray-500">Project completed</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 rounded bg-[#F5F0E8] border border-[#1F5D3A]/20" />
-              <span className="text-gray-500">Expansion coming soon</span>
+              <span className="text-gray-500">Service coverage</span>
             </div>
           </motion.div>
         </InViewSection>
