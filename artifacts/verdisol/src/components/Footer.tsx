@@ -128,7 +128,7 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-[#D1B766] flex-shrink-0" />
                 <span className="text-white/70 text-sm">
                   +263 777 226 654<br />
-                  +263 781 939 9896
+                  +263 781 939 896
                 </span>
               </li>
               <li className="flex items-center gap-3">
