@@ -362,7 +362,7 @@ function ContactDetails() {
         {
           icon: Phone,
           label: "Phone Numbers",
-          value: "+263 777 226 654\n+263 789 398 96\n+263 781 939 9896",
+          value: "+263 777 226 654\n+263 781 939 9896",
           sub: null,
         },
         {
