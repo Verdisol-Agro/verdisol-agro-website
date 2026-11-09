@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: contact
+    description: Contact enquiries
 paths:
   /healthz:
     get:
@@ -24,6 +26,48 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /contact-enquiries:
+    post:
+      operationId: submitContactEnquiry
+      tags: [contact]
+      summary: Send a contact enquiry to VerdiSol Agro
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactEnquiryInput"
+      responses:
+        "200":
+          description: Enquiry delivered to the configured recipient
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactEnquiryResponse"
+        "400":
+          description: Invalid enquiry details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "429":
+          description: Too many enquiries
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "502":
+          description: Email provider failed to deliver the enquiry
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: Email delivery is not configured
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +77,57 @@ components:
           type: string
       required:
         - status
+    ContactEnquiryInput:
+      type: object
+      required:
+        - fullName
+        - phone
+        - location
+        - service
+        - message
+      properties:
+        fullName:
+          type: string
+          minLength: 1
+          maxLength: 120
+        phone:
+          type: string
+          minLength: 5
+          maxLength: 40
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        location:
+          type: string
+          minLength: 1
+          maxLength: 200
+        service:
+          type: string
+          enum:
+            - Underground Water Surveys
+            - Drone Surveying
+            - Aerial Mapping
+            - Land Use Planning
+            - Farm Assessment & Valuation
+            - Boundary Pegging
+            - Agricultural Investment Consultancy
+        message:
+          type: string
+          minLength: 1
+          maxLength: 5000
+    ContactEnquiryResponse:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
 

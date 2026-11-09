@@ -2,6 +2,10 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import {
+  submitContactEnquiry,
+  type ContactEnquiryInput,
+} from "@workspace/api-client-react";
+import {
   MapPin,
   Phone,
   Mail,
@@ -106,7 +110,7 @@ function PageHero() {
 
 /* ─── 3. Contact Form ────────────────────────────────────────────────────── */
 
-const SERVICE_OPTIONS = [
+const SERVICE_OPTIONS: ContactEnquiryInput["service"][] = [
   "Underground Water Surveys",
   "Drone Surveying",
   "Aerial Mapping",
@@ -121,7 +125,7 @@ interface FormData {
   phone: string;
   email: string;
   location: string;
-  service: string;
+  service: ContactEnquiryInput["service"] | "";
   message: string;
 }
 
@@ -136,6 +140,7 @@ function ContactForm() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -143,16 +148,35 @@ function ContactForm() {
     >,
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setSubmitError("");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitError("");
+
+    const service = form.service;
+    if (!service) {
+      setSubmitError("Please select a service before sending your enquiry.");
+      return;
+    }
+
     setLoading(true);
-    // Simulate submission (wire to real endpoint later)
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const enquiry: ContactEnquiryInput = {
+        ...form,
+        service,
+        email: form.email.trim() || undefined,
+      };
+      await submitContactEnquiry(enquiry);
       setSubmitted(true);
-    }, 1200);
+    } catch {
+      setSubmitError(
+        "Your enquiry wasn't sent. Please try again or contact us by phone or WhatsApp.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -167,12 +191,13 @@ function ContactForm() {
         </div>
         <h3 className="text-2xl font-bold text-gray-900 mb-3">Request Sent!</h3>
         <p className="text-gray-500 max-w-sm">
-          Thank you for contacting VerdiSol Agro. We typically respond within 24
-          hours.
+          Your enquiry was emailed to VerdiSol Agro. We typically respond within
+          24 hours.
         </p>
         <button
           onClick={() => {
             setSubmitted(false);
+            setSubmitError("");
             setForm({
               fullName: "",
               phone: "",
@@ -289,6 +314,15 @@ function ContactForm() {
           className={`${inputCls} resize-none`}
         />
       </div>
+
+      {submitError && (
+        <div
+          role="alert"
+          className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+        >
+          {submitError}
+        </div>
+      )}
 
       <button
         type="submit"
