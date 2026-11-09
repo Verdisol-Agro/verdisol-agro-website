@@ -23,6 +23,7 @@ export const ContactEnquiryInputService = {
   Soil_Analysis: 'Soil Analysis',
   Crop_Advisory: 'Crop Advisory',
   Irrigation_Planning: 'Irrigation Planning',
+  'Agricultural_Engineering_(Fencing)': 'Agricultural Engineering (Fencing)',
 } as const;
 
 export interface ContactEnquiryInput {

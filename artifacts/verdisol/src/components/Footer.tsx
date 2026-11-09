@@ -21,6 +21,7 @@ const services = [
   "Soil Analysis",
   "Crop Advisory",
   "Irrigation Planning",
+  "Agricultural Engineering (Fencing)",
 ];
 
 export default function Footer() {

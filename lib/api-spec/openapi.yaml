@@ -115,6 +115,7 @@ components:
             - Soil Analysis
             - Crop Advisory
             - Irrigation Planning
+            - Agricultural Engineering (Fencing)
         message:
           type: string
           minLength: 1

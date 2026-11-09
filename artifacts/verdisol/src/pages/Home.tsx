@@ -30,6 +30,7 @@ import {
   FlaskConical,
   Sprout,
   Waves,
+  Fence,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import farmlandHeroImage from "@assets/Golden_Hour_Sustainable_Farmland_Banner_1792149078371.png";
@@ -374,6 +375,12 @@ const SERVICES = [
     title: "Irrigation Planning",
     description:
       "Water-demand and field-layout planning to help farms use available water efficiently.",
+  },
+  {
+    icon: Fence,
+    title: "Agricultural Engineering (Fencing)",
+    description:
+      "Farm perimeter and paddock fencing plans designed around terrain, access, and livestock movement.",
   },
 ];
 

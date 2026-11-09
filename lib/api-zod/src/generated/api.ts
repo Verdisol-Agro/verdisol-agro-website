@@ -38,7 +38,7 @@ export const SubmitContactEnquiryBody = zod.object({
   "phone": zod.string().min(submitContactEnquiryBodyPhoneMin).max(submitContactEnquiryBodyPhoneMax),
   "email": zod.string().email().max(submitContactEnquiryBodyEmailMax).optional(),
   "location": zod.string().min(1).max(submitContactEnquiryBodyLocationMax),
-  "service": zod.enum(['Underground Water Surveys', 'Drone Surveying', 'Aerial Mapping', 'Land Use Planning', 'Farm Assessment & Valuation', 'Boundary Pegging', 'Agricultural Investment Consultancy', 'Soil Analysis', 'Crop Advisory', 'Irrigation Planning']),
+  "service": zod.enum(['Underground Water Surveys', 'Drone Surveying', 'Aerial Mapping', 'Land Use Planning', 'Farm Assessment & Valuation', 'Boundary Pegging', 'Agricultural Investment Consultancy', 'Soil Analysis', 'Crop Advisory', 'Irrigation Planning', 'Agricultural Engineering (Fencing)']),
   "message": zod.string().min(1).max(submitContactEnquiryBodyMessageMax)
 })
 
