@@ -394,7 +394,7 @@ function ContactDetails() {
         {
           icon: MapPin,
           label: "Office Location",
-          value: "121 Borgward, Masasa, Harare, Zimbabwe",
+          value: "Borgward, Masasa, Harare, Zimbabwe",
           sub: null,
         },
         {

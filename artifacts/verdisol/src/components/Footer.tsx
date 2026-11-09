@@ -124,7 +124,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#D1B766] mt-0.5 flex-shrink-0" />
                 <span className="text-white/70 text-sm leading-relaxed">
-                  121 Borgward, Masasa,<br />
+                  Borgward, Masasa,<br />
                   Harare, Zimbabwe
                 </span>
               </li>
