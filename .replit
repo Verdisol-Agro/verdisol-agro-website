@@ -18,3 +18,12 @@ expertMode = true
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 20000
+
+[userenv]
+
+[userenv.shared]
+CONTACT_TO_EMAIL = "verdisolagro@gmail.com"
+SMTP_FROM_EMAIL = "silentganda02@gmail.com"
+SMTP_HOST = "smtp.gmail.com"
+SMTP_PORT = "587"
+SMTP_USER = "silentganda02@gmail.com"
