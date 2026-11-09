@@ -18,6 +18,9 @@ import {
   Users,
   Globe,
   Gauge,
+  FlaskConical,
+  Sprout,
+  Waves,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 
@@ -389,6 +392,60 @@ const SERVICES: ServiceDetailProps[] = [
       "https://images.unsplash.com/photo-1486328228599-85db4443971f?w=900&q=80",
     flipped: false,
   },
+  {
+    id: 8,
+    icon: FlaskConical,
+    title: "Soil Analysis",
+    tagline: "Understand soil conditions before making field decisions.",
+    description:
+      "We assess soil characteristics and interpret test results to guide crop selection, soil improvement, and practical farm management. Recommendations are tailored to the needs and conditions of each site.",
+    bullets: [
+      "Soil sampling plans for representative field coverage",
+      "Soil pH and fertility result interpretation",
+      "Nutrient and soil amendment recommendations",
+      "Field zoning and soil variability mapping",
+      "Clear reports to support crop and investment decisions",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&q=80",
+    flipped: true,
+  },
+  {
+    id: 9,
+    icon: Sprout,
+    title: "Crop Advisory",
+    tagline: "Field-specific guidance for better crop decisions.",
+    description:
+      "We help growers turn field observations and available farm data into practical crop recommendations, from crop selection and planting schedules through in-season monitoring and production planning.",
+    bullets: [
+      "Crop selection suited to local conditions and soil",
+      "Planting schedules and seasonal crop calendars",
+      "Crop nutrition and field management guidance",
+      "Crop condition monitoring and issue identification",
+      "Recommendations for each stage of production",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=900&q=80",
+    flipped: false,
+  },
+  {
+    id: 10,
+    icon: Waves,
+    title: "Irrigation Planning",
+    tagline: "Plan water systems around crops, land, and supply.",
+    description:
+      "We help assess water availability, crop demand, field layout, and terrain to plan efficient irrigation zones and practical implementation priorities for farms.",
+    bullets: [
+      "Water source and crop demand assessment",
+      "Irrigation layout and field-zone planning",
+      "Terrain and farm layout considerations",
+      "Water-use efficiency recommendations",
+      "Phased equipment and implementation guidance",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=900&q=80",
+    flipped: true,
+  },
 ];
 
 /* ─── 4. Why Our Services Work ──────────────────────────────────────────── */
@@ -492,13 +549,16 @@ const NAV_SERVICES = [
   { icon: ClipboardList, label: "Farm Assessments" },
   { icon: Bookmark, label: "Boundary Pegging" },
   { icon: TrendingUp, label: "Consultancy" },
+  { icon: FlaskConical, label: "Soil Analysis" },
+  { icon: Sprout, label: "Crop Advisory" },
+  { icon: Waves, label: "Irrigation Planning" },
 ];
 
 function ServicesQuickNav() {
   return (
     <section className="bg-white border-b border-gray-100 sticky top-16 lg:top-20 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-1 overflow-x-auto py-3 scrollbar-hide">
+        <div className="flex items-center gap-1 overflow-x-auto py-3 scrollbar-hide lg:flex-wrap lg:justify-center lg:overflow-visible">
           {NAV_SERVICES.map(({ icon: Icon, label }, i) => (
             <button
               key={label}

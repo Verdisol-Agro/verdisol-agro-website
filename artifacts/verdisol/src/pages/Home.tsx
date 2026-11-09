@@ -27,6 +27,9 @@ import {
   ChevronLeft,
   ChevronRight,
   Quote,
+  FlaskConical,
+  Sprout,
+  Waves,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import farmlandHeroImage from "@assets/Golden_Hour_Sustainable_Farmland_Banner_1792149078371.png";
@@ -353,6 +356,24 @@ const SERVICES = [
     title: "Boundary Pegging",
     description:
       "Accurate property demarcation and boundary verification using GPS and survey-grade equipment.",
+  },
+  {
+    icon: FlaskConical,
+    title: "Soil Analysis",
+    description:
+      "Soil assessment and interpretation to guide crop selection, soil improvement, and farm management.",
+  },
+  {
+    icon: Sprout,
+    title: "Crop Advisory",
+    description:
+      "Practical crop selection, seasonal planning, and in-season guidance tailored to local field conditions.",
+  },
+  {
+    icon: Waves,
+    title: "Irrigation Planning",
+    description:
+      "Water-demand and field-layout planning to help farms use available water efficiently.",
   },
 ];
 

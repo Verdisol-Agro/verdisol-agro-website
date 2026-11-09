@@ -118,6 +118,9 @@ const SERVICE_OPTIONS: ContactEnquiryInput["service"][] = [
   "Farm Assessment & Valuation",
   "Boundary Pegging",
   "Agricultural Investment Consultancy",
+  "Soil Analysis",
+  "Crop Advisory",
+  "Irrigation Planning",
 ];
 
 interface FormData {

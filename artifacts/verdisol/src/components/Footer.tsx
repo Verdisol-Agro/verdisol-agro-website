@@ -18,6 +18,9 @@ const services = [
   "Farm Assessments & Valuations",
   "Boundary Pegging",
   "Agricultural Investment & Consultancy",
+  "Soil Analysis",
+  "Crop Advisory",
+  "Irrigation Planning",
 ];
 
 export default function Footer() {

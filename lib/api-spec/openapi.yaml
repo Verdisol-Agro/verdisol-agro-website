@@ -112,6 +112,9 @@ components:
             - Farm Assessment & Valuation
             - Boundary Pegging
             - Agricultural Investment Consultancy
+            - Soil Analysis
+            - Crop Advisory
+            - Irrigation Planning
         message:
           type: string
           minLength: 1

@@ -17,4 +17,7 @@ export const ContactEnquiryInputService = {
   'Farm_Assessment_&_Valuation': 'Farm Assessment & Valuation',
   Boundary_Pegging: 'Boundary Pegging',
   Agricultural_Investment_Consultancy: 'Agricultural Investment Consultancy',
+  Soil_Analysis: 'Soil Analysis',
+  Crop_Advisory: 'Crop Advisory',
+  Irrigation_Planning: 'Irrigation Planning',
 } as const;
