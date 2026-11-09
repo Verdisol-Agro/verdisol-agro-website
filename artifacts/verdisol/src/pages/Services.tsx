@@ -21,7 +21,6 @@ import {
   FlaskConical,
   Sprout,
   Waves,
-  Fence,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 
@@ -447,24 +446,6 @@ const SERVICES: ServiceDetailProps[] = [
       "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=900&q=80",
     flipped: true,
   },
-  {
-    id: 11,
-    icon: Fence,
-    title: "Agricultural Engineering (Fencing)",
-    tagline: "Practical fencing plans for secure farm operations.",
-    description:
-      "We support the planning of farm fencing systems, from perimeter boundaries to paddock divisions. Each plan considers terrain, access, livestock movement, and the day-to-day needs of the farm.",
-    bullets: [
-      "Perimeter fencing and farm boundary layouts",
-      "Paddock subdivision and grazing-zone plans",
-      "Fence-line routing based on terrain and access",
-      "Gate placement and livestock movement planning",
-      "Material and implementation recommendations",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80",
-    flipped: false,
-  },
 ];
 
 /* ─── 4. Why Our Services Work ──────────────────────────────────────────── */
@@ -571,14 +552,13 @@ const NAV_SERVICES = [
   { icon: FlaskConical, label: "Soil Analysis" },
   { icon: Sprout, label: "Crop Advisory" },
   { icon: Waves, label: "Irrigation Planning" },
-  { icon: Fence, label: "Agricultural Engineering (Fencing)" },
 ];
 
 function ServicesQuickNav() {
   return (
     <section className="bg-white border-b border-gray-100 sticky top-16 lg:top-20 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-1 overflow-x-auto py-3 scrollbar-hide lg:flex-wrap lg:justify-center lg:overflow-visible">
+        <div className="flex items-center gap-1 overflow-x-auto py-3 scrollbar-hide">
           {NAV_SERVICES.map(({ icon: Icon, label }, i) => (
             <button
               key={label}
