@@ -1,0 +1,218 @@
+Now build the complete Projects page for VerdiSol Agro (Pvt) Ltd.
+
+Use existing React + TypeScript + Tailwind project.
+Do NOT modify Navbar, Footer, routing, or other pages.
+Only build the Projects page.
+
+This page must feel like a real professional agricultural consultancy portfolio showing proof of work, credibility, and field experience across Zimbabwe.
+
+---
+
+# PAGE STRUCTURE
+
+## 1. PAGE HERO SECTION
+
+Title:
+Our Projects
+
+Subtitle:
+A portfolio of agricultural surveys, drone mapping, GIS analysis, land development planning, and farm assessment projects across Zimbabwe.
+
+Add subtle farmland or drone background image overlay.
+
+---
+
+## 2. INTRO SECTION
+
+Text:
+
+VerdiSol Agro has completed a wide range of agricultural and land development projects across Zimbabwe, supporting farmers, investors, and institutions with accurate data, drone technology, and professional GIS analysis.
+
+Our projects demonstrate practical solutions delivered across multiple provinces and farming environments.
+
+---
+
+## 3. PROJECT GRID (MAIN SECTION)
+
+Create a responsive grid of project cards.
+
+Each project card must include:
+
+- Project image (placeholder allowed)
+- Project title
+- Location (Zimbabwe province or city)
+- Short description
+- Service category tag
+
+---
+
+# PROJECTS TO INCLUDE
+
+### 1. 450 ha Water Survey Project
+Location: Mashonaland West
+
+Description:
+Drone-assisted groundwater survey with borehole site ranking and full land water mapping for optimal drilling strategy.
+
+Tag: Water Surveys
+
+---
+
+### 2. Commercial Farm Land Use Plan
+Location: Midlands
+
+Description:
+Enterprise zoning and land capability analysis for a large-scale commercial farming operation including irrigation and livestock planning.
+
+Tag: Land Use Planning
+
+---
+
+### 3. Irrigation Development Planning
+Location: Mashonaland East
+
+Description:
+GIS-based irrigation layout design and water distribution planning for high-efficiency crop production.
+
+Tag: Irrigation Planning
+
+---
+
+### 4. Boundary Verification Project
+Location: Masvingo
+
+Description:
+Boundary pegging and verification for title deed confirmation and dispute resolution.
+
+Tag: Surveying
+
+---
+
+### 5. Farm Valuation Assessment
+Location: Manicaland
+
+Description:
+Comprehensive farm valuation report including infrastructure, land capability, and agricultural productivity assessment.
+
+Tag: Valuations
+
+---
+
+### 6. Plantation Development Plan
+Location: Mashonaland Central
+
+Description:
+Land preparation and enterprise planning for plantation agriculture with long-term production strategy.
+
+Tag: Agricultural Planning
+
+---
+
+### 7. Drone Mapping Project
+Location: Bulawayo Region
+
+Description:
+High-resolution aerial mapping using drone imagery for terrain modeling and farm analysis.
+
+Tag: Drone Surveying
+
+---
+
+### 8. Agricultural Investment Assessment
+Location: Harare Region
+
+Description:
+Feasibility study and investment analysis for commercial agricultural development project.
+
+Tag: Investment Advisory
+
+---
+
+## 4. FILTER SECTION (IMPORTANT)
+
+Add simple filter buttons:
+
+- All
+- Water Surveys
+- Land Use Planning
+- Drone Surveying
+- Valuations
+- Investment
+
+Make filtering optional but visually premium.
+
+---
+
+## 5. ZIMBABWE COVERAGE MAP
+
+Add a section showing:
+
+"Projects completed across Zimbabwe"
+
+Highlight provinces:
+
+- Harare
+- Bulawayo
+- Mashonaland East
+- Mashonaland West
+- Mashonaland Central
+- Midlands
+- Manicaland
+- Masvingo
+- Matabeleland North
+- Matabeleland South
+
+Use either:
+- Simple map graphic OR
+- Styled province grid
+
+---
+
+## 6. CREDIBILITY STRIP
+
+Add small section:
+
+- 600+ Clients Served
+- Nationwide Coverage
+- Drone + GIS Technology
+- Professional Agricultural Reporting
+
+---
+
+## 7. CALL TO ACTION SECTION
+
+Title:
+Have a project you want to develop?
+
+Button:
+Request a Survey
+
+Secondary text:
+We provide professional agricultural and land development solutions across Zimbabwe.
+
+---
+
+# DESIGN REQUIREMENTS
+
+- Fully responsive grid layout
+- Clean modern consulting style
+- Bottle green + earth tones
+- Lucide icons
+- Framer Motion animations
+- Hover effects on cards
+- Smooth transitions
+- Professional spacing
+- No clutter
+- Premium portfolio look
+
+---
+
+# TECH RULES
+
+- Do NOT modify Home page
+- Do NOT modify Services page
+- Do NOT modify Navbar/Footer
+- Only build Projects page
+- Ensure reusable components are used where possible
+- Ensure no TypeScript errors
+- Ensure production-ready code

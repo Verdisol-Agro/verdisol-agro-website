@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "VerdiSol Agro"
+version = "1.0.0"
+id = "artifacts/verdisol"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22079
+
+[services.development]
+run = "pnpm --filter @workspace/verdisol run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/verdisol", "run", "build" ]
+publicDir = "artifacts/verdisol/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22079"
+BASE_PATH = "/"
