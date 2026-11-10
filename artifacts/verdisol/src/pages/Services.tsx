@@ -32,6 +32,7 @@ import droneSurveyVideo from "@assets/VID-20261015-WA0116_1794299030635.mp4";
 import aerialMappingPhoto from "@assets/IMG-20261110-WA0020_1794300453163.jpg";
 import landUseMap from "@assets/Screenshot_2026-02-17_115332_1794301012478.png";
 import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1794301414063.jpeg";
+import boundaryPeggingMap from "@assets/Screenshot_2026-11-10_112612_1794302867416.png";
 
 /* ─── Animation helpers ─────────────────────────────────────────────────── */
 
@@ -271,7 +272,7 @@ function ServiceDetail({
           : portraitImage
             ? "aspect-[3/4] w-full max-w-md mx-auto"
             : imageFit === "contain"
-              ? "aspect-[16/9] bg-white"
+              ? "bg-white"
               : "aspect-[4/3]"
       }`}
     >
@@ -363,7 +364,7 @@ function ServiceDetail({
         <img
           src={image}
           alt={title}
-          className={`h-full w-full ${imageFit === "contain" ? "object-contain" : "object-cover"}`}
+          className={`w-full ${imageFit === "contain" ? "h-auto object-contain" : "h-full object-cover"}`}
         />
       )}
     </motion.div>
@@ -545,8 +546,8 @@ const SERVICES: ServiceDetailProps[] = [
       "Beaconing and physical boundary marking",
       "GIS-referenced survey deliverables",
     ],
-    image:
-      "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=900&q=80",
+    image: boundaryPeggingMap,
+    imageFit: "contain",
     flipped: true,
   },
   {
