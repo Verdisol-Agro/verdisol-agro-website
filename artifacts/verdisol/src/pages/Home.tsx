@@ -35,6 +35,7 @@ import Layout from "@/components/Layout";
 import vegetablesImage from "@assets/image_1794296544704.png";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
+import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Helpers                                                                   */
@@ -747,61 +748,71 @@ function FeaturedProjects() {
 /* ────────────────────────────────────────────────────────────────────────── */
 
 function DroneVideoSection() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-
   return (
-    <section ref={ref} className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-[#123d2c] py-20 sm:py-24">
+      <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#8CC63F]/15 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 right-0 h-[28rem] w-[28rem] rounded-full bg-[#C7A85A]/15 blur-3xl" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_0.8fr] lg:px-8">
         <motion.div
-          variants={stagger}
-          initial="hidden"
-          animate={inView ? "show" : "hidden"}
-          className="text-center mb-12"
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-xl"
         >
-          <motion.span
-            variants={fadeUp}
-            className="inline-block px-4 py-1.5 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-sm font-medium tracking-wide mb-4"
-          >
+          <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium tracking-wide text-[#cfe7a8]">
             Technology in Action
-          </motion.span>
-          <motion.h2
-            variants={fadeUp}
-            className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
-          >
-            Drone Operations
-          </motion.h2>
-          <motion.p
-            variants={fadeUp}
-            className="text-gray-500 max-w-2xl mx-auto"
-          >
-            Drone technology enables accurate mapping, water detection, land
-            analysis, and agricultural planning — transforming how we see and
-            manage the land.
-          </motion.p>
+          </span>
+          <h2 className="mt-5 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+            See the work behind the results.
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-white/75 sm:text-lg">
+            A field view of VerdiSol’s agricultural work, supported by drone
+            technology, careful surveying, and practical land analysis.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {["Field operations", "Drone technology", "Zimbabwe"].map((label) => (
+              <span
+                key={label}
+                className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white/85"
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+          <p className="mt-10 text-sm font-semibold tracking-[0.2em] text-[#8CC63F]">
+            REDEFINING FARMING
+          </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          initial={{ opacity: 0, y: 24, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-2xl overflow-hidden aspect-video bg-gray-900 shadow-2xl"
+          className="relative mx-auto w-full max-w-[390px]"
         >
-          <img
-            src={vegetablesImage}
-            alt="Fresh vegetables from agricultural production"
-            className="w-full h-full object-cover opacity-70"
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/65 via-black/15 to-transparent p-6 text-center">
-            <div className="max-w-xl text-white">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-white/50 bg-white/15 text-2xl backdrop-blur">
-                ▶
-              </div>
-              <p className="text-xl font-semibold">VerdiSol in the Field</p>
-              <p className="mt-2 text-sm text-white/85">
-                Upload the video clip to enable playback here.
-              </p>
-            </div>
+          <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#8CC63F]/60 via-white/10 to-[#C7A85A]/50 blur-xl" />
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/20 bg-black p-2 shadow-2xl shadow-black/40">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster={vegetablesImage}
+              className="aspect-[9/16] w-full rounded-[1.2rem] bg-black object-contain"
+              aria-label="VerdiSol field operations video"
+            >
+              <source src={fieldVideo} type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div className="absolute -bottom-5 -left-5 rounded-2xl border border-white/15 bg-[#f5f0e8] px-5 py-3 shadow-xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1F5D3A]">
+              VerdiSol Agro
+            </p>
+            <p className="mt-1 text-sm font-medium text-gray-700">
+              Field footage
+            </p>
           </div>
         </motion.div>
       </div>
