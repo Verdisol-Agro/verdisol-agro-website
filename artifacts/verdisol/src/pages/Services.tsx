@@ -31,6 +31,7 @@ import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
 import droneSurveyVideo from "@assets/VID-20261015-WA0116_1794299030635.mp4";
 import aerialMappingPhoto from "@assets/IMG-20261110-WA0020_1794300453163.jpg";
 import landUseMap from "@assets/Screenshot_2026-02-17_115332_1794301012478.png";
+import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1794301414063.jpeg";
 
 /* ─── Animation helpers ─────────────────────────────────────────────────── */
 
@@ -525,8 +526,8 @@ const SERVICES: ServiceDetailProps[] = [
       "Bank and finance-ready documentation",
       "Comparative market analysis and benchmarking",
     ],
-    image:
-      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=900&q=80",
+    image: farmAssessmentPhoto,
+    portraitImage: true,
     flipped: false,
   },
   {
