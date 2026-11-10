@@ -33,6 +33,7 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import vegetablesImage from "@assets/image_1794296544704.png";
+import farmlandHeroImage from "@assets/Golden_Hour_Sustainable_Farmland_Banner_1794305560425.png";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
 import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
@@ -83,14 +84,15 @@ const stagger = {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#123d2c] py-24 sm:py-28">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${vegetablesImage})` }}
+        style={{ backgroundImage: `url(${farmlandHeroImage})` }}
       />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/75" />
+      {/* Preserve the golden light while providing contrast behind the copy. */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#092c20]/75 via-[#0c3022]/60 to-[#092c20]/25" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-[#082a1c]/70" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -104,27 +106,29 @@ function Hero() {
 
           <motion.h1
             variants={fadeUp}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-lg"
           >
             VERDISOL AGRO(PVT) LIMITED &{" "}
-            <span className="text-[#8CC63F]">
+            <span className="text-[#A5D951]">
               Revolutionising farming with Drone
             </span>{" "}
             Technology
           </motion.h1>
 
-          <p className="text-xl sm:text-2xl font-semibold text-[#8CC63F] tracking-wide mb-5">
+          <p className="flex items-center justify-center gap-3 text-xl sm:text-2xl font-semibold text-[#F1D78C] tracking-wide mb-5 drop-shadow-md">
+            <span aria-hidden="true" className="h-px w-8 bg-[#F1D78C]/70" />
             Redefining Farming
+            <span aria-hidden="true" className="h-px w-8 bg-[#F1D78C]/70" />
           </p>
 
           <motion.p
             variants={fadeUp}
-            className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-10"
+            className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10 drop-shadow-md"
           >
             Helping farmers, investors and landowners make informed decisions
             through precision agriculture, drone technology, GIS mapping, land
             development and agricultural consultancy.{" "}
-            <span className="text-white/60">
+            <span className="text-white/85">
               Based in Zimbabwe, serving agricultural projects across Africa.
             </span>
           </motion.p>
