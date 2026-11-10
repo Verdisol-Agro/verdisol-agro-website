@@ -23,6 +23,7 @@ import {
 import Layout from "@/components/Layout";
 import AboutPhotoSlideshow from "@/components/AboutPhotoSlideshow";
 import internationalGreenhousePhoto from "@assets/image_search/modern-greenhouse-international-standards.jpg";
+import produceInspectionPhoto from "@assets/IMG-20261110-WA0052_1794319998457.jpg";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -331,13 +332,30 @@ function InternationalSection() {
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="rounded-2xl overflow-hidden aspect-[4/3] shadow-xl order-2 lg:order-1"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 order-2 lg:order-1"
           >
-            <img
-              src={internationalGreenhousePhoto}
-              alt="Modern greenhouse with organised tomato rows and controlled-environment growing systems"
-              className="w-full h-full object-cover"
-            />
+            <figure className="overflow-hidden rounded-2xl bg-white shadow-lg">
+              <img
+                src={internationalGreenhousePhoto}
+                alt="Modern greenhouse with organised tomato rows and controlled-environment growing systems"
+                className="aspect-[3/4] w-full object-cover"
+                loading="lazy"
+              />
+              <figcaption className="px-4 py-3 text-sm font-medium text-[#1F5D3A]">
+                Controlled-environment growing
+              </figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-2xl bg-white shadow-lg">
+              <img
+                src={produceInspectionPhoto}
+                alt="Team examining packaged tomatoes in a produce packing facility"
+                className="aspect-[3/4] w-full object-cover"
+                loading="lazy"
+              />
+              <figcaption className="px-4 py-3 text-sm font-medium text-[#1F5D3A]">
+                Produce quality inspection
+              </figcaption>
+            </figure>
           </motion.div>
 
           {/* Text */}
