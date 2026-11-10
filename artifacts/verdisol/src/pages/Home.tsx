@@ -649,11 +649,11 @@ const PROJECTS = [
   },
   {
     image: siteAnalysisImage,
-    title: "GIS Site Analysis",
+    title: "Underground Water Survey",
     description:
-      "Spatial mapping output showing survey targets, terrain patterns, and coordinates.",
-    location: "GIS deliverable",
-    tag: "Site Mapping",
+      "Survey mapping with identified targets and GPS coordinates to support groundwater assessment and borehole siting.",
+    location: "Groundwater assessment",
+    tag: "Water Surveys",
   },
   {
     image: slopeAnalysisImage,
