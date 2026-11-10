@@ -34,7 +34,7 @@ import landUseMap from "@assets/Screenshot_2026-11-10_111855_1794305199445.png";
 import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1794301414063.jpeg";
 import boundaryPeggingMap from "@assets/Screenshot_2026-11-10_112612_1794302867416.png";
 import consultancyPhoto from "@assets/IMG-20261109-WA0016_1794303441655.jpg";
-import soilAnalysisPhoto from "@assets/generated_images/soil-analysis-field-sampling.jpg";
+import soilAnalysisVideo from "@assets/VID-20261110-WA0044_1794314697264.mp4";
 import irrigationPlanningPhoto from "@assets/generated_images/irrigation-planning-drip-system.jpg";
 
 /* ─── Animation helpers ─────────────────────────────────────────────────── */
@@ -153,7 +153,8 @@ interface ServiceDetailProps {
   tagline: string;
   description: string;
   bullets: string[];
-  image: string;
+  image?: string;
+  video?: string;
   imageFit?: "cover" | "contain";
   imagePosition?: string;
   portraitImage?: boolean;
@@ -178,6 +179,7 @@ function ServiceDetail({
   description,
   bullets,
   image,
+  video,
   imageFit = "cover",
   imagePosition = "center",
   portraitImage = false,
@@ -272,7 +274,9 @@ function ServiceDetail({
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.65, ease: "easeOut" }}
       className={`overflow-hidden rounded-2xl shadow-xl ${
-        media
+        video
+          ? "aspect-[9/16] w-full max-w-[360px] mx-auto bg-black"
+          : media
           ? "border border-[#1F5D3A]/10 bg-[#123d2c] ring-1 ring-white/60"
           : portraitImage
             ? "aspect-[3/4] w-full max-w-md mx-auto"
@@ -281,7 +285,18 @@ function ServiceDetail({
               : "aspect-[4/3]"
       }`}
     >
-      {media && activeMedia ? (
+      {video ? (
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          className="h-full w-full object-contain"
+          aria-label={`${title} field video`}
+        >
+          <source src={video} type="video/mp4" />
+          Your browser does not support embedded video.
+        </video>
+      ) : media && activeMedia ? (
         <>
           <div className="relative aspect-[4/3] overflow-hidden bg-white">
             {activeMedia.type === "video" ? (
@@ -589,7 +604,7 @@ const SERVICES: ServiceDetailProps[] = [
       "Field zoning and soil variability mapping",
       "Clear reports to support crop and investment decisions",
     ],
-    image: soilAnalysisPhoto,
+    video: soilAnalysisVideo,
     flipped: true,
   },
   {
