@@ -32,7 +32,6 @@ import {
   Fence,
 } from "lucide-react";
 import Layout from "@/components/Layout";
-import vegetablesImage from "@assets/image_1794296544704.png";
 import farmlandHeroImage from "@assets/Golden_Hour_Sustainable_Farmland_Banner_1794305560425.png";
 import aboutFarmlandImage from "@assets/image_search/about-farmland.jpg";
 import cropProductionImage from "@assets/image_search/crop-production.jpg";
@@ -815,7 +814,6 @@ function DroneVideoSection() {
               controls
               playsInline
               preload="metadata"
-              poster={vegetablesImage}
               className="aspect-[9/16] w-full rounded-[1.2rem] bg-black object-contain"
               aria-label="VerdiSol field operations video"
             >
