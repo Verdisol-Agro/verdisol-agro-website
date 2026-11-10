@@ -135,7 +135,7 @@ const PROJECTS: Project[] = [
     title: "Farm Valuation Assessment",
     location: "Manicaland",
     description:
-      "Comprehensive farm valuation report including infrastructure, land capability, and agricultural productivity assessment.",
+      "Comprehensive farm valuation report including infrastructure, land capability and agricultural productivity assessment.",
     tag: "Valuations",
     filterTag: "Valuations",
     icon: ClipboardList,
@@ -221,7 +221,7 @@ function PageHero() {
           className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
         >
           A portfolio of agricultural surveys, drone mapping, GIS analysis, land development
-          planning, and farm assessment projects across Zimbabwe.
+          planning and farm assessment projects across Zimbabwe.
         </motion.p>
       </div>
     </section>
@@ -243,8 +243,8 @@ function Intro() {
           className="text-gray-600 text-lg leading-relaxed mb-4"
         >
           VerdiSol Agro has completed a wide range of agricultural and land development
-          projects across Zimbabwe, supporting farmers, investors, and institutions with
-          accurate data, drone technology, and professional GIS analysis.
+          projects across Zimbabwe, supporting farmers, investors and institutions with
+          accurate data, drone technology and professional GIS analysis.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -475,7 +475,7 @@ function CoverageSection() {
             Coverage Across All Provinces of Zimbabwe
           </motion.h2>
           <motion.p variants={fadeUp} className="text-gray-500 max-w-xl mx-auto">
-            Our field teams provide surveys, maps, and plans across all ten provinces
+            Our field teams provide surveys, maps and plans across all ten provinces
             of Zimbabwe.
           </motion.p>
         </InViewSection>

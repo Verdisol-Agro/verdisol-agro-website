@@ -95,7 +95,7 @@ function PageHero() {
           className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
         >
           A Zimbabwean agricultural consultancy combining precision technology, GIS
-          expertise and local knowledge to empower farmers, investors, and institutions
+          expertise and local knowledge to empower farmers, investors and institutions
           across Africa.
         </motion.p>
       </div>
@@ -136,12 +136,12 @@ function WhoWeAre() {
             </motion.h2>
             <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed mb-4">
               VerdiSol Agro (Pvt) Ltd is a Zimbabwean agricultural consultancy specialising
-              in precision agriculture, drone surveying, GIS mapping, land use planning, and
+              in precision agriculture, drone surveying, GIS mapping, land use planning and
               agricultural advisory services operating across Africa.
             </motion.p>
             <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed mb-8">
-              We support farmers, investors, agribusinesses, and institutions with
-              data-driven insights for land development, productivity improvement, and
+              We support farmers, investors, agribusinesses and institutions with
+              data-driven insights for land development, productivity improvement and
               investment decision-making.
             </motion.p>
             <motion.div variants={fadeUp} className="mb-8">
@@ -196,17 +196,17 @@ const WHAT_WE_DO = [
   {
     icon: Map,
     title: "GIS Systems",
-    desc: "Spatial analysis, orthomosaic mapping, digital elevation models, and GIS-based planning for accurate land insights.",
+    desc: "Spatial analysis, orthomosaic mapping, digital elevation models and GIS-based planning for accurate land insights.",
   },
   {
     icon: Sprout,
     title: "Agricultural Science",
-    desc: "Crop planning, soil assessment, irrigation design, and productivity optimisation grounded in agricultural best practice.",
+    desc: "Crop planning, soil assessment, irrigation design and productivity optimisation grounded in agricultural best practice.",
   },
   {
     icon: Layers,
     title: "Land Use Planning",
-    desc: "Optimal farm design, enterprise zoning, and legacy blueprints that maximise land productivity and long-term profitability.",
+    desc: "Optimal farm design, enterprise zoning and legacy blueprints that maximise land productivity and long-term profitability.",
   },
 ];
 
@@ -276,8 +276,8 @@ function MissionVision() {
               </div>
               <h2 className="text-2xl font-bold text-white mb-5">Our Mission</h2>
               <p className="text-white/80 leading-relaxed text-base">
-                To help farmers, investors, and landowners make informed agricultural and
-                land development decisions through accurate data, precision mapping, and
+                To help farmers, investors and landowners make informed agricultural and
+                land development decisions through accurate data, precision mapping and
                 professional consultancy services.
               </p>
             </div>
@@ -297,7 +297,7 @@ function MissionVision() {
               </div>
               <h2 className="text-2xl font-bold text-white mb-5">Our Vision</h2>
               <p className="text-white/80 leading-relaxed text-base">
-                To become Africa's leading provider of precision agriculture, GIS, and land
+                To become Africa's leading provider of precision agriculture, GIS and land
                 development solutions, empowering sustainable and profitable agricultural
                 growth.
               </p>
@@ -394,12 +394,12 @@ function InternationalSection() {
 /* ─── 8. Why Choose VerdiSol ─────────────────────────────────────────────── */
 
 const WHY = [
-  { icon: Users, title: "600+ Clients Served", desc: "Trusted by smallholder farmers, commercial operations, and institutions." },
+  { icon: Users, title: "600+ Clients Served", desc: "Trusted by smallholder farmers, commercial operations and institutions." },
   { icon: Globe, title: "International Exposure", desc: "Methodologies informed by global precision agriculture systems." },
   { icon: Plane, title: "Drone & GIS Expertise", desc: "DJI Mavic 3 Multispectral and survey-grade equipment on every engagement." },
   { icon: Gauge, title: "Precision Agricultural Mapping", desc: "Centimetre-accurate outputs for confident land decisions." },
   { icon: Layers, title: "Practical Land Development", desc: "Blueprints and plans that translate directly into productive operations." },
-  { icon: FileCheck, title: "Professional Reporting Standards", desc: "Reports that meet institutional, banking, and investment requirements." },
+  { icon: FileCheck, title: "Professional Reporting Standards", desc: "Reports that meet institutional, banking and investment requirements." },
   { icon: BarChart3, title: "Local Expertise + International Methods", desc: "Global standards applied with deep local Zimbabwe knowledge." },
   { icon: CheckCircle2, title: "Reliable, Data-Driven Decisions", desc: "Every recommendation backed by field data and technical analysis." },
 ];
@@ -416,7 +416,7 @@ function WhyChoose() {
             Why Choose VerdiSol Agro?
           </motion.h2>
           <motion.p variants={fadeUp} className="text-gray-500 max-w-xl mx-auto">
-            Precision, integrity, and practical expertise — the foundation of every project we deliver.
+            Precision, integrity and practical expertise — the foundation of every project we deliver.
           </motion.p>
         </InViewSection>
 
@@ -447,13 +447,13 @@ const VALUES = [
     icon: Gauge,
     name: "Precision",
     color: "bg-[#1F5D3A]",
-    desc: "Every recommendation is based on accurate data and analysis. We do not guess — we measure, map, and verify.",
+    desc: "Every recommendation is based on accurate data and analysis. We do not guess — we measure, map and verify.",
   },
   {
     icon: Shield,
     name: "Integrity",
     color: "bg-[#896F32]",
-    desc: "We provide honest, transparent, and professional advice — even when the findings are not what a client hoped to hear.",
+    desc: "We provide honest, transparent and professional advice — even when the findings are not what a client hoped to hear.",
   },
   {
     icon: HeartHandshake,
@@ -489,7 +489,7 @@ function ValuesSection() {
             Our Core Values
           </motion.h2>
           <motion.p variants={fadeUp} className="text-white/70 max-w-xl mx-auto">
-            The principles that guide every project, every report, and every client relationship.
+            The principles that guide every project, every report and every client relationship.
           </motion.p>
         </motion.div>
 

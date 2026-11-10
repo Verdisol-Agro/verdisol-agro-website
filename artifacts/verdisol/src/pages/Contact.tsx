@@ -100,7 +100,7 @@ function PageHero() {
           className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
         >
           Get in touch for agricultural surveys, drone mapping, GIS analysis,
-          land development planning, and consultancy services across Africa and
+          land development planning and consultancy services across Africa and
           beyond.
         </motion.p>
       </div>
@@ -383,7 +383,7 @@ function ContactDetails() {
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed">
           We are available to support agricultural projects across Africa.
-          Contact VerdiSol Agro for professional surveying, mapping, and
+          Contact VerdiSol Agro for professional surveying, mapping and
           agricultural consultancy services. We typically respond within 24
           hours.
         </p>
@@ -533,7 +533,7 @@ const WHY = [
   {
     icon: ClipboardList,
     title: "Professional Agricultural Consultancy",
-    desc: "Expert agronomists, GIS specialists, and drone operators working together.",
+    desc: "Expert agronomists, GIS specialists and drone operators working together.",
   },
   {
     icon: Plane,
@@ -558,7 +558,7 @@ const WHY = [
   {
     icon: Users,
     title: "600+ Clients Served",
-    desc: "Trusted by farmers, investors, and institutions across Zimbabwe.",
+    desc: "Trusted by farmers, investors and institutions across Zimbabwe.",
   },
 ];
 

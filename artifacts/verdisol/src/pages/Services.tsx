@@ -138,8 +138,8 @@ function ServicesIntro() {
           className="text-lg text-gray-600 leading-relaxed"
         >
           VerdiSol Agro delivers data-driven agricultural and land development
-          solutions using drone technology, GIS analysis, and professional
-          agricultural expertise. Our services support farmers, investors, and
+          solutions using drone technology, GIS analysis and professional
+          agricultural expertise. Our services support farmers, investors and
           institutions in making informed land and investment decisions.
         </motion.p>
       </div>
@@ -338,12 +338,12 @@ function ServiceDetail({
             </div>
           </div>
 
-          <div className="flex items-center justify-between gap-3 px-4 py-3 text-white sm:px-5">
+          <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-white sm:px-5">
             <div className="min-w-0">
-              <p className="truncate text-sm font-semibold">
+              <p className="text-sm font-semibold">
                 {activeMedia.title}
               </p>
-              <p className="truncate text-xs text-white/65">
+              <p className="text-xs text-white/65">
                 {activeMedia.caption}
               </p>
             </div>
@@ -474,7 +474,7 @@ const SERVICES: ServiceDetailProps[] = [
       "Agricultural aerial surveys and crop monitoring",
       "Infrastructure and facility inspections",
       "High-resolution imagery capture and processing",
-      "Farm monitoring, health analysis, and change detection",
+      "Farm monitoring, health analysis and change detection",
       "NDVI and multispectral crop stress mapping",
       "Rapid deployment across all Zimbabwe provinces",
     ],
@@ -518,7 +518,7 @@ const SERVICES: ServiceDetailProps[] = [
     title: "Aerial Mapping",
     tagline: "Precision GIS mapping for land management and planning.",
     description:
-      "We produce publication-quality GIS maps and spatial analyses used by farmers, developers, and government agencies. From orthomosaics to full topographic surveys, our mapping outputs drive confident land decisions.",
+      "We produce publication-quality GIS maps and spatial analyses used by farmers, developers and government agencies. From orthomosaics to full topographic surveys, our mapping outputs drive confident land decisions.",
     bullets: [
       "Orthomosaic mapping and georeferenced imagery",
       "Contour mapping and terrain analysis",
@@ -538,7 +538,7 @@ const SERVICES: ServiceDetailProps[] = [
     tagline:
       "Strategic planning to maximise land productivity and profitability.",
     description:
-      "Our land use planning service transforms raw land into productive, profitable operations. We design enterprise zoning layouts, assess soil capability, and develop investment-ready implementation plans that align with international agricultural standards.",
+      "Our land use planning service transforms raw land into productive, profitable operations. We design enterprise zoning layouts, assess soil capability and develop investment-ready implementation plans that align with international agricultural standards.",
     bullets: [
       "Enterprise zoning maps and strategic land allocation for agricultural enterprises and agri-tourism developments, designed to maximise land productivity and investment potential.",
       "Land capability analysis and soil productivity assessment",
@@ -557,9 +557,9 @@ const SERVICES: ServiceDetailProps[] = [
     icon: ClipboardList,
     title: "Farm Assessments & Valuations",
     tagline:
-      "Professional appraisals for investment, finance, and decision-making.",
+      "Professional appraisals for investment, finance and decision-making.",
     description:
-      "We conduct thorough farm inspections and produce independent valuation reports used by banks, investors, and landowners. Our assessments cover physical condition, agricultural performance, and market value — giving every stakeholder a reliable, defensible basis for decisions.",
+      "We conduct thorough farm inspections and produce independent valuation reports used by banks, investors and landowners. Our assessments cover physical condition, agricultural performance and market value — giving every stakeholder a reliable, defensible basis for decisions.",
     bullets: [
       "On-site farm inspections and condition assessments",
       "Agricultural performance and productivity evaluation",
@@ -578,7 +578,7 @@ const SERVICES: ServiceDetailProps[] = [
     title: "Boundary Pegging",
     tagline: "Accurate demarcation for property security and legal compliance.",
     description:
-      "We use GPS and survey-grade equipment to verify, peg, and document property boundaries — providing landowners and investors with the certainty they need to protect their assets and resolve disputes.",
+      "We use GPS and survey-grade equipment to verify, peg and document property boundaries — providing landowners and investors with the certainty they need to protect their assets and resolve disputes.",
     bullets: [
       "GPS-accurate boundary verification surveys",
       "Title deed support and documentation",
@@ -616,7 +616,7 @@ const SERVICES: ServiceDetailProps[] = [
     title: "Soil Analysis",
     tagline: "Understand soil conditions before making field decisions.",
     description:
-      "We assess soil characteristics and interpret test results to guide crop selection, soil improvement, and practical farm management. Recommendations are tailored to the needs and conditions of each site.",
+      "We assess soil characteristics and interpret test results to guide crop selection, soil improvement and practical farm management. Recommendations are tailored to the needs and conditions of each site.",
     bullets: [
       "Soil sampling plans for representative field coverage",
       "Soil pH and fertility result interpretation",
@@ -649,9 +649,9 @@ const SERVICES: ServiceDetailProps[] = [
     id: 10,
     icon: Waves,
     title: "Irrigation Planning",
-    tagline: "Plan water systems around crops, land, and supply.",
+    tagline: "Plan water systems around crops, land and supply.",
     description:
-      "We help assess water availability, crop demand, field layout, and terrain to plan efficient irrigation zones and practical implementation priorities for farms.",
+      "We help assess water availability, crop demand, field layout and terrain to plan efficient irrigation zones and practical implementation priorities for farms.",
     bullets: [
       "Water source and crop demand assessment",
       "Irrigation layout and field-zone planning",
@@ -671,7 +671,7 @@ const WHY_POINTS = [
   {
     icon: Database,
     title: "Data-Driven Decisions",
-    desc: "Every recommendation is backed by field data, geophysical readings, and GIS analysis — never guesswork.",
+    desc: "Every recommendation is backed by field data, geophysical readings and GIS analysis — never guesswork.",
   },
   {
     icon: Gauge,
@@ -681,7 +681,7 @@ const WHY_POINTS = [
   {
     icon: Compass,
     title: "Local Zimbabwe Expertise",
-    desc: "Our teams understand Zimbabwe's soils, geology, and land tenure systems inside out.",
+    desc: "Our teams understand Zimbabwe's soils, geology and land tenure systems inside out.",
   },
   {
     icon: Globe,
@@ -696,7 +696,7 @@ const WHY_POINTS = [
   {
     icon: FileText,
     title: "Bank-Ready Reporting",
-    desc: "Our documentation is structured to satisfy financial institutions, investors, and regulators.",
+    desc: "Our documentation is structured to satisfy financial institutions, investors and regulators.",
   },
 ];
 
@@ -725,7 +725,7 @@ function WhySection() {
             className="text-white/70 max-w-xl mx-auto"
           >
             The principles that make every VerdiSol Agro engagement reliable,
-            practical, and impactful.
+            practical and impactful.
           </motion.p>
         </Section>
 
@@ -826,7 +826,7 @@ function CTASection() {
             className="text-gray-500 text-lg max-w-xl mx-auto mb-10"
           >
             Talk to our team today. We'll recommend the right service for your
-            land, budget, and goals.
+            land, budget and goals.
           </motion.p>
           <motion.div
             variants={fadeUp}

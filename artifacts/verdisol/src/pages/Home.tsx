@@ -320,7 +320,7 @@ const SERVICES = [
     icon: ClipboardList,
     title: "Farm Assessments & Valuations",
     description:
-      "Comprehensive farm appraisals covering soil health, productivity potential, and market valuation.",
+      "Comprehensive farm appraisals covering soil health, productivity potential and market valuation.",
   },
   {
     icon: Bookmark,
@@ -332,13 +332,13 @@ const SERVICES = [
     icon: FlaskConical,
     title: "Soil Analysis",
     description:
-      "Soil assessment and interpretation to guide crop selection, soil improvement, and farm management.",
+      "Soil assessment and interpretation to guide crop selection, soil improvement and farm management.",
   },
   {
     icon: Sprout,
     title: "Crop Advisory",
     description:
-      "Practical crop selection, seasonal planning, and in-season guidance tailored to local field conditions.",
+      "Practical crop selection, seasonal planning and in-season guidance tailored to local field conditions.",
   },
   {
     icon: Waves,
@@ -350,7 +350,7 @@ const SERVICES = [
     icon: Fence,
     title: "Agricultural Engineering (Fencing)",
     description:
-      "Farm perimeter and paddock fencing plans designed around terrain, access, and livestock movement.",
+      "Farm perimeter and paddock fencing plans designed around terrain, access and livestock movement.",
   },
 ];
 
@@ -494,14 +494,14 @@ function AboutPreview() {
               className="text-gray-600 leading-relaxed mb-4"
             >
               VerdiSol Agro is a multidisciplinary agricultural consultancy
-              combining GIS specialists, drone operators, and agricultural
+              combining GIS specialists, drone operators and agricultural
               advisors.
             </motion.p>
             <motion.p
               variants={fadeUp}
               className="text-gray-600 leading-relaxed mb-8"
             >
-              We integrate drone technology, GIS mapping, agricultural science,
+              We integrate drone technology, GIS mapping, agricultural science
               and international land-use planning standards with deep local
               expertise — giving our clients reliable, actionable insights for
               every project.
@@ -544,7 +544,7 @@ const FEATURES = [
   {
     icon: Users,
     title: "600+ Clients Served",
-    desc: "Trusted by farmers, investors, and institutions across Africa.",
+    desc: "Trusted by farmers, investors and institutions across Africa.",
   },
   {
     icon: Globe,
@@ -602,7 +602,7 @@ function WhyVerdiSol() {
             variants={fadeUp}
             className="text-gray-500 max-w-xl mx-auto"
           >
-            Precision, reliability, and practical expertise — all under one
+            Precision, reliability and practical expertise — all under one
             roof.
           </motion.p>
         </motion.div>
@@ -784,7 +784,7 @@ function DroneVideoSection() {
           </h2>
           <p className="mt-5 text-base leading-relaxed text-white/75 sm:text-lg">
             A field view of VerdiSol’s agricultural work, supported by drone
-            technology, careful surveying, and practical land analysis.
+            technology, careful surveying and practical land analysis.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             {["Field operations", "Drone technology", "Zimbabwe"].map((label) => (
@@ -858,7 +858,7 @@ const TESTIMONIALS = [
     name: "FBC Bank Ltd",
     role: "Institutional Client",
     location: "Harare CBD",
-    text: "We engaged VerdiSol for boundary verification across multiple loan-secured farms. Their accuracy, timeliness, and reports meet our institutional standards.",
+    text: "We engaged VerdiSol for boundary verification across multiple loan-secured farms. Their accuracy, timeliness and reports meet our institutional standards.",
     rating: 5,
   },
 ];
