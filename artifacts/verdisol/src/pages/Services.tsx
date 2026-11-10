@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import {
@@ -10,6 +10,8 @@ import {
   Bookmark,
   TrendingUp,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
   CheckCircle2,
   Database,
   BarChart3,
@@ -23,6 +25,9 @@ import {
   Waves,
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
+import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
+import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
 
 /* ─── Animation helpers ─────────────────────────────────────────────────── */
 
@@ -141,7 +146,15 @@ interface ServiceDetailProps {
   description: string;
   bullets: string[];
   image: string;
+  media?: ServiceMedia[];
   flipped?: boolean;
+}
+
+interface ServiceMedia {
+  type: "image" | "video";
+  src: string;
+  title: string;
+  caption: string;
 }
 
 function ServiceDetail({
@@ -152,10 +165,29 @@ function ServiceDetail({
   description,
   bullets,
   image,
+  media,
   flipped = false,
 }: ServiceDetailProps) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const [activeMediaIndex, setActiveMediaIndex] = useState(0);
+  const activeMedia = media?.[activeMediaIndex];
+
+  useEffect(() => {
+    if (!media || media.length < 2 || activeMedia?.type === "video") return;
+
+    const timeout = window.setTimeout(() => {
+      setActiveMediaIndex((current) => (current + 1) % media.length);
+    }, 6500);
+    return () => window.clearTimeout(timeout);
+  }, [activeMedia?.type, activeMediaIndex, media]);
+
+  const moveSlide = (direction: number) => {
+    if (!media?.length) return;
+    setActiveMediaIndex(
+      (current) => (current + direction + media.length) % media.length,
+    );
+  };
 
   const content = (
     <motion.div
@@ -223,9 +255,95 @@ function ServiceDetail({
       initial={{ opacity: 0, x: flipped ? -40 : 40 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.65, ease: "easeOut" }}
-      className="rounded-2xl overflow-hidden aspect-[4/3] shadow-xl"
+      className={`overflow-hidden rounded-2xl shadow-xl ${
+        media
+          ? "border border-[#1F5D3A]/10 bg-[#123d2c] ring-1 ring-white/60"
+          : "aspect-[4/3]"
+      }`}
     >
-      <img src={image} alt={title} className="w-full h-full object-cover" />
+      {media && activeMedia ? (
+        <>
+          <div className="relative aspect-[4/3] overflow-hidden bg-white">
+            {activeMedia.type === "video" ? (
+              <video
+                key={activeMedia.src}
+                controls
+                playsInline
+                preload="metadata"
+                poster={siteAnalysisImage}
+                onEnded={() => moveSlide(1)}
+                className="h-full w-full bg-black object-contain"
+                aria-label={activeMedia.title}
+              >
+                <source src={activeMedia.src} type="video/mp4" />
+                Your browser does not support embedded video.
+              </video>
+            ) : (
+              <motion.img
+                key={activeMedia.src}
+                src={activeMedia.src}
+                alt={activeMedia.title}
+                initial={{ opacity: 0, scale: 1.025 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.55 }}
+                className="h-full w-full bg-white object-contain p-2 sm:p-3"
+              />
+            )}
+            <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/25 bg-[#123d2c]/85 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg backdrop-blur">
+              {activeMedia.type === "video" ? "Field video" : "Survey output"}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between gap-3 px-4 py-3 text-white sm:px-5">
+            <div className="min-w-0">
+              <p className="truncate text-sm font-semibold">
+                {activeMedia.title}
+              </p>
+              <p className="truncate text-xs text-white/65">
+                {activeMedia.caption}
+              </p>
+            </div>
+            <div className="flex shrink-0 items-center gap-3">
+              <div className="flex items-center gap-1.5" aria-label="Choose slide">
+                {media.map((item, index) => (
+                  <button
+                    key={item.src}
+                    type="button"
+                    onClick={() => setActiveMediaIndex(index)}
+                    aria-label={`Show ${item.title}`}
+                    aria-current={index === activeMediaIndex ? "true" : undefined}
+                    className={`h-2 rounded-full transition-all ${
+                      index === activeMediaIndex
+                        ? "w-6 bg-[#8CC63F]"
+                        : "w-2 bg-white/40 hover:bg-white/75"
+                    }`}
+                  />
+                ))}
+              </div>
+              <div className="flex gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => moveSlide(-1)}
+                  aria-label="Previous survey media"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 transition hover:bg-white/20"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => moveSlide(1)}
+                  aria-label="Next survey media"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 transition hover:bg-white/20"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <img src={image} alt={title} className="h-full w-full object-cover" />
+      )}
     </motion.div>
   );
 
@@ -273,6 +391,26 @@ const SERVICES: ServiceDetailProps[] = [
     ],
     image:
       "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=900&q=80",
+    media: [
+      {
+        type: "image",
+        src: siteAnalysisImage,
+        title: "Survey site analysis",
+        caption: "Mapped survey targets and terrain patterns.",
+      },
+      {
+        type: "image",
+        src: slopeAnalysisImage,
+        title: "Slope and terrain map",
+        caption: "A detailed visual of slope conditions across the site.",
+      },
+      {
+        type: "video",
+        src: fieldVideo,
+        title: "VerdiSol field operations",
+        caption: "View the field video with player controls.",
+      },
+    ],
     flipped: false,
   },
   {
