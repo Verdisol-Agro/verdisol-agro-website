@@ -256,9 +256,9 @@ function AnalysisShowcase() {
   const examples = [
     {
       image: siteAnalysisImage,
-      title: "Site Analysis & Target Mapping",
+      title: "Underground Water Survey",
       detail:
-        "Spatial overview with marked survey sites, coordinate references, and terrain context.",
+        "Survey mapping with identified targets and GPS coordinates to support groundwater assessment and borehole siting.",
     },
     {
       image: terrainAssessmentMap,
