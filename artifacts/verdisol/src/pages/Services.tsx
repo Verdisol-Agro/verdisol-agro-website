@@ -30,6 +30,7 @@ import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_17942966200
 import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
 import droneSurveyVideo from "@assets/VID-20261015-WA0116_1794299030635.mp4";
 import aerialMappingPhoto from "@assets/IMG-20261110-WA0020_1794300453163.jpg";
+import landUseMap from "@assets/Screenshot_2026-02-17_115332_1794301012478.png";
 
 /* ─── Animation helpers ─────────────────────────────────────────────────── */
 
@@ -148,6 +149,7 @@ interface ServiceDetailProps {
   description: string;
   bullets: string[];
   image: string;
+  imageFit?: "cover" | "contain";
   portraitImage?: boolean;
   media?: ServiceMedia[];
   flipped?: boolean;
@@ -170,6 +172,7 @@ function ServiceDetail({
   description,
   bullets,
   image,
+  imageFit = "cover",
   portraitImage = false,
   media,
   flipped = false,
@@ -266,7 +269,9 @@ function ServiceDetail({
           ? "border border-[#1F5D3A]/10 bg-[#123d2c] ring-1 ring-white/60"
           : portraitImage
             ? "aspect-[3/4] w-full max-w-md mx-auto"
-            : "aspect-[4/3]"
+            : imageFit === "contain"
+              ? "aspect-[16/9] bg-white"
+              : "aspect-[4/3]"
       }`}
     >
       {media && activeMedia ? (
@@ -354,7 +359,11 @@ function ServiceDetail({
           </div>
         </>
       ) : (
-        <img src={image} alt={title} className="h-full w-full object-cover" />
+        <img
+          src={image}
+          alt={title}
+          className={`h-full w-full ${imageFit === "contain" ? "object-contain" : "object-cover"}`}
+        />
       )}
     </motion.div>
   );
@@ -496,8 +505,8 @@ const SERVICES: ServiceDetailProps[] = [
       "Equipment and infrastructure planning",
       "Full project execution strategy and timeline",
     ],
-    image:
-      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=900&q=80",
+    image: landUseMap,
+    imageFit: "contain",
     flipped: true,
   },
   {
