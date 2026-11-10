@@ -70,7 +70,6 @@ type ProjectCategory =
 interface Project {
   id: number;
   image: string;
-  illustrative?: boolean;
   title: string;
   location: string;
   description: string;
@@ -105,7 +104,6 @@ const PROJECTS: Project[] = [
   {
     id: 3,
     image: irrigationPlanningImage,
-    illustrative: true,
     title: "Irrigation Development Planning",
     location: "Mashonaland East",
     description:
@@ -355,11 +353,6 @@ function ProjectCard({ project }: { project: Project }) {
           }`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        {project.illustrative && (
-          <span className="absolute bottom-2 left-2 rounded-full bg-black/55 px-2.5 py-1 text-[10px] font-medium text-white backdrop-blur-sm">
-            Illustrative image
-          </span>
-        )}
         {/* Category icon overlay */}
         <div className="absolute top-3 right-3 w-9 h-9 rounded-lg bg-[#1F5D3A] flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Icon className="w-4 h-4 text-white" />
