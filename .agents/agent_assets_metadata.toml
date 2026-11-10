@@ -126,3 +126,73 @@ mtime_ms = 1794313400241
 storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/a94c193b-2b83-40e9-b73a-7ec7be6f3a13/60347b85-f6c9-47b6-9a66-7d17f9e6e9cb"
 storage_version_token = "1794313459506379"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "wqB5dkuLVf5Sp5OU9TNo3"
+uri = "file://attached_assets/image_search/precision-agriculture-drone.jpg"
+type = "image"
+title = "Drone Technology"
+description = "Agricultural drones and a field technician on farmland. Source: Pexels, photo 34182414. Candidate for the About page's precision agriculture specialists section; not yet added to the website."
+logical_id = "a74218d8-17f8-4599-9f0f-7f2a01d7c457"
+content_hash = "sha256:21946b253b8fb4e0fb396a39bcbe3bb283e209b28590f3a54d42470c463b643e"
+size = 166005
+mtime_ms = 1794313681249
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/a74218d8-17f8-4599-9f0f-7f2a01d7c457/214bcc79-ab87-4328-8662-0e307b2f4593"
+storage_version_token = "1794313708682377"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "N4OyCh_xWoMpgH30h2djl"
+uri = "file://attached_assets/image_search/field-surveying-equipment.jpg"
+type = "image"
+title = "Field Surveying"
+description = "Precision total-station equipment used for land measurement. Pexels image 36930873. Candidate for the About page's precision agriculture specialists section; not yet added to the website."
+logical_id = "6013ea13-6924-45a6-b263-438788127bc6"
+content_hash = "sha256:2fe070ea8b28f2ee7c4a83cbe191af41d37d31e88cdabfd68c5a5d65456910bc"
+size = 67549
+mtime_ms = 1794313680901
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/6013ea13-6924-45a6-b263-438788127bc6/05ec289c-d74d-4ca3-8285-ba2238de7097"
+storage_version_token = "1794313709311425"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "GxnZVbGMHjRI5pebHgS0W"
+uri = "file://attached_assets/image_search/african-farmer-crop-inspection.jpg"
+type = "image"
+title = "Crop Assessment"
+description = "An African farmer inspecting crops in a field. Pexels image 34411687. Candidate for the About page's precision agriculture specialists section; not yet added to the website."
+logical_id = "89296430-a58c-4fcf-8cec-63e6f9ee5937"
+content_hash = "sha256:ebf882205ad85a7e3a0a33c8c860bc03fc4554c0bebd9706001be73adbfaa032"
+size = 294962
+mtime_ms = 1794313680973
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/89296430-a58c-4fcf-8cec-63e6f9ee5937/b5d260c4-2b91-4cfb-b878-e9b2304396ed"
+storage_version_token = "1794313710376782"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "9v0NgtBbAyozj7v9DRQpD"
+uri = "file://attached_assets/image_search/aerial-farmland-planning.jpg"
+type = "image"
+title = "Land Planning & GIS"
+description = "An aerial view of agricultural fields, suited to land planning and spatial analysis. Pexels image 1375561. Candidate for the About page's precision agriculture specialists section; not yet added to the website."
+logical_id = "384daf8b-3db0-433e-8b27-83780c3dec59"
+content_hash = "sha256:bb6b968d2664db643cc66ba1004fab6dd5581f2d8125abeb114efa6444c6722d"
+size = 137051
+mtime_ms = 1794313681201
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/384daf8b-3db0-433e-8b27-83780c3dec59/3deecdfb-f364-468d-9c6c-3faa7ac0cd39"
+storage_version_token = "1794313711244882"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "mFGsdbU_G0n8E7Ooba7-J"
+uri = "file://attached_assets/image_search/soil-seeds-agricultural-science.jpg"
+type = "image"
+title = "Agricultural Science"
+description = "Hands holding soil and seeds, representing soil health and agricultural expertise. Pexels image 15182672. Candidate for the About page's precision agriculture specialists section; not yet added to the website."
+logical_id = "5212d125-0783-4bfd-a60c-a70a4e909f95"
+content_hash = "sha256:98eb815479bb6110d4493d77b14d6b16f5dd56b4c8f597667958b7ad3fe551e2"
+size = 138917
+mtime_ms = 1794313680961
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/5212d125-0783-4bfd-a60c-a70a4e909f95/060b5b41-7429-426d-a332-2993c7f32aea"
+storage_version_token = "1794313711872004"
+content_type = "image/jpeg"
