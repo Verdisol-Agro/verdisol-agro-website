@@ -30,6 +30,8 @@ import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_17942966200
 import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
 import droneSurveyVideo from "@assets/VID-20261110-WA0061_1794316854409.mp4";
 import droneSurveyPhoto from "@assets/IMG-20261110-WA0047_1794316876878.jpg";
+import droneEquipmentPhoto from "@assets/IMG-20261110-WA0055_1794317256769.jpg";
+import droneFieldPhoto from "@assets/IMG-20261110-WA0057_1794317256775.jpg";
 import aerialMappingPhoto from "@assets/IMG-20261110-WA0020_1794300453163.jpg";
 import landUseMap from "@assets/Screenshot_2026-11-10_111855_1794305199445.png";
 import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1794301414063.jpeg";
@@ -170,6 +172,7 @@ interface ServiceMedia {
   caption: string;
   poster?: string;
   fit?: "cover" | "contain";
+  position?: string;
 }
 
 function ServiceDetail({
@@ -193,13 +196,13 @@ function ServiceDetail({
   const activeMedia = media?.[activeMediaIndex];
 
   useEffect(() => {
-    if (!media || media.length < 2 || activeMedia?.type === "video") return;
+    if (!inView || !media || media.length < 2 || activeMedia?.type === "video") return;
 
     const timeout = window.setTimeout(() => {
       setActiveMediaIndex((current) => (current + 1) % media.length);
     }, 6500);
     return () => window.clearTimeout(timeout);
-  }, [activeMedia?.type, activeMediaIndex, media]);
+  }, [activeMedia?.type, activeMediaIndex, media, inView]);
 
   const moveSlide = (direction: number) => {
     if (!media?.length) return;
@@ -319,6 +322,7 @@ function ServiceDetail({
                 key={activeMedia.src}
                 src={activeMedia.src}
                 alt={activeMedia.title}
+                style={{ objectPosition: activeMedia.position }}
                 initial={{ opacity: 0, scale: 1.025 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.55 }}
@@ -482,6 +486,21 @@ const SERVICES: ServiceDetailProps[] = [
         src: droneSurveyPhoto,
         title: "Drone survey preparation",
         caption: "VerdiSol field team preparing the drone and controller.",
+        fit: "cover",
+      },
+      {
+        type: "image",
+        src: droneEquipmentPhoto,
+        title: "Drone equipment checks",
+        caption: "Preparing the controller and equipment for field work.",
+        fit: "cover",
+        position: "right center",
+      },
+      {
+        type: "image",
+        src: droneFieldPhoto,
+        title: "Ready for take-off",
+        caption: "The pilot and drone ready for a survey flight.",
         fit: "cover",
       },
       {
