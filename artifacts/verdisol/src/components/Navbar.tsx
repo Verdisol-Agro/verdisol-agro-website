@@ -54,10 +54,10 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`relative px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
+                className={`relative px-4 py-2 text-lg font-semibold rounded-md transition-colors duration-200 ${
                   isActive(link.to)
                     ? "text-[#1F5D3A]"
-                    : "text-gray-600 hover:text-[#1F5D3A] hover:bg-[#1F5D3A]/5"
+                  : "text-gray-700 hover:text-[#1F5D3A] hover:bg-[#1F5D3A]/5"
                 }`}
               >
                 {link.label}
@@ -76,7 +76,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1F5D3A] text-white text-sm font-semibold hover:bg-[#174d2f] transition-all duration-200 shadow-sm hover:shadow-md"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1F5D3A] text-white text-base font-semibold hover:bg-[#174d2f] transition-all duration-200 shadow-sm hover:shadow-md"
             >
               Request a Survey
             </Link>
@@ -108,10 +108,10 @@ export default function Navbar() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`flex items-center px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  className={`flex items-center px-4 py-3 rounded-lg text-lg font-semibold transition-colors ${
                     isActive(link.to)
                       ? "bg-[#1F5D3A]/8 text-[#1F5D3A] font-semibold"
-                      : "text-gray-600 hover:bg-[#1F5D3A]/5 hover:text-[#1F5D3A]"
+                      : "text-gray-700 hover:bg-[#1F5D3A]/5 hover:text-[#1F5D3A]"
                   }`}
                 >
                   {link.label}
@@ -120,7 +120,7 @@ export default function Navbar() {
               <div className="pt-2">
                 <Link
                   to="/contact"
-                  className="flex items-center justify-center w-full px-5 py-3 rounded-lg bg-[#1F5D3A] text-white text-sm font-semibold hover:bg-[#174d2f] transition-colors"
+                  className="flex items-center justify-center w-full px-5 py-3 rounded-lg bg-[#1F5D3A] text-white text-base font-semibold hover:bg-[#174d2f] transition-colors"
                 >
                   Request a Survey
                 </Link>
