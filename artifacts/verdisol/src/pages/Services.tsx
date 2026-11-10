@@ -28,7 +28,8 @@ import Layout from "@/components/Layout";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
 import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
-import droneSurveyVideo from "@assets/VID-20261015-WA0116_1794299030635.mp4";
+import droneSurveyVideo from "@assets/VID-20261110-WA0061_1794316854409.mp4";
+import droneSurveyPhoto from "@assets/IMG-20261110-WA0047_1794316876878.jpg";
 import aerialMappingPhoto from "@assets/IMG-20261110-WA0020_1794300453163.jpg";
 import landUseMap from "@assets/Screenshot_2026-11-10_111855_1794305199445.png";
 import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1794301414063.jpeg";
@@ -277,7 +278,7 @@ function ServiceDetail({
         video
           ? "aspect-[9/16] w-full max-w-[360px] mx-auto bg-black"
           : media
-          ? "border border-[#1F5D3A]/10 bg-[#123d2c] ring-1 ring-white/60"
+          ? `border border-[#1F5D3A]/10 bg-[#123d2c] ring-1 ring-white/60 ${portraitImage ? "w-full max-w-[360px] mx-auto" : ""}`
           : portraitImage
             ? "aspect-[3/4] w-full max-w-md mx-auto"
             : imageFit === "contain"
@@ -298,7 +299,7 @@ function ServiceDetail({
         </video>
       ) : media && activeMedia ? (
         <>
-          <div className="relative aspect-[4/3] overflow-hidden bg-white">
+          <div className={`relative ${portraitImage ? "aspect-[9/16]" : "aspect-[4/3]"} overflow-hidden bg-white`}>
             {activeMedia.type === "video" ? (
               <video
                 key={activeMedia.src}
@@ -329,7 +330,7 @@ function ServiceDetail({
               />
             )}
             <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/25 bg-[#123d2c]/85 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg backdrop-blur">
-              {activeMedia.type === "video" ? "Field video" : "Survey output"}
+              {activeMedia.type === "video" ? "Field video" : portraitImage ? "Field photo" : "Survey output"}
             </div>
           </div>
 
@@ -473,14 +474,14 @@ const SERVICES: ServiceDetailProps[] = [
       "NDVI and multispectral crop stress mapping",
       "Rapid deployment across all Zimbabwe provinces",
     ],
-    image:
-      "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=900&q=80",
+    image: droneSurveyPhoto,
+    portraitImage: true,
     media: [
       {
         type: "image",
-        src: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=900&q=80",
-        title: "Aerial landscape",
-        caption: "Aerial views support detailed land and crop assessment.",
+        src: droneSurveyPhoto,
+        title: "Drone survey preparation",
+        caption: "VerdiSol field team preparing the drone and controller.",
         fit: "cover",
       },
       {
