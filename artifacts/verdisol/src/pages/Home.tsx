@@ -38,6 +38,7 @@ import aboutFarmlandImage from "@assets/image_search/about-farmland.jpg";
 import cropProductionImage from "@assets/image_search/crop-production.jpg";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_123905_1794307874676.png";
+import landUsePlanningMap from "@assets/Screenshot_2026-11-10_111855_1794305199445.png";
 import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
 
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -663,6 +664,14 @@ const PROJECTS = [
     location: "GIS deliverable",
     tag: "Terrain Analysis",
   },
+  {
+    image: landUsePlanningMap,
+    title: "Land Use Planning",
+    description:
+      "Enterprise zoning and land allocation to guide productive, practical farm development.",
+    location: "Farm development planning",
+    tag: "Land Use Planning",
+  },
 ];
 
 function FeaturedProjects() {
@@ -706,7 +715,7 @@ function FeaturedProjects() {
           variants={stagger}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6"
         >
           {PROJECTS.map(({ image, title, description, location, tag }) => (
             <motion.div
@@ -720,7 +729,9 @@ function FeaturedProjects() {
                   src={image}
                   alt={title}
                   className={`w-full h-full ${
-                    image === siteAnalysisImage || image === slopeAnalysisImage
+                    image === siteAnalysisImage ||
+                    image === slopeAnalysisImage ||
+                    image === landUsePlanningMap
                       ? "object-contain bg-white p-2"
                       : "object-cover group-hover:scale-105 transition-transform duration-500"
                   }`}
