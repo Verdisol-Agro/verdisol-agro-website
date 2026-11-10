@@ -84,3 +84,17 @@ mtime_ms = 1794310654833
 storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/c742d998-07c0-42ea-91de-ccd9f00228f6/06c15e51-ec0a-4820-912b-e3dc0e8a5f19"
 storage_version_token = "1794310759059171"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "V7iIX6QZTQQdtiRor1RWG"
+uri = "file://attached_assets/generated_images/soil-analysis-field-sampling.jpg"
+type = "image"
+title = "Soil Analysis — Field Sampling"
+description = "AI-generated photograph of an agronomist examining soil in a maize field, with natural lighting and detailed soil textures. Now used in the Soil Analysis service card."
+logical_id = "6c83b0be-5093-4bb3-ac59-663417127598"
+content_hash = "sha256:781347ab8d4ac9cba16da7d2ca2069fea1ad14c4e52fa3bc653e07cba7617008"
+size = 200831
+mtime_ms = 1794311195873
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/6c83b0be-5093-4bb3-ac59-663417127598/1a277683-36a9-4ab4-9ae5-ad3b298d130a"
+storage_version_token = "1794311262591992"
+content_type = "image/jpeg"
