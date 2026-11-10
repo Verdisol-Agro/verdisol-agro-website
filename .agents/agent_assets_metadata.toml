@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "YC5N6kscQ420KKPGTGIUb"
+uri = "file://attached_assets/generated_images/irrigation-development-planning.jpg"
+type = "image"
+title = "Irrigation Development Planning"
+description = "AI-generated illustration of a centre-pivot irrigation system watering crop fields, now used on the project card."
+logical_id = "33aa64d7-0686-4c85-ae7a-97df2680c46f"
+content_hash = "sha256:a68cd3d6b4cabf9ab796d76e925744aa8ec7bfcc3e4cda5cbbc362706f5d2d25"
+size = 229202
+mtime_ms = 1794309785337
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/33aa64d7-0686-4c85-ae7a-97df2680c46f/969cab0f-d01a-489f-b09a-6b10106c0742"
+storage_version_token = "1794309873548653"
+content_type = "image/jpeg"
