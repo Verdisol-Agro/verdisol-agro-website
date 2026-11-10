@@ -35,6 +35,7 @@ import Layout from "@/components/Layout";
 import vegetablesImage from "@assets/image_1794296544704.png";
 import farmlandHeroImage from "@assets/Golden_Hour_Sustainable_Farmland_Banner_1794305560425.png";
 import aboutFarmlandImage from "@assets/image_search/about-farmland.jpg";
+import cropProductionImage from "@assets/image_search/crop-production.jpg";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
 import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
@@ -639,7 +640,7 @@ function WhyVerdiSol() {
 
 const PROJECTS = [
   {
-    image: vegetablesImage,
+    image: cropProductionImage,
     title: "Fresh Crop Production",
     description:
       "A closer look at crops and produce supported by informed agricultural planning.",
