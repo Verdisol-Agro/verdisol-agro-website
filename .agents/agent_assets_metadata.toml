@@ -14,3 +14,17 @@ mtime_ms = 1794309785337
 storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/33aa64d7-0686-4c85-ae7a-97df2680c46f/969cab0f-d01a-489f-b09a-6b10106c0742"
 storage_version_token = "1794309873548653"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "I-mBZPIG1Wd8zrgotuY2p"
+uri = "file://attached_assets/generated_images/boundary-verification-survey.jpg"
+type = "image"
+title = "Boundary Verification Image"
+description = "AI-generated realistic image of a surveyor using surveying equipment beside farmland boundary markers, now used on the Boundary Verification Project card."
+logical_id = "d93c2c32-0a63-40ba-a15f-dd8b79a1ff0c"
+content_hash = "sha256:f16072d971c0e789f9b71ee5a2472443f8be416f7cad86b5f098288193967dba"
+size = 235330
+mtime_ms = 1794310314665
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/d93c2c32-0a63-40ba-a15f-dd8b79a1ff0c/a72d7410-7567-42ba-9c86-89fcf8fbc79c"
+storage_version_token = "1794310378499162"
+content_type = "image/jpeg"

@@ -22,6 +22,7 @@ import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_17942966200
 import commercialLandUseMapImage from "@assets/Screenshot_2026-02-23_143731_1794297611541.png";
 import terrainAssessmentMap from "@assets/Screenshot_2026-11-10_123905_1794307874676.png";
 import irrigationPlanningImage from "@assets/generated_images/irrigation-development-planning.jpg";
+import boundaryVerificationImage from "@assets/generated_images/boundary-verification-survey.jpg";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -114,7 +115,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 4,
-    image: siteAnalysisImage,
+    image: boundaryVerificationImage,
     title: "Boundary Verification Project",
     location: "Masvingo",
     description:
