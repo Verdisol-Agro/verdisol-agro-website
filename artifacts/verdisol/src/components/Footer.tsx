@@ -123,10 +123,16 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#D1B766] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70 text-sm leading-relaxed">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=VerdiSol%20Agro%2C%20Borgward%2C%20Msasa%2C%20Harare%2C%20Zimbabwe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 text-sm leading-relaxed hover:text-white hover:underline underline-offset-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D1B766] rounded-sm"
+                  aria-label="Find VerdiSol Agro at Borgward, Msasa, Harare in Google Maps (opens in a new tab)"
+                >
                   Borgward, Masasa,<br />
                   Harare, Zimbabwe
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#D1B766] flex-shrink-0" />
