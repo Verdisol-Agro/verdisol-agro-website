@@ -130,10 +130,22 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#D1B766] flex-shrink-0" />
-                <span className="text-white/70 text-sm">
-                  +263 777 226 654<br />
-                  +263 781 939 896
-                </span>
+                <div className="flex flex-col text-sm">
+                  <a
+                    href="tel:+263777226654"
+                    className="text-white/70 hover:text-white hover:underline underline-offset-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D1B766] rounded-sm"
+                    aria-label="Call VerdiSol Agro on +263 777 226 654"
+                  >
+                    +263 777 226 654
+                  </a>
+                  <a
+                    href="tel:+263781939896"
+                    className="text-white/70 hover:text-white hover:underline underline-offset-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D1B766] rounded-sm"
+                    aria-label="Call VerdiSol Agro on +263 781 939 896"
+                  >
+                    +263 781 939 896
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#D1B766] flex-shrink-0" />
