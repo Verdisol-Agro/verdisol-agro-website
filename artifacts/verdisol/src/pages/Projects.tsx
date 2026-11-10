@@ -16,6 +16,9 @@ import {
   Bookmark,
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import vegetablesImage from "@assets/image_1794296544704.png";
+import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
+import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -75,7 +78,7 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&q=80",
+    image: siteAnalysisImage,
     title: "450 ha Water Survey Project",
     location: "Mashonaland West",
     description:
@@ -86,7 +89,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=700&q=80",
+    image: slopeAnalysisImage,
     title: "Commercial Farm Land Use Plan",
     location: "Midlands",
     description:
@@ -97,7 +100,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=700&q=80",
+    image: slopeAnalysisImage,
     title: "Irrigation Development Planning",
     location: "Mashonaland East",
     description:
@@ -108,7 +111,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=700&q=80",
+    image: siteAnalysisImage,
     title: "Boundary Verification Project",
     location: "Masvingo",
     description:
@@ -119,7 +122,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=700&q=80",
+    image: vegetablesImage,
     title: "Farm Valuation Assessment",
     location: "Manicaland",
     description:
@@ -130,7 +133,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=700&q=80",
+    image: vegetablesImage,
     title: "Plantation Development Plan",
     location: "Mashonaland Central",
     description:
@@ -141,7 +144,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 7,
-    image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=700&q=80",
+    image: siteAnalysisImage,
     title: "Drone Mapping Project",
     location: "Bulawayo Region",
     description:
@@ -152,7 +155,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 8,
-    image: "https://images.unsplash.com/photo-1486328228599-85db4443971f?w=700&q=80",
+    image: slopeAnalysisImage,
     title: "Agricultural Investment Assessment",
     location: "Harare Region",
     description:
@@ -180,8 +183,7 @@ function PageHero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1600&q=80)",
+          backgroundImage: `url(${vegetablesImage})`,
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-[#1F5D3A]/92 via-[#1F5D3A]/80 to-[#0f3320]/90" />
@@ -248,6 +250,79 @@ function Intro() {
   );
 }
 
+function AnalysisShowcase() {
+  const examples = [
+    {
+      image: siteAnalysisImage,
+      title: "Site Analysis & Target Mapping",
+      detail:
+        "Spatial overview with marked survey sites, coordinate references, and terrain context.",
+    },
+    {
+      image: slopeAnalysisImage,
+      title: "Slope & Terrain Assessment",
+      detail:
+        "A clear view of slope patterns to support land-use and development planning.",
+    },
+  ];
+
+  return (
+    <section className="relative overflow-hidden bg-[#123d2c] py-20 sm:py-24">
+      <div className="pointer-events-none absolute -right-24 -top-28 h-96 w-96 rounded-full bg-[#8CC63F]/15 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-[#C7A85A]/15 blur-3xl" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 max-w-2xl">
+          <span className="mb-4 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium tracking-wide text-[#cfe7a8]">
+            Mapping in Detail
+          </span>
+          <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl">
+            Real outputs. Clearer decisions.
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
+            Explore examples of the GIS and terrain analysis visuals used to
+            make land information easier to understand.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {examples.map(({ image, title, detail }, index) => (
+            <motion.figure
+              key={title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.55, delay: index * 0.12 }}
+              className="group overflow-hidden rounded-3xl border border-white/15 bg-white shadow-2xl shadow-black/20"
+            >
+              <div className="relative aspect-[1.16/1] overflow-hidden bg-[#f6f6f3] p-3 sm:p-5">
+                <img
+                  src={image}
+                  alt={title}
+                  className="h-full w-full rounded-xl object-contain transition-transform duration-500 group-hover:scale-[1.025]"
+                />
+                <span className="absolute left-6 top-6 rounded-full bg-[#1F5D3A] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-lg">
+                  GIS deliverable
+                </span>
+              </div>
+              <figcaption className="flex flex-col gap-2 p-6 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+                <div>
+                  <h3 className="text-xl font-bold text-[#173f2d]">{title}</h3>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-gray-600">
+                    {detail}
+                  </p>
+                </div>
+                <span className="mt-1 inline-flex shrink-0 items-center rounded-full bg-[#8CC63F]/15 px-3 py-1 text-xs font-semibold text-[#1F5D3A]">
+                  VerdiSol Agro
+                </span>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── 3 + 4. Filter + Project Grid ─────────────────────────────────────── */
 
 function ProjectCard({ project }: { project: Project }) {
@@ -266,7 +341,12 @@ function ProjectCard({ project }: { project: Project }) {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className={`w-full h-full transition-transform duration-500 ${
+            project.image === siteAnalysisImage ||
+            project.image === slopeAnalysisImage
+              ? "object-contain bg-white p-2"
+              : "object-cover group-hover:scale-105"
+          }`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         {/* Category icon overlay */}
@@ -504,6 +584,7 @@ export default function Projects() {
     <Layout>
       <PageHero />
       <Intro />
+      <AnalysisShowcase />
       <ProjectGrid />
       <CoverageSection />
       <CredibilityStrip />

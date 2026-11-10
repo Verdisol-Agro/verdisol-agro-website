@@ -21,7 +21,6 @@ import {
   Gauge,
   FileCheck,
   Star,
-  Play,
   ArrowRight,
   MapPin,
   ChevronLeft,
@@ -33,7 +32,9 @@ import {
   Fence,
 } from "lucide-react";
 import Layout from "@/components/Layout";
-import farmlandHeroImage from "@assets/Golden_Hour_Sustainable_Farmland_Banner_1792149078371.png";
+import vegetablesImage from "@assets/image_1794296544704.png";
+import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
+import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Helpers                                                                   */
@@ -79,38 +80,13 @@ const stagger = {
 /* 1. HERO SECTION                                                            */
 /* ────────────────────────────────────────────────────────────────────────── */
 
-const HERO_IMAGES = [
-  farmlandHeroImage,
-  "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600&q=80",
-  "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600&q=80",
-  "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&q=80",
-  "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1600&q=80",
-];
-
 function Hero() {
-  const [slide, setSlide] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(
-      () => setSlide((s) => (s + 1) % HERO_IMAGES.length),
-      5000,
-    );
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background slides */}
-      {HERO_IMAGES.map((src, i) => (
-        <div
-          key={i}
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
-          style={{
-            backgroundImage: `url(${src})`,
-            opacity: i === slide ? 1 : 0,
-          }}
-        />
-      ))}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${vegetablesImage})` }}
+      />
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/75" />
@@ -171,19 +147,6 @@ function Hero() {
             </Link>
           </motion.div>
         </motion.div>
-      </div>
-
-      {/* Slide dots */}
-      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {HERO_IMAGES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setSlide(i)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              i === slide ? "bg-white w-6" : "bg-white/40"
-            }`}
-          />
-        ))}
       </div>
 
       {/* Scroll indicator */}
@@ -486,8 +449,8 @@ function AboutPreview() {
           >
             <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-gray-200 shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=900&q=80"
-                alt="Agricultural drone over farmland"
+                src={vegetablesImage}
+                alt="Fresh produce from agricultural farming"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -670,31 +633,28 @@ function WhyVerdiSol() {
 
 const PROJECTS = [
   {
-    image:
-      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=700&q=80",
-    title: "450 ha Water Survey",
+    image: vegetablesImage,
+    title: "Fresh Crop Production",
     description:
-      "Comprehensive geophysical underground water survey for a large-scale commercial farming operation.",
-    location: "Mashonaland East",
-    tag: "Water Survey",
+      "A closer look at crops and produce supported by informed agricultural planning.",
+    location: "Agricultural practice",
+    tag: "Crop Production",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=700&q=80",
-    title: "Commercial Farm Planning",
+    image: siteAnalysisImage,
+    title: "GIS Site Analysis",
     description:
-      "Full farm planning and irrigation design for a 200 ha commercial tobacco and maize operation.",
-    location: "Midlands Province",
-    tag: "Land Planning",
+      "Spatial mapping output showing survey targets, terrain patterns, and coordinates.",
+    location: "GIS deliverable",
+    tag: "Site Mapping",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=700&q=80",
-    title: "Boundary Verification Project",
+    image: slopeAnalysisImage,
+    title: "Slope & Terrain Analysis",
     description:
-      "Precision GPS boundary pegging and GIS mapping to resolve land tenure and ownership disputes.",
-    location: "Manicaland",
-    tag: "Boundary Pegging",
+      "Terrain analysis output that makes slope conditions easier to review and plan around.",
+    location: "GIS deliverable",
+    tag: "Terrain Analysis",
   },
 ];
 
@@ -752,7 +712,11 @@ function FeaturedProjects() {
                 <img
                   src={image}
                   alt={title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full ${
+                    image === siteAnalysisImage || image === slopeAnalysisImage
+                      ? "object-contain bg-white p-2"
+                      : "object-cover group-hover:scale-105 transition-transform duration-500"
+                  }`}
                 />
               </div>
               <div className="p-6">
@@ -821,26 +785,23 @@ function DroneVideoSection() {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6 }}
-          className="relative rounded-2xl overflow-hidden aspect-video bg-gray-900 shadow-2xl group cursor-pointer"
+          className="relative rounded-2xl overflow-hidden aspect-video bg-gray-900 shadow-2xl"
         >
           <img
-            src="https://images.unsplash.com/photo-1508444845599-5c89863b1c44?w=1400&q=80"
-            alt="Drone aerial view of farmland"
-            className="w-full h-full object-cover opacity-75 group-hover:opacity-65 transition-opacity duration-300"
+            src={vegetablesImage}
+            alt="Fresh vegetables from agricultural production"
+            className="w-full h-full object-cover opacity-70"
           />
-          {/* Play button */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm border border-white/40 flex items-center justify-center shadow-xl"
-            >
-              <Play className="w-8 h-8 text-white fill-white ml-1" />
-            </motion.div>
-          </div>
-          {/* Overlay label */}
-          <div className="absolute bottom-6 left-6 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-medium">
-            DJI Mavic 3 Multispectral — Field Operations
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/65 via-black/15 to-transparent p-6 text-center">
+            <div className="max-w-xl text-white">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-white/50 bg-white/15 text-2xl backdrop-blur">
+                ▶
+              </div>
+              <p className="text-xl font-semibold">VerdiSol in the Field</p>
+              <p className="mt-2 text-sm text-white/85">
+                Upload the video clip to enable playback here.
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>
