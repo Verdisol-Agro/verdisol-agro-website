@@ -34,6 +34,7 @@ import landUseMap from "@assets/Screenshot_2026-02-17_115332_1794301012478.png";
 import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1794301414063.jpeg";
 import boundaryPeggingMap from "@assets/Screenshot_2026-11-10_112612_1794302867416.png";
 import consultancyPhoto from "@assets/IMG-20261109-WA0016_1794303441655.jpg";
+import soilAnalysisMap from "@assets/Screenshot_2026-11-10_114417_1794304168264.png";
 
 /* ─── Animation helpers ─────────────────────────────────────────────────── */
 
@@ -584,8 +585,8 @@ const SERVICES: ServiceDetailProps[] = [
       "Field zoning and soil variability mapping",
       "Clear reports to support crop and investment decisions",
     ],
-    image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&q=80",
+    image: soilAnalysisMap,
+    imageFit: "contain",
     flipped: true,
   },
   {
