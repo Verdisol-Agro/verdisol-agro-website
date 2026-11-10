@@ -156,6 +156,7 @@ interface ServiceMedia {
   src: string;
   title: string;
   caption: string;
+  poster?: string;
 }
 
 function ServiceDetail({
@@ -271,7 +272,7 @@ function ServiceDetail({
                 controls
                 playsInline
                 preload="metadata"
-                poster={siteAnalysisImage}
+                poster={activeMedia.poster}
                 onEnded={() => moveSlide(1)}
                 className="h-full w-full bg-black object-contain"
                 aria-label={activeMedia.title}
@@ -410,6 +411,7 @@ const SERVICES: ServiceDetailProps[] = [
         src: fieldVideo,
         title: "VerdiSol field operations",
         caption: "View the field video with player controls.",
+        poster: siteAnalysisImage,
       },
     ],
     flipped: false,
