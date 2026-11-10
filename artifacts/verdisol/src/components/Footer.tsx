@@ -137,9 +137,13 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#D1B766] flex-shrink-0" />
-                <span className="text-white/70 text-sm">
+                <a
+                  href="mailto:info@verdisolagro.com"
+                  className="text-white/70 text-sm hover:text-white hover:underline underline-offset-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D1B766] rounded-sm"
+                  aria-label="Compose an email to VerdiSol Agro"
+                >
                   info@verdisolagro.com
-                </span>
+                </a>
               </li>
             </ul>
           </div>
