@@ -28,3 +28,59 @@ mtime_ms = 1794310314665
 storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/d93c2c32-0a63-40ba-a15f-dd8b79a1ff0c/a72d7410-7567-42ba-9c86-89fcf8fbc79c"
 storage_version_token = "1794310378499162"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "e5sgvldWlQ-Gw79o3YIWy"
+uri = "file://attached_assets/generated_images/farm-valuation-assessment.jpg"
+type = "image"
+title = "Farm Valuation Assessment"
+description = "AI-generated image of an agricultural appraiser inspecting a productive farm and its infrastructure."
+logical_id = "d27189a4-48f0-4997-8c95-fe822e90fbb6"
+content_hash = "sha256:4056d31b278e36b0312370780cdc17bc0a6f21b962e1588955ee83c51dd42088"
+size = 164038
+mtime_ms = 1794310663277
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/d27189a4-48f0-4997-8c95-fe822e90fbb6/75c5a3d2-7a28-4d9d-b2f2-4151ea45e6a4"
+storage_version_token = "1794310757047918"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "hCFaeIKZldfACQDhzwU0f"
+uri = "file://attached_assets/generated_images/plantation-development-plan.jpg"
+type = "image"
+title = "Plantation Development Plan"
+description = "AI-generated image of a planned orchard with organised planting blocks and farm access routes."
+logical_id = "ad1180ab-cf60-4a82-988a-dc239b02236f"
+content_hash = "sha256:cafad8fcaf3ac6a9bdd4ffce1a0db788d81298036c88b89e48d76f1f5155837a"
+size = 252461
+mtime_ms = 1794310657045
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/ad1180ab-cf60-4a82-988a-dc239b02236f/55494773-c0b3-49cf-8c1d-848cb388fee2"
+storage_version_token = "1794310757807578"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "LFDxbxVOml8CYYTU9Nm4B"
+uri = "file://attached_assets/generated_images/drone-mapping-project.jpg"
+type = "image"
+title = "Drone Mapping Project"
+description = "AI-generated image of a survey drone flying above cultivated farmland."
+logical_id = "50c7bc9a-17a2-42a1-b8c5-442da8add943"
+content_hash = "sha256:a2ab3865403bc9fc05b6c5fbb733939f0fb2c1b91296fa1fa98306d04049c663"
+size = 239664
+mtime_ms = 1794310657337
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/50c7bc9a-17a2-42a1-b8c5-442da8add943/e480cdcd-15f3-444f-b1eb-f123f6374392"
+storage_version_token = "1794310758447451"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "fK3YwyNEyGDyyYGZUJg5f"
+uri = "file://attached_assets/generated_images/agricultural-investment-assessment.jpg"
+type = "image"
+title = "Agricultural Investment Assessment"
+description = "AI-generated image of an adviser and investor reviewing farm development information."
+logical_id = "c742d998-07c0-42ea-91de-ccd9f00228f6"
+content_hash = "sha256:69ee424ba925d065f3559c0257ab3bfa7ad584a3396a1b7cf849c4b9def808fd"
+size = 157034
+mtime_ms = 1794310654833
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/c742d998-07c0-42ea-91de-ccd9f00228f6/06c15e51-ec0a-4820-912b-e3dc0e8a5f19"
+storage_version_token = "1794310759059171"
+content_type = "image/jpeg"

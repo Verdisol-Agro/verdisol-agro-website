@@ -18,11 +18,14 @@ import {
 import Layout from "@/components/Layout";
 import vegetablesImage from "@assets/image_1794296544704.png";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
-import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
 import commercialLandUseMapImage from "@assets/Screenshot_2026-02-23_143731_1794297611541.png";
 import terrainAssessmentMap from "@assets/Screenshot_2026-11-10_123905_1794307874676.png";
 import irrigationPlanningImage from "@assets/generated_images/irrigation-development-planning.jpg";
 import boundaryVerificationImage from "@assets/generated_images/boundary-verification-survey.jpg";
+import farmValuationImage from "@assets/generated_images/farm-valuation-assessment.jpg";
+import plantationDevelopmentImage from "@assets/generated_images/plantation-development-plan.jpg";
+import droneMappingImage from "@assets/generated_images/drone-mapping-project.jpg";
+import investmentAssessmentImage from "@assets/generated_images/agricultural-investment-assessment.jpg";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -71,6 +74,7 @@ type ProjectCategory =
 interface Project {
   id: number;
   image: string;
+  imagePosition?: string;
   title: string;
   location: string;
   description: string;
@@ -126,7 +130,8 @@ const PROJECTS: Project[] = [
   },
   {
     id: 5,
-    image: vegetablesImage,
+    image: farmValuationImage,
+    imagePosition: "center 30%",
     title: "Farm Valuation Assessment",
     location: "Manicaland",
     description:
@@ -137,7 +142,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 6,
-    image: vegetablesImage,
+    image: plantationDevelopmentImage,
     title: "Plantation Development Plan",
     location: "Mashonaland Central",
     description:
@@ -148,7 +153,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 7,
-    image: siteAnalysisImage,
+    image: droneMappingImage,
     title: "Drone Mapping Project",
     location: "Bulawayo Region",
     description:
@@ -159,7 +164,8 @@ const PROJECTS: Project[] = [
   },
   {
     id: 8,
-    image: slopeAnalysisImage,
+    image: investmentAssessmentImage,
+    imagePosition: "center 40%",
     title: "Agricultural Investment Assessment",
     location: "Harare Region",
     description:
@@ -345,9 +351,9 @@ function ProjectCard({ project }: { project: Project }) {
         <img
           src={project.image}
           alt={project.title}
+          style={{ objectPosition: project.imagePosition }}
           className={`w-full h-full transition-transform duration-500 ${
             project.image === siteAnalysisImage ||
-            project.image === slopeAnalysisImage ||
             project.image === commercialLandUseMapImage
               ? "object-contain bg-white p-2"
               : "object-cover group-hover:scale-105"
