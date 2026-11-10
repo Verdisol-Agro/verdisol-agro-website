@@ -98,3 +98,17 @@ mtime_ms = 1794311195873
 storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/6c83b0be-5093-4bb3-ac59-663417127598/1a277683-36a9-4ab4-9ae5-ad3b298d130a"
 storage_version_token = "1794311262591992"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "cdbZXB2EDARCLF24oGCfP"
+uri = "file://attached_assets/generated_images/irrigation-planning-drip-system.jpg"
+type = "image"
+title = "Irrigation Planning — Drip Irrigation"
+description = "New AI-generated image of an irrigation engineer checking a drip irrigation system among green crop rows. Created specifically for the Irrigation Planning service card, not reused elsewhere on the website."
+logical_id = "88869658-e417-44c4-8b50-7914998ff7e7"
+content_hash = "sha256:ec55ddfc8421bcefb1a1e8d21b72b4aa37bad31491607521efff7ff8f900a2f4"
+size = 210743
+mtime_ms = 1794313006777
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/88869658-e417-44c4-8b50-7914998ff7e7/0b3a188c-1318-427a-8740-b0c28653dfc8"
+storage_version_token = "1794313082881541"
+content_type = "image/jpeg"

@@ -35,6 +35,7 @@ import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1
 import boundaryPeggingMap from "@assets/Screenshot_2026-11-10_112612_1794302867416.png";
 import consultancyPhoto from "@assets/IMG-20261109-WA0016_1794303441655.jpg";
 import soilAnalysisPhoto from "@assets/generated_images/soil-analysis-field-sampling.jpg";
+import irrigationPlanningPhoto from "@assets/generated_images/irrigation-planning-drip-system.jpg";
 
 /* ─── Animation helpers ─────────────────────────────────────────────────── */
 
@@ -154,6 +155,7 @@ interface ServiceDetailProps {
   bullets: string[];
   image: string;
   imageFit?: "cover" | "contain";
+  imagePosition?: string;
   portraitImage?: boolean;
   media?: ServiceMedia[];
   flipped?: boolean;
@@ -177,6 +179,7 @@ function ServiceDetail({
   bullets,
   image,
   imageFit = "cover",
+  imagePosition = "center",
   portraitImage = false,
   media,
   flipped = false,
@@ -366,6 +369,7 @@ function ServiceDetail({
         <img
           src={image}
           alt={title}
+          style={{ objectPosition: imagePosition }}
           className={`w-full ${imageFit === "contain" ? "h-auto object-contain" : "h-full object-cover"}`}
         />
       )}
@@ -620,8 +624,8 @@ const SERVICES: ServiceDetailProps[] = [
       "Water-use efficiency recommendations",
       "Phased equipment and implementation guidance",
     ],
-    image:
-      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=900&q=80",
+    image: irrigationPlanningPhoto,
+    imagePosition: "center 20%",
     flipped: true,
   },
 ];
