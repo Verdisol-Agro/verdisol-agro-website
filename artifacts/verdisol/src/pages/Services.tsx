@@ -28,6 +28,7 @@ import Layout from "@/components/Layout";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
 import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
+import droneSurveyVideo from "@assets/VID-20261015-WA0116_1794299030635.mp4";
 
 /* ─── Animation helpers ─────────────────────────────────────────────────── */
 
@@ -430,6 +431,20 @@ const SERVICES: ServiceDetailProps[] = [
     ],
     image:
       "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=900&q=80",
+    media: [
+      {
+        type: "image",
+        src: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=900&q=80",
+        title: "Aerial landscape",
+        caption: "Aerial views support detailed land and crop assessment.",
+      },
+      {
+        type: "video",
+        src: droneSurveyVideo,
+        title: "Drone surveying in action",
+        caption: "Play the video to see the surveying work.",
+      },
+    ],
     flipped: true,
   },
   {
