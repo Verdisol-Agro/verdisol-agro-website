@@ -157,6 +157,7 @@ interface ServiceMedia {
   title: string;
   caption: string;
   poster?: string;
+  fit?: "cover" | "contain";
 }
 
 function ServiceDetail({
@@ -288,7 +289,11 @@ function ServiceDetail({
                 initial={{ opacity: 0, scale: 1.025 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.55 }}
-                className="h-full w-full bg-white object-contain p-2 sm:p-3"
+                className={`h-full w-full ${
+                  activeMedia.fit === "cover"
+                    ? "object-cover"
+                    : "bg-white object-contain p-2 sm:p-3"
+                }`}
               />
             )}
             <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/25 bg-[#123d2c]/85 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg backdrop-blur">
@@ -439,6 +444,7 @@ const SERVICES: ServiceDetailProps[] = [
         src: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=900&q=80",
         title: "Aerial landscape",
         caption: "Aerial views support detailed land and crop assessment.",
+        fit: "cover",
       },
       {
         type: "video",
