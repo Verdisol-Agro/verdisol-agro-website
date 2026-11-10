@@ -21,6 +21,7 @@ import {
   Compass,
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import internationalGreenhousePhoto from "@assets/image_search/modern-greenhouse-international-standards.jpg";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -338,8 +339,8 @@ function InternationalSection() {
             className="rounded-2xl overflow-hidden aspect-[4/3] shadow-xl order-2 lg:order-1"
           >
             <img
-              src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=900&q=80"
-              alt="International agricultural operations"
+              src={internationalGreenhousePhoto}
+              alt="Modern greenhouse with organised tomato rows and controlled-environment growing systems"
               className="w-full h-full object-cover"
             />
           </motion.div>

@@ -112,3 +112,17 @@ mtime_ms = 1794313006777
 storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/88869658-e417-44c4-8b50-7914998ff7e7/0b3a188c-1318-427a-8740-b0c28653dfc8"
 storage_version_token = "1794313082881541"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "2VtiILEG9GamC2KKGnmuv"
+uri = "file://attached_assets/image_search/modern-greenhouse-international-standards.jpg"
+type = "image"
+title = "Modern Greenhouse Farming"
+description = "Photo sourced from Pexels, showing organised tomato rows in a modern greenhouse. Replaces the wheat-field image in the International Standards & Exposure section."
+logical_id = "a94c193b-2b83-40e9-b73a-7ec7be6f3a13"
+content_hash = "sha256:f27cc77bc78245672f2018d79392ba8211f07cab5bc5df3b698f5ce14e3dd3a9"
+size = 311813
+mtime_ms = 1794313400241
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:7c929e1c-30fa-4744-9bbd-0b75b41687b3/a94c193b-2b83-40e9-b73a-7ec7be6f3a13/60347b85-f6c9-47b6-9a66-7d17f9e6e9cb"
+storage_version_token = "1794313459506379"
+content_type = "image/jpeg"
