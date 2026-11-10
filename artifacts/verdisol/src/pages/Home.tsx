@@ -37,7 +37,7 @@ import farmlandHeroImage from "@assets/Golden_Hour_Sustainable_Farmland_Banner_1
 import aboutFarmlandImage from "@assets/image_search/about-farmland.jpg";
 import cropProductionImage from "@assets/image_search/crop-production.jpg";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
-import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
+import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_123905_1794307874676.png";
 import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
 
 /* ────────────────────────────────────────────────────────────────────────── */
