@@ -21,6 +21,7 @@ import {
   Compass,
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import AboutPhotoSlideshow from "@/components/AboutPhotoSlideshow";
 import internationalGreenhousePhoto from "@assets/image_search/modern-greenhouse-international-standards.jpg";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
@@ -167,13 +168,7 @@ function WhoWeAre() {
             transition={{ duration: 0.65, ease: "easeOut" }}
             className="relative"
           >
-            <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=900&q=80"
-                alt="VerdiSol Agro team at work in the field"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <AboutPhotoSlideshow />
             {/* Stats badge */}
             <div className="absolute -bottom-5 -left-4 bg-[#896F32] text-white px-5 py-3.5 rounded-xl shadow-lg">
               <div className="text-2xl font-bold">600+</div>
