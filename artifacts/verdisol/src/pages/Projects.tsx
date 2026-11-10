@@ -20,6 +20,7 @@ import vegetablesImage from "@assets/image_1794296544704.png";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
 import commercialLandUseMapImage from "@assets/Screenshot_2026-02-23_143731_1794297611541.png";
+import terrainAssessmentMap from "@assets/Screenshot_2026-11-10_123905_1794307874676.png";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -260,7 +261,7 @@ function AnalysisShowcase() {
         "Spatial overview with marked survey sites, coordinate references, and terrain context.",
     },
     {
-      image: slopeAnalysisImage,
+      image: terrainAssessmentMap,
       title: "Slope & Terrain Assessment",
       detail:
         "A clear view of slope patterns to support land-use and development planning.",
