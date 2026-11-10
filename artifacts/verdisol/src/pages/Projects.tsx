@@ -19,6 +19,7 @@ import Layout from "@/components/Layout";
 import vegetablesImage from "@assets/image_1794296544704.png";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
+import commercialLandUseMapImage from "@assets/Screenshot_2026-02-23_143731_1794297611541.png";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -89,7 +90,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 2,
-    image: slopeAnalysisImage,
+    image: commercialLandUseMapImage,
     title: "Commercial Farm Land Use Plan",
     location: "Midlands",
     description:
@@ -343,7 +344,8 @@ function ProjectCard({ project }: { project: Project }) {
           alt={project.title}
           className={`w-full h-full transition-transform duration-500 ${
             project.image === siteAnalysisImage ||
-            project.image === slopeAnalysisImage
+            project.image === slopeAnalysisImage ||
+            project.image === commercialLandUseMapImage
               ? "object-contain bg-white p-2"
               : "object-cover group-hover:scale-105"
           }`}
