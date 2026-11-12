@@ -327,41 +327,41 @@ function InternationalSection() {
   return (
     <section ref={ref} className="py-20 bg-[#F5F0E8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 order-2 lg:order-1"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-rows-2 gap-4 order-2 lg:order-1"
           >
-            <figure className="overflow-hidden rounded-2xl bg-white shadow-lg">
+            <figure className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg sm:col-span-2">
               <img
                 src={internationalGreenhousePhoto}
                 alt="Modern greenhouse with organised tomato rows and controlled-environment growing systems"
-                className="aspect-[3/4] w-full object-cover"
+                className="h-[280px] sm:h-[260px] lg:h-0 lg:min-h-[200px] lg:flex-1 w-full object-cover"
                 loading="lazy"
               />
               <figcaption className="px-4 py-3 text-sm font-medium text-[#1F5D3A]">
                 Controlled-environment growing
               </figcaption>
             </figure>
-            <figure className="overflow-hidden rounded-2xl bg-white shadow-lg">
+            <figure className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg">
               <img
                 src={produceInspectionPhoto}
                 alt="Team examining packaged tomatoes in a produce packing facility"
-                className="aspect-[3/4] w-full object-cover"
+                className="aspect-[3/4] sm:aspect-square lg:aspect-auto lg:h-0 lg:min-h-[220px] lg:flex-1 w-full object-cover object-[center_60%]"
                 loading="lazy"
               />
               <figcaption className="px-4 py-3 text-sm font-medium text-[#1F5D3A]">
                 Produce quality inspection
               </figcaption>
             </figure>
-            <figure className="overflow-hidden rounded-2xl bg-white shadow-lg">
+            <figure className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg">
               <img
                 src={greenhouseVisitPhoto}
                 alt="Group learning about crop growing systems inside a modern greenhouse"
-                className="aspect-[3/4] w-full object-cover"
+                className="aspect-[3/4] sm:aspect-square lg:aspect-auto lg:h-0 lg:min-h-[220px] lg:flex-1 w-full object-cover object-[center_65%]"
                 loading="lazy"
               />
               <figcaption className="px-4 py-3 text-sm font-medium text-[#1F5D3A]">
