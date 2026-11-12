@@ -62,11 +62,54 @@ Review `artifacts/verdisol/cloudflare/wrangler.jsonc` before deploying.
 The configured production origin is `https://verdisol-agro-website.pages.dev`.
 If a custom domain is later used, update `ALLOWED_ORIGIN` to that exact origin.
 
+### Monorepo deployment target
+
+The existing Workers application is **`artifacts/verdisol/cloudflare/`**.
+Its entry point is `worker.ts` and its configuration is `wrangler.jsonc` in
+that same directory. Its owning package is `@workspace/verdisol`, declared
+in **`artifacts/verdisol/package.json`**; the `cloudflare` directory does not
+need a separate package or a duplicate backend.
+
+Do **not** run bare `npx wrangler deploy` at the repository root. The root
+`wrangler.jsonc` belongs to **Pages**, not this Worker, and automatic workspace
+application detection is not the deployment path for this project.
+`artifacts/api-server` is the separate Replit Express server and is not the
+Cloudflare Workers target.
+
+From the repository root, the explicit Worker deployment command is:
+
+```sh
+pnpm run deploy:worker
+```
+
+This selects `@workspace/verdisol` and runs
+`cd cloudflare && wrangler deploy --config wrangler.jsonc` from that package.
+Wrangler therefore executes inside `artifacts/verdisol/cloudflare/` with the
+existing Worker configuration, rather than detecting an app at workspace root.
+
+For a **separate Workers Builds project** connected to this repository, use:
+
+| Setting | Value |
+| --- | --- |
+| Root directory | `artifacts/verdisol` |
+| Build command | `pnpm run cf:worker:check` |
+| Deploy command | `pnpm run cf:worker:deploy` |
+| Dependency installation | Install the pnpm workspace from the repository root using `pnpm install --frozen-lockfile` |
+
+The build command only bundles locally with `--dry-run`; it does not deploy.
+The deploy script enters the nested Worker directory explicitly. Retain access
+to the complete repository and its shared `lib/` packages during installation
+and bundling. Do not install this package as an isolated copy.
+
+These are **Worker settings only**. Do not replace the existing Pages project
+or change its frontend build/output settings to these commands. Worker
+deployment does not upload the Pages frontend.
+
 Using a trusted local terminal with Cloudflare access:
 
 ```sh
 pnpm --filter @workspace/verdisol exec wrangler login
-pnpm --filter @workspace/verdisol run cf:worker:deploy
+pnpm run deploy:worker
 ```
 
 This creates `verdisol-enquiries` and its SQLite-backed `EnquiryGuard` Durable
