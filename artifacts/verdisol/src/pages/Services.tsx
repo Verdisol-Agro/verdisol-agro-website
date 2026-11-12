@@ -33,6 +33,7 @@ import droneFieldPhoto from "@assets/IMG-20261110-WA0057_1794317256775.jpg";
 import aerialMappingPhoto from "@assets/IMG-20261110-WA0020_1794300453163.jpg";
 import landUseMap from "@assets/Screenshot_2026-11-10_111855_1794305199445.png";
 import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1794301414063.jpeg";
+import additionalFarmAssessmentPhoto from "@assets/farm-assessment-additional-photo.jpg";
 import boundaryPeggingMap from "@assets/Screenshot_2026-11-12_083758_1794465701455.png";
 import consultancyPhoto from "@assets/IMG-20261109-WA0016_1794303441655.jpg";
 import irrigationPlanningPhoto from "@assets/generated_images/irrigation-planning-drip-system.jpg";
@@ -159,6 +160,7 @@ interface ServiceDetailProps {
   imageFit?: "cover" | "contain";
   imagePosition?: string;
   portraitImage?: boolean;
+  mediaAspectRatio?: string;
   media?: ServiceMedia[];
   flipped?: boolean;
 }
@@ -186,6 +188,7 @@ function ServiceDetail({
   imageFit = "cover",
   imagePosition = "center",
   portraitImage = false,
+  mediaAspectRatio,
   media,
   flipped = false,
 }: ServiceDetailProps) {
@@ -310,7 +313,10 @@ function ServiceDetail({
         </video>
       ) : media && activeMedia ? (
         <>
-          <div className={`relative ${portraitImage ? "aspect-[9/16]" : "aspect-[4/3]"} overflow-hidden bg-white`}>
+          <div
+            className={`relative ${portraitImage ? "aspect-[9/16]" : "aspect-[4/3]"} overflow-hidden bg-white`}
+            style={mediaAspectRatio ? { aspectRatio: mediaAspectRatio } : undefined}
+          >
             {activeMedia.type === "embed" ? (
               <iframe
                 key={activeMedia.src}
@@ -587,6 +593,23 @@ const SERVICES: ServiceDetailProps[] = [
     ],
     image: farmAssessmentPhoto,
     portraitImage: true,
+    mediaAspectRatio: "3 / 4",
+    media: [
+      {
+        type: "image",
+        src: farmAssessmentPhoto,
+        title: "Farm inspection",
+        caption: "A field view of farm infrastructure and crop production.",
+        fit: "cover",
+      },
+      {
+        type: "image",
+        src: additionalFarmAssessmentPhoto,
+        title: "Crop condition assessment",
+        caption: "Inspecting crops in the field to assess farm performance.",
+        fit: "cover",
+      },
+    ],
     flipped: false,
   },
   {
