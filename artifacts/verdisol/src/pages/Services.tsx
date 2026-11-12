@@ -679,7 +679,7 @@ const SERVICES: ServiceDetailProps[] = [
       "Field zoning and soil variability mapping",
       "Clear reports to support crop and investment decisions",
     ],
-    videoEmbed: "https://drive.google.com/file/d/1VheozogNZdhzIEPmqNtq93JQ0BkAzq_0/preview",
+    video: "/api/media/soil-analysis.mp4",
     flipped: true,
   },
   {
