@@ -511,7 +511,7 @@ function FloatingWhatsApp() {
 
 function MapSection() {
   return (
-    <section className="py-16 bg-[#F5F0E8]">
+    <section id="our-location" className="py-16 bg-[#F5F0E8] scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <InViewSection className="mb-8 text-center">
           <motion.h2
@@ -521,7 +521,10 @@ function MapSection() {
             Our Location
           </motion.h2>
           <motion.p variants={fadeUp} className="text-gray-500 text-sm">
-            Msasa, Harare, Zimbabwe
+            VerdiSol Agro — Msasa area, Harare, Zimbabwe
+          </motion.p>
+          <motion.p variants={fadeUp} className="mt-2 text-sm text-gray-600">
+            The red pin marks the general area. Contact us for directions to the office.
           </motion.p>
         </InViewSection>
 
@@ -533,8 +536,8 @@ function MapSection() {
           className="rounded-2xl overflow-hidden shadow-xl border border-gray-200"
         >
           <iframe
-            title="VerdiSol Agro Location — Msasa, Harare"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15188.344!2d31.108!3d-17.834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4e5a6b5a5a5%3A0x0!2sMsasa%2C%20Harare%2C%20Zimbabwe!5e0!3m2!1sen!2szw!4v1700000000000"
+            title="VerdiSol Agro — general Msasa area marker, not an exact office pin"
+            src="https://maps.google.com/maps?q=-17.834%2C31.108&z=14&output=embed"
             width="100%"
             height="420"
             style={{ border: 0, display: "block" }}
