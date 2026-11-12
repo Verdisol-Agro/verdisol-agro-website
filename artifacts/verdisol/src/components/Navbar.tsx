@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img
-              src="/verdisol-logo.png"
+              src={`${import.meta.env.BASE_URL}verdisol-logo.png`}
               alt="VerdiSol Agro (Pvt) Ltd"
               className="block w-[128px] sm:w-[132px] lg:w-[160px] h-auto"
             />
@@ -87,6 +87,8 @@ export default function Navbar() {
             onClick={() => setIsOpen((o) => !o)}
             className="lg:hidden p-2 rounded-lg text-gray-600 hover:text-[#1F5D3A] hover:bg-[#1F5D3A]/5 transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -103,7 +105,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="lg:hidden overflow-hidden border-t border-[#1F5D3A]/10 bg-white"
           >
-            <nav className="px-4 py-4 space-y-1">
+            <nav id="mobile-navigation" className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}

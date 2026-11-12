@@ -1,3 +1,4 @@
 - [VerdiSol motto](verdisol-motto.md) — the company motto is “Redifining Farming.”
 - [Website text style](website-text-style.md) — visible, vivid text throughout the website and the user's punctuation requirement.
 - [International Standards photos](international-photos.md) — use a large slideshow aligned with the adjacent text box.
+- [GitHub media inclusion](github-media-inclusion.md) — workspace-wide ignore rules can hide newly uploaded website images from GitHub copies.

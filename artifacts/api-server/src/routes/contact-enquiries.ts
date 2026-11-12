@@ -8,14 +8,32 @@ import {
   type ErrorResponse,
 } from "@workspace/api-zod";
 
-const router: IRouter = Router();
 const errorResponse = (error: string): ErrorResponse => ({ error });
 const recipient = "verdisolagro@gmail.com";
 const connectors = new ReplitConnectors();
+type EmailDelivery = (raw: string) => Promise<{ id?: string }>;
+
+const deliverWithGmail: EmailDelivery = async (raw) => {
+  const response = await connectors.proxy(
+    "google-mail", "/gmail/v1/users/me/messages/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ raw }),
+    },
+  );
+  if (!response.ok) throw new Error(`Email provider rejected delivery (${response.status})`);
+  return await response.json() as { id?: string };
+};
+
+export function createContactEnquiriesRouter(
+  deliver: EmailDelivery = deliverWithGmail,
+  limit = 30,
+): IRouter {
+const router: IRouter = Router();
 // A mailbox-wide cap also protects the account behind shared preview proxies.
 const enquiryLimit = rateLimit({
   windowMs: 15 * 60 * 1000,
-  limit: 30,
+  limit,
   keyGenerator: () => "contact-mailbox",
   standardHeaders: "draft-8",
   legacyHeaders: false,
@@ -73,18 +91,7 @@ router.post("/contact-enquiries", enquiryLimit, async (req, res): Promise<void> 
       ].join("\n"),
     });
 
-    const response = await connectors.proxy(
-      "google-mail", "/gmail/v1/users/me/messages/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ raw: result.message.toString("base64url") }),
-      },
-    );
-    if (!response.ok) {
-      req.log.error({ providerStatus: response.status }, "Gmail rejected enquiry delivery");
-      throw new Error("Email provider rejected the request");
-    }
-    const sent = await response.json() as { id?: string };
+    const sent = await deliver(result.message.toString("base64url"));
     if (!sent.id) throw new Error("Email provider did not confirm delivery");
     req.log.info({ messageId: sent.id }, "Gmail accepted the website enquiry");
 
@@ -107,4 +114,7 @@ router.post("/contact-enquiries", enquiryLimit, async (req, res): Promise<void> 
   }
 });
 
-export default router;
+return router;
+}
+
+export default createContactEnquiriesRouter();

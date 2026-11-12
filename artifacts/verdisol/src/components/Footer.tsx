@@ -37,13 +37,13 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-5 w-fit rounded-md bg-white px-2 py-1.5">
               <img
-                src="/verdisol-logo.png"
+                src={`${import.meta.env.BASE_URL}verdisol-logo.png`}
                 alt="VerdiSol Agro (Pvt) Ltd"
                 className="block w-44 h-auto"
               />
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-xs">
-              Professional agricultural surveying and advisory services. Committed to sustainable and productive farming solutions across Pakistan.
+              Professional agricultural surveying and advisory services. Committed to sustainable and productive farming solutions across Zimbabwe and Africa.
             </p>
             {/* WhatsApp Button */}
             <a

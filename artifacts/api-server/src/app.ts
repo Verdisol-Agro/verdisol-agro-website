@@ -1,4 +1,4 @@
-import express, { type Express } from "express";
+import express, { type Express, type ErrorRequestHandler } from "express";
 import cors from "cors";
 import pinoHttp from "pino-http";
 import router from "./routes";
@@ -26,9 +26,23 @@ app.use(
   }),
 );
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.disable("x-powered-by");
+app.use(express.json({ limit: "32kb", inflate: false }));
+app.use(express.urlencoded({ extended: false, limit: "32kb", inflate: false }));
 
 app.use("/api", router);
+
+const errorHandler: ErrorRequestHandler = (error, req, res, _next) => {
+  const status = typeof error?.status === "number" ? error.status : 500;
+  const safeStatus = [400, 413, 415].includes(status) ? status : 500;
+  req.log.error({ statusCode: safeStatus }, "API request failed");
+  res.status(safeStatus).json({
+    error: safeStatus === 413 ? "The request is too large."
+      : safeStatus === 415 ? "Compressed requests are not supported."
+      : safeStatus === 400 ? "Please send a valid request."
+      : "An unexpected error occurred. Please try again later.",
+  });
+};
+app.use(errorHandler);
 
 export default app;

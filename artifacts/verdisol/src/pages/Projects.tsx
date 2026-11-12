@@ -30,7 +30,7 @@ import investmentAssessmentImage from "@assets/generated_images/agricultural-inv
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" as const } },
 };
 
 const stagger = {
@@ -147,7 +147,7 @@ const PROJECTS: Project[] = [
     location: "Mashonaland Central",
     description:
       "Land preparation and enterprise planning for plantation agriculture with long-term production strategy.",
-    tag: "Agricultural Planning",
+    tag: "Land Use Planning",
     filterTag: "Land Use Planning",
     icon: Map,
   },
