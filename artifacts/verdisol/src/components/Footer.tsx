@@ -124,7 +124,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#D1B766] mt-0.5 flex-shrink-0" />
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=VerdiSol%20Agro%2C%20Borgward%2C%20Msasa%2C%20Harare%2C%20Zimbabwe"
+                  href="https://maps.app.goo.gl/Yq72xmSUB5j2tUvS9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/70 text-sm leading-relaxed hover:text-white hover:underline underline-offset-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D1B766] rounded-sm"

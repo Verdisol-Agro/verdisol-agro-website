@@ -521,10 +521,7 @@ function MapSection() {
             Our Location
           </motion.h2>
           <motion.p variants={fadeUp} className="text-gray-500 text-sm">
-            VerdiSol Agro — Msasa area, Harare, Zimbabwe
-          </motion.p>
-          <motion.p variants={fadeUp} className="mt-2 text-sm text-gray-600">
-            The red pin marks the general area. Contact us for directions to the office.
+            VerdiSol Agro — Msasa, Harare, Zimbabwe
           </motion.p>
         </InViewSection>
 
@@ -536,8 +533,8 @@ function MapSection() {
           className="rounded-2xl overflow-hidden shadow-xl border border-gray-200"
         >
           <iframe
-            title="VerdiSol Agro — general Msasa area marker, not an exact office pin"
-            src="https://maps.google.com/maps?q=-17.834%2C31.108&z=14&output=embed"
+            title="VerdiSol Agro office location"
+            src="https://maps.google.com/maps?q=-17.8433033%2C31.1248107&z=17&output=embed"
             width="100%"
             height="420"
             style={{ border: 0, display: "block" }}
