@@ -32,7 +32,7 @@ import {
   Fence,
 } from "lucide-react";
 import Layout from "@/components/Layout";
-import farmlandHeroImage from "@assets/Golden_Hour_Sustainable_Farmland_Banner_1794305560425.png";
+import HeroSlideshow from "@/components/HeroSlideshow";
 import aboutFarmlandImage from "@assets/image_search/about-farmland.jpg";
 import cropProductionImage from "@assets/image_search/crop-production.jpg";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
@@ -86,10 +86,7 @@ const stagger = {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#123d2c] py-24 sm:py-28">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${farmlandHeroImage})` }}
-      />
+      <HeroSlideshow />
 
       {/* Preserve the golden light while providing contrast behind the copy. */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#092c20]/75 via-[#0c3022]/60 to-[#092c20]/25" />
@@ -157,7 +154,7 @@ function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/60"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-1 text-white/60"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
       >
