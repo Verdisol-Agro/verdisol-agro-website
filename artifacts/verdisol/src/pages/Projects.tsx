@@ -23,7 +23,6 @@ import terrainAssessmentMap from "@assets/Screenshot_2026-11-10_123905_179430787
 import irrigationPlanningImage from "@assets/generated_images/irrigation-development-planning.jpg";
 import boundaryVerificationImage from "@assets/generated_images/boundary-verification-survey.jpg";
 import farmValuationImage from "@assets/generated_images/farm-valuation-assessment.jpg";
-import plantationDevelopmentImage from "@assets/generated_images/plantation-development-plan.jpg";
 import droneMappingImage from "@assets/generated_images/drone-mapping-project.jpg";
 import investmentAssessmentImage from "@assets/generated_images/agricultural-investment-assessment.jpg";
 
@@ -73,7 +72,8 @@ type ProjectCategory =
 
 interface Project {
   id: number;
-  image: string;
+  image?: string;
+  videoEmbed?: string;
   imagePosition?: string;
   title: string;
   location: string;
@@ -142,7 +142,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 6,
-    image: plantationDevelopmentImage,
+    videoEmbed: "https://drive.google.com/file/d/1_laQW0HjreqYColKp5uFOQj2B5baaTFz/preview",
     title: "Plantation Development Plan",
     location: "Mashonaland Central",
     description:
@@ -348,6 +348,17 @@ function ProjectCard({ project }: { project: Project }) {
       className="group rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl overflow-hidden transition-shadow"
     >
       <div className="aspect-[16/10] overflow-hidden relative">
+        {project.videoEmbed ? (
+          <iframe
+            src={project.videoEmbed}
+            title={`${project.title} video`}
+            className="h-full w-full border-0 bg-black"
+            allow="autoplay; fullscreen; encrypted-media"
+            allowFullScreen
+            loading="lazy"
+          />
+        ) : (
+          <>
         <img
           src={project.image}
           alt={project.title}
@@ -364,6 +375,8 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="absolute top-3 right-3 w-9 h-9 rounded-lg bg-[#1F5D3A] flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Icon className="w-4 h-4 text-white" />
         </div>
+          </>
+        )}
       </div>
       <div className="p-6">
         <span className="inline-block px-3 py-1 rounded-full bg-[#1F5D3A]/10 text-[#1F5D3A] text-xs font-semibold tracking-wide mb-3">
