@@ -24,6 +24,7 @@ import Layout from "@/components/Layout";
 import AboutPhotoSlideshow from "@/components/AboutPhotoSlideshow";
 import internationalGreenhousePhoto from "@assets/image_search/modern-greenhouse-international-standards.jpg";
 import produceInspectionPhoto from "@assets/IMG-20261110-WA0052_1794319998457.jpg";
+import greenhouseVisitPhoto from "@assets/international-exposure-additional-photo.jpg";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -332,7 +333,7 @@ function InternationalSection() {
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 order-2 lg:order-1"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 order-2 lg:order-1"
           >
             <figure className="overflow-hidden rounded-2xl bg-white shadow-lg">
               <img
@@ -354,6 +355,17 @@ function InternationalSection() {
               />
               <figcaption className="px-4 py-3 text-sm font-medium text-[#1F5D3A]">
                 Produce quality inspection
+              </figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-2xl bg-white shadow-lg">
+              <img
+                src={greenhouseVisitPhoto}
+                alt="Group learning about crop growing systems inside a modern greenhouse"
+                className="aspect-[3/4] w-full object-cover"
+                loading="lazy"
+              />
+              <figcaption className="px-4 py-3 text-sm font-medium text-[#1F5D3A]">
+                Greenhouse knowledge exchange
               </figcaption>
             </figure>
           </motion.div>
