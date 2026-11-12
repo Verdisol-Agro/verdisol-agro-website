@@ -25,6 +25,7 @@ import AboutPhotoSlideshow from "@/components/AboutPhotoSlideshow";
 import internationalGreenhousePhoto from "@assets/image_search/modern-greenhouse-international-standards.jpg";
 import produceInspectionPhoto from "@assets/IMG-20261110-WA0052_1794319998457.jpg";
 import greenhouseVisitPhoto from "@assets/international-exposure-additional-photo.jpg";
+import internationalMeetingPhoto from "@assets/international-exposure-fourth-photo.jpg";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -333,41 +334,35 @@ function InternationalSection() {
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-rows-2 gap-4 order-2 lg:order-1"
+            className="min-w-0 order-2 lg:order-1"
           >
-            <figure className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg sm:col-span-2">
-              <img
-                src={internationalGreenhousePhoto}
-                alt="Modern greenhouse with organised tomato rows and controlled-environment growing systems"
-                className="h-[280px] sm:h-[260px] lg:h-0 lg:min-h-[200px] lg:flex-1 w-full object-cover"
-                loading="lazy"
-              />
-              <figcaption className="px-4 py-3 text-sm font-medium text-[#1F5D3A]">
-                Controlled-environment growing
-              </figcaption>
-            </figure>
-            <figure className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg">
-              <img
-                src={produceInspectionPhoto}
-                alt="Team examining packaged tomatoes in a produce packing facility"
-                className="aspect-[3/4] sm:aspect-square lg:aspect-auto lg:h-0 lg:min-h-[220px] lg:flex-1 w-full object-cover object-[center_60%]"
-                loading="lazy"
-              />
-              <figcaption className="px-4 py-3 text-sm font-medium text-[#1F5D3A]">
-                Produce quality inspection
-              </figcaption>
-            </figure>
-            <figure className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg">
-              <img
-                src={greenhouseVisitPhoto}
-                alt="Group learning about crop growing systems inside a modern greenhouse"
-                className="aspect-[3/4] sm:aspect-square lg:aspect-auto lg:h-0 lg:min-h-[220px] lg:flex-1 w-full object-cover object-[center_65%]"
-                loading="lazy"
-              />
-              <figcaption className="px-4 py-3 text-sm font-medium text-[#1F5D3A]">
-                Greenhouse knowledge exchange
-              </figcaption>
-            </figure>
+            <AboutPhotoSlideshow
+              label="International Standards and Exposure photos"
+              className="relative min-h-[460px] sm:min-h-[540px] lg:min-h-[560px] lg:h-full overflow-hidden rounded-2xl bg-[#123d2c] shadow-xl"
+              slides={[
+                {
+                  src: internationalGreenhousePhoto,
+                  title: "Controlled-environment growing",
+                  alt: "Modern greenhouse with organised tomato rows",
+                },
+                {
+                  src: produceInspectionPhoto,
+                  title: "Produce quality inspection",
+                  alt: "Team examining packaged tomatoes in a produce packing facility",
+                },
+                {
+                  src: greenhouseVisitPhoto,
+                  title: "Greenhouse knowledge exchange",
+                  alt: "Group learning about crop growing systems inside a modern greenhouse",
+                },
+                {
+                  src: internationalMeetingPhoto,
+                  title: "International knowledge exchange",
+                  alt: "VerdiSol team members meeting with an international colleague around a table",
+                  fit: "contain",
+                },
+              ]}
+            />
           </motion.div>
 
           {/* Text */}

@@ -7,7 +7,14 @@ import cropPhoto from "@assets/image_search/african-farmer-crop-inspection.jpg";
 import farmlandPhoto from "@assets/image_search/aerial-farmland-planning.jpg";
 import soilPhoto from "@assets/image_search/soil-seeds-agricultural-science.jpg";
 
-const slides = [
+interface PhotoSlide {
+  src: string;
+  title: string;
+  alt: string;
+  fit?: "cover" | "contain";
+}
+
+const defaultSlides: PhotoSlide[] = [
   {
     src: dronePhoto,
     title: "Drone Technology",
@@ -35,7 +42,15 @@ const slides = [
   },
 ];
 
-export default function AboutPhotoSlideshow() {
+export default function AboutPhotoSlideshow({
+  slides = defaultSlides,
+  className = "relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#123d2c] shadow-2xl",
+  label = "Precision agriculture expertise photos",
+}: {
+  slides?: PhotoSlide[];
+  className?: string;
+  label?: string;
+} = {}) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount: 0.25 });
   const reduceMotion = useReducedMotion();
@@ -52,7 +67,7 @@ export default function AboutPhotoSlideshow() {
       }
     }, 5000);
     return () => window.clearInterval(timer);
-  }, [isInView, isPlaying, isHovered, hasFocus]);
+  }, [isInView, isPlaying, isHovered, hasFocus, slides.length]);
 
   function selectSlide(index: number) {
     setActiveIndex((index + slides.length) % slides.length);
@@ -67,8 +82,8 @@ export default function AboutPhotoSlideshow() {
       ref={ref}
       role="region"
       aria-roledescription="carousel"
-      aria-label="Precision agriculture expertise photos"
-      className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#123d2c] shadow-2xl"
+      aria-label={label}
+      className={className}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onFocusCapture={() => setHasFocus(true)}
@@ -88,7 +103,7 @@ export default function AboutPhotoSlideshow() {
           src={slide.src}
           alt={index === activeIndex ? slide.alt : ""}
           aria-hidden={index !== activeIndex}
-          className={`absolute inset-0 h-full w-full object-cover ${
+          className={`absolute inset-0 h-full w-full ${slide.fit === "contain" ? "object-contain" : "object-cover"} ${
             reduceMotion ? "" : "transition-opacity duration-700"
           } ${index === activeIndex ? "opacity-100" : "opacity-0"}`}
         />
