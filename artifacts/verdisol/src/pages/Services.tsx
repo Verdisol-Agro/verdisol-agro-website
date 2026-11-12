@@ -27,7 +27,6 @@ import {
 import Layout from "@/components/Layout";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
-import droneSurveyVideo from "@assets/VID-20261110-WA0061_1794316854409.mp4";
 import droneSurveyPhoto from "@assets/IMG-20261110-WA0047_1794316876878.jpg";
 import droneEquipmentPhoto from "@assets/IMG-20261110-WA0055_1794317256769.jpg";
 import droneFieldPhoto from "@assets/IMG-20261110-WA0057_1794317256775.jpg";
@@ -522,8 +521,8 @@ const SERVICES: ServiceDetailProps[] = [
         fit: "cover",
       },
       {
-        type: "video",
-        src: droneSurveyVideo,
+        type: "embed",
+        src: "https://drive.google.com/file/d/1DFBEcY8MfaI3T796lkCb3kE8o696ar1C/preview",
         title: "Drone surveying in action",
         caption: "Play the video to see the surveying work.",
       },
