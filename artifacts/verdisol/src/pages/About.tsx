@@ -26,6 +26,7 @@ import internationalGreenhousePhoto from "@assets/image_search/modern-greenhouse
 import produceInspectionPhoto from "@assets/IMG-20261110-WA0052_1794319998457.jpg";
 import greenhouseVisitPhoto from "@assets/international-exposure-additional-photo.jpg";
 import internationalMeetingPhoto from "@assets/international-exposure-fourth-photo.jpg";
+import internationalGroupPhoto from "@assets/international-exposure-fifth-photo.jpg";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -359,6 +360,12 @@ function InternationalSection() {
                   src: internationalMeetingPhoto,
                   title: "International knowledge exchange",
                   alt: "VerdiSol team members meeting with an international colleague around a table",
+                  fit: "contain",
+                },
+                {
+                  src: internationalGroupPhoto,
+                  title: "International learning visit",
+                  alt: "Group gathered during an international visit in an educational room with bee displays",
                   fit: "contain",
                 },
               ]}
