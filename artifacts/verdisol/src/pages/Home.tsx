@@ -38,7 +38,6 @@ import cropProductionImage from "@assets/image_search/crop-production.jpg";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_123905_1794307874676.png";
 import landUsePlanningMap from "@assets/Screenshot_2026-11-10_111855_1794305199445.png";
-import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Helpers                                                                   */
@@ -810,16 +809,14 @@ function DroneVideoSection() {
         >
           <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#8CC63F]/60 via-white/10 to-[#C7A85A]/50 blur-xl" />
           <div className="relative overflow-hidden rounded-[1.75rem] border border-white/20 bg-black p-2 shadow-2xl shadow-black/40">
-            <video
-              controls
-              playsInline
-              preload="metadata"
-              className="aspect-[9/16] w-full rounded-[1.2rem] bg-black object-contain"
-              aria-label="VerdiSol field operations video"
-            >
-              <source src={fieldVideo} type="video/mp4" />
-              Your browser does not support embedded video.
-            </video>
+            <iframe
+              src="https://drive.google.com/file/d/1fH6dXESdWeLmzCrTHFw0BqCedilw29aq/preview"
+              title="VerdiSol field operations video"
+              className="aspect-[9/16] w-full rounded-[1.2rem] border-0 bg-black"
+              allow="autoplay; fullscreen; encrypted-media"
+              allowFullScreen
+              loading="lazy"
+            />
           </div>
           <div className="absolute -bottom-5 -left-5 rounded-2xl border border-white/15 bg-[#f5f0e8] px-5 py-3 shadow-xl">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1F5D3A]">
