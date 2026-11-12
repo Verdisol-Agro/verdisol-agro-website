@@ -130,7 +130,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 5,
-    video: "/api/media/farm-valuation.mp4",
+    videoEmbed: "https://drive.google.com/file/d/1jadaDEbTGmcMycruA6CcU38FEbTu1Q9m/preview",
     title: "Farm Valuation Assessment",
     location: "Manicaland",
     description:
