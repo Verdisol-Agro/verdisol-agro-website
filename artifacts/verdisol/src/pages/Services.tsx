@@ -35,7 +35,7 @@ import droneFieldPhoto from "@assets/IMG-20261110-WA0057_1794317256775.jpg";
 import aerialMappingPhoto from "@assets/IMG-20261110-WA0020_1794300453163.jpg";
 import landUseMap from "@assets/Screenshot_2026-11-10_111855_1794305199445.png";
 import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1794301414063.jpeg";
-import boundaryPeggingMap from "@assets/Screenshot_2026-11-10_112612_1794302867416.png";
+import boundaryPeggingMap from "@assets/Screenshot_2026-11-12_083758_1794465701455.png";
 import consultancyPhoto from "@assets/IMG-20261109-WA0016_1794303441655.jpg";
 import soilAnalysisVideo from "@assets/VID-20261110-WA0044_1794314697264.mp4";
 import irrigationPlanningPhoto from "@assets/generated_images/irrigation-planning-drip-system.jpg";
