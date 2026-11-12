@@ -13,6 +13,39 @@ tags:
   - name: contact
     description: Contact enquiries
 paths:
+  /media/farm-valuation.mp4:
+    get:
+      operationId: getFarmValuationVideo
+      summary: Stream the public Farm Valuation Assessment video
+      parameters:
+        - in: header
+          name: Range
+          schema:
+            type: string
+          description: A single byte range for video seeking
+      responses:
+        "200":
+          description: Complete video
+          content:
+            video/mp4:
+              schema:
+                type: string
+                format: binary
+        "206":
+          description: Requested video byte range
+          content:
+            video/mp4:
+              schema:
+                type: string
+                format: binary
+        "416":
+          description: Invalid or unsatisfiable byte range
+        "503":
+          description: Video storage temporarily unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
   /media/soil-analysis.mp4:
     get:
       operationId: getSoilAnalysisVideo

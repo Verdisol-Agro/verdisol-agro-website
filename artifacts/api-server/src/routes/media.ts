@@ -1,11 +1,12 @@
 import { Router, type IRouter } from "express";
-import { soilAnalysisVideoFile } from "../lib/public-video";
+import { publicVideoFile } from "../lib/public-video";
 
 const router: IRouter = Router();
 
-router.get("/media/soil-analysis.mp4", async (req, res): Promise<void> => {
+router.get(["/media/soil-analysis.mp4", "/media/farm-valuation.mp4"], async (req, res): Promise<void> => {
   try {
-    const file = soilAnalysisVideoFile();
+    const video = req.path === "/media/farm-valuation.mp4" ? "farm-valuation" : "soil-analysis";
+    const file = publicVideoFile(video);
     const [metadata] = await file.getMetadata();
     const size = Number(metadata.size);
     if (!Number.isSafeInteger(size) || size < 1) throw new Error("Invalid video");

@@ -9,6 +9,16 @@ import * as zod from 'zod';
 
 
 /**
+ * @summary Stream the public Farm Valuation Assessment video
+ */
+export const GetFarmValuationVideoHeader = zod.object({
+  "Range": zod.string().optional().describe('A single byte range for video seeking')
+})
+
+export const GetFarmValuationVideoResponse = zod.unknown()
+
+
+/**
  * @summary Stream the public Soil Analysis video
  */
 export const GetSoilAnalysisVideoHeader = zod.object({

@@ -17,10 +17,10 @@ const storage = new Storage({
   projectId: "",
 });
 
-export function soilAnalysisVideoFile() {
+export function publicVideoFile(video: "soil-analysis" | "farm-valuation") {
   const prefix = process.env.PUBLIC_OBJECT_SEARCH_PATHS?.split(",")[0]?.trim();
   if (!prefix) throw new Error("Public media storage is not configured");
   const [bucket, ...parts] = prefix.replace(/^\/+/, "").split("/");
   if (!bucket) throw new Error("Invalid public media storage configuration");
-  return storage.bucket(bucket).file([...parts, "soil-analysis-v1.mp4"].join("/"));
+  return storage.bucket(bucket).file([...parts, `${video}-v1.mp4`].join("/"));
 }

@@ -53,6 +53,80 @@ const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKe
   return result;
 };
 
+export const getGetFarmValuationVideoUrl = () => {
+
+
+
+
+  return `/api/media/farm-valuation.mp4`
+}
+
+/**
+ * @summary Stream the public Farm Valuation Assessment video
+ */
+export const getFarmValuationVideo = async ( options?: Parameters<typeof customFetch>[1]): Promise<Blob> => {
+
+  return customFetch<Blob>(getGetFarmValuationVideoUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+
+
+
+export const getGetFarmValuationVideoQueryKey = () => {
+    return [
+    `/api/media/farm-valuation.mp4`
+    ] as const;
+    }
+
+
+export const getGetFarmValuationVideoQueryOptions = <TData = Awaited<ReturnType<typeof getFarmValuationVideo>>, TError = ErrorType<void | ErrorResponse>>( options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getFarmValuationVideo>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
+) => {
+
+const {query: queryOptions, request: requestOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getGetFarmValuationVideoQueryKey();
+
+
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getFarmValuationVideo>>> = ({ signal }) => getFarmValuationVideo({ signal, ...requestOptions });
+
+
+
+
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getFarmValuationVideo>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type GetFarmValuationVideoQueryResult = NonNullable<Awaited<ReturnType<typeof getFarmValuationVideo>>>
+export type GetFarmValuationVideoQueryError = ErrorType<void | ErrorResponse>
+
+
+/** @summary Stream the public Farm Valuation Assessment video */
+export function useGetFarmValuationVideo<TData = Awaited<ReturnType<typeof getFarmValuationVideo>>, TError = ErrorType<void | ErrorResponse>>(
+  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getFarmValuationVideo>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
+
+ ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+
+  const queryOptions = getGetFarmValuationVideoQueryOptions(options)
+
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  return withQueryKey(query, queryOptions.queryKey);
+}
+
+
+
+
+
+
+
 export const getGetSoilAnalysisVideoUrl = () => {
 
 

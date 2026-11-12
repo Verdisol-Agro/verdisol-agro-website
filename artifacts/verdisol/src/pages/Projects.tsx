@@ -22,7 +22,6 @@ import commercialLandUseMapImage from "@assets/Screenshot_2026-02-23_143731_1794
 import terrainAssessmentMap from "@assets/Screenshot_2026-11-10_123905_1794307874676.png";
 import irrigationPlanningImage from "@assets/generated_images/irrigation-development-planning.jpg";
 import boundaryVerificationImage from "@assets/generated_images/boundary-verification-survey.jpg";
-import farmValuationImage from "@assets/generated_images/farm-valuation-assessment.jpg";
 import droneMappingImage from "@assets/generated_images/drone-mapping-project.jpg";
 import investmentAssessmentImage from "@assets/generated_images/agricultural-investment-assessment.jpg";
 
@@ -73,6 +72,7 @@ type ProjectCategory =
 interface Project {
   id: number;
   image?: string;
+  video?: string;
   videoEmbed?: string;
   imagePosition?: string;
   title: string;
@@ -130,8 +130,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 5,
-    image: farmValuationImage,
-    imagePosition: "center 30%",
+    video: "/api/media/farm-valuation.mp4",
     title: "Farm Valuation Assessment",
     location: "Manicaland",
     description:
@@ -339,16 +338,28 @@ function ProjectCard({ project }: { project: Project }) {
   const Icon = project.icon;
   return (
     <motion.div
+      id={`project-${project.id}`}
       layout
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.94 }}
       transition={{ duration: 0.3 }}
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
-      className="group rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl overflow-hidden transition-shadow"
+      className="group scroll-mt-32 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl overflow-hidden transition-shadow"
     >
       <div className="aspect-[16/10] overflow-hidden relative">
-        {project.videoEmbed ? (
+        {project.video ? (
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            className="h-full w-full object-contain bg-black"
+            aria-label={`${project.title} video`}
+          >
+            <source src={project.video} type="video/mp4" />
+            Your browser does not support embedded video.
+          </video>
+        ) : project.videoEmbed ? (
           <iframe
             src={project.videoEmbed}
             title={`${project.title} video`}

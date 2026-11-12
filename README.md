@@ -70,9 +70,10 @@ availability and playback. Imported local images are under `attached_assets/`;
 include the required assets when committing. `pnpm run check:assets` detects missing
 or ignored website images.
 
-The Soil Analysis video is served directly from Replit App Storage through
-`/api/media/soil-analysis.mp4`, with byte-range support for playback and seeking.
-It is an H.264/AAC web-optimized copy of the supplied Drive video, not a Drive iframe.
+The Soil Analysis and Farm Valuation Assessment videos are served directly from
+Replit App Storage through `/api/media/soil-analysis.mp4` and
+`/api/media/farm-valuation.mp4`, with byte-range support for playback and seeking.
+They are H.264/AAC web-optimized copies of the supplied Drive videos, not Drive iframes.
 App Storage authorization and the video object do not transfer with a GitHub clone;
 external hosting needs the video migrated to suitable storage and this route adapted.
 
