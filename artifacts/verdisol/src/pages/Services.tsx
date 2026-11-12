@@ -27,7 +27,6 @@ import {
 import Layout from "@/components/Layout";
 import siteAnalysisImage from "@assets/Screenshot_2026-11-10_090239_1794296620040.png";
 import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_1794296620040.png";
-import fieldVideo from "@assets/0_VID-20261109-WA0022_1794297093106.mp4";
 import droneSurveyVideo from "@assets/VID-20261110-WA0061_1794316854409.mp4";
 import droneSurveyPhoto from "@assets/IMG-20261110-WA0047_1794316876878.jpg";
 import droneEquipmentPhoto from "@assets/IMG-20261110-WA0055_1794317256769.jpg";
@@ -166,7 +165,7 @@ interface ServiceDetailProps {
 }
 
 interface ServiceMedia {
-  type: "image" | "video";
+  type: "image" | "video" | "embed";
   src: string;
   title: string;
   caption: string;
@@ -197,7 +196,7 @@ function ServiceDetail({
   const activeMedia = media?.[activeMediaIndex];
 
   useEffect(() => {
-    if (!inView || !media || media.length < 2 || activeMedia?.type === "video") return;
+    if (!inView || !media || media.length < 2 || activeMedia?.type !== "image") return;
 
     const timeout = window.setTimeout(() => {
       setActiveMediaIndex((current) => (current + 1) % media.length);
@@ -313,7 +312,17 @@ function ServiceDetail({
       ) : media && activeMedia ? (
         <>
           <div className={`relative ${portraitImage ? "aspect-[9/16]" : "aspect-[4/3]"} overflow-hidden bg-white`}>
-            {activeMedia.type === "video" ? (
+            {activeMedia.type === "embed" ? (
+              <iframe
+                key={activeMedia.src}
+                src={activeMedia.src}
+                title={activeMedia.title}
+                className="h-full w-full border-0 bg-black"
+                allow="autoplay; fullscreen; encrypted-media"
+                allowFullScreen
+                loading="lazy"
+              />
+            ) : activeMedia.type === "video" ? (
               <video
                 key={activeMedia.src}
                 controls
@@ -344,7 +353,7 @@ function ServiceDetail({
               />
             )}
             <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/25 bg-[#123d2c]/85 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg backdrop-blur">
-              {activeMedia.type === "video" ? "Field video" : portraitImage ? "Field photo" : "Survey output"}
+              {activeMedia.type !== "image" ? "Field video" : portraitImage ? "Field photo" : "Survey output"}
             </div>
           </div>
 
@@ -464,11 +473,10 @@ const SERVICES: ServiceDetailProps[] = [
         caption: "A detailed visual of slope conditions across the site.",
       },
       {
-        type: "video",
-        src: fieldVideo,
+        type: "embed",
+        src: "https://drive.google.com/file/d/1DKRXUJuDqODjSbfp6l0TVWURyt2LjNPE/preview",
         title: "VerdiSol field operations",
         caption: "View the field video with player controls.",
-        poster: siteAnalysisImage,
       },
     ],
     flipped: false,
