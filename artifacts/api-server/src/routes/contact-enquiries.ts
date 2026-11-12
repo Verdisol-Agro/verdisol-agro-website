@@ -1,5 +1,7 @@
 import { Router, type IRouter } from "express";
 import nodemailer from "nodemailer";
+import { ReplitConnectors } from "@replit/connectors-sdk";
+import { rateLimit } from "express-rate-limit";
 import {
   SubmitContactEnquiryBody,
   SubmitContactEnquiryResponse,
@@ -8,9 +10,27 @@ import {
 
 const router: IRouter = Router();
 const errorResponse = (error: string): ErrorResponse => ({ error });
+const recipient = "verdisolagro@gmail.com";
+const connectors = new ReplitConnectors();
+// A mailbox-wide cap also protects the account behind shared preview proxies.
+const enquiryLimit = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 30,
+  keyGenerator: () => "contact-mailbox",
+  standardHeaders: "draft-8",
+  legacyHeaders: false,
+  message: errorResponse(
+    "We are receiving too many enquiries right now. Please try again later or email verdisolagro@gmail.com directly.",
+  ),
+});
 
-router.post("/contact-enquiries", async (req, res): Promise<void> => {
-  const parsed = SubmitContactEnquiryBody.safeParse(req.body);
+router.post("/contact-enquiries", enquiryLimit, async (req, res): Promise<void> => {
+  const input = req.body && typeof req.body === "object"
+    ? Object.fromEntries(Object.entries(req.body).map(([key, value]) => [
+        key, typeof value === "string" ? value.trim() : value,
+      ]))
+    : req.body;
+  const parsed = SubmitContactEnquiryBody.safeParse(input);
   if (!parsed.success) {
     req.log.warn(
       { issueCount: parsed.error.issues.length },
@@ -22,55 +42,21 @@ router.post("/contact-enquiries", async (req, res): Promise<void> => {
     return;
   }
 
-  const smtpHost = process.env.SMTP_HOST?.trim();
-  const smtpPort = Number(process.env.SMTP_PORT);
-  const smtpUser = process.env.SMTP_USER?.trim();
-  const smtpPassword = process.env.SMTP_PASSWORD;
-  const fromEmail = process.env.SMTP_FROM_EMAIL?.trim();
-  const toEmail = process.env.CONTACT_TO_EMAIL?.trim();
-
-  if (
-    !smtpHost ||
-    !Number.isInteger(smtpPort) ||
-    smtpPort < 1 ||
-    smtpPort > 65535 ||
-    !smtpUser ||
-    !smtpPassword ||
-    !fromEmail ||
-    !toEmail
-  ) {
-    req.log.warn("Contact email delivery is not configured");
-    res.status(503).json(
-      errorResponse(
-        "Email delivery is not configured yet. Please contact us by phone or WhatsApp.",
-      ),
-    );
-    return;
-  }
-
-  const transporter = nodemailer.createTransport({
-    host: smtpHost,
-    port: smtpPort,
-    secure: smtpPort === 465,
-    requireTLS: smtpPort !== 465,
-    auth: {
-      user: smtpUser,
-      pass: smtpPassword,
-    },
-    connectionTimeout: 10_000,
-    greetingTimeout: 10_000,
-    socketTimeout: 15_000,
-  });
-
   const { fullName, phone, email, location, service, message } = parsed.data;
 
   try {
+    // Assemble MIME safely; credentials and actual delivery stay in the connector.
+    const transporter = nodemailer.createTransport({
+      streamTransport: true,
+      buffer: true,
+      newline: "windows",
+    });
     const result = await transporter.sendMail({
       from: {
         name: "VerdiSol Agro Website",
-        address: fromEmail,
+        address: recipient,
       },
-      to: toEmail,
+      to: recipient,
       replyTo: email || undefined,
       subject: `Website enquiry: ${service}`,
       text: [
@@ -87,18 +73,20 @@ router.post("/contact-enquiries", async (req, res): Promise<void> => {
       ].join("\n"),
     });
 
-    if (result.rejected.length > 0) {
-      req.log.error(
-        { rejectedCount: result.rejected.length },
-        "SMTP server rejected the contact enquiry recipient",
-      );
-      res.status(502).json(
-        errorResponse(
-          "Email could not be delivered. Please contact us by phone or WhatsApp.",
-        ),
-      );
-      return;
+    const response = await connectors.proxy(
+      "google-mail", "/gmail/v1/users/me/messages/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ raw: result.message.toString("base64url") }),
+      },
+    );
+    if (!response.ok) {
+      req.log.error({ providerStatus: response.status }, "Gmail rejected enquiry delivery");
+      throw new Error("Email provider rejected the request");
     }
+    const sent = await response.json() as { id?: string };
+    if (!sent.id) throw new Error("Email provider did not confirm delivery");
+    req.log.info({ messageId: sent.id }, "Gmail accepted the website enquiry");
 
     res.status(200).json(
       SubmitContactEnquiryResponse.parse({
@@ -110,7 +98,7 @@ router.post("/contact-enquiries", async (req, res): Promise<void> => {
       error && typeof error === "object" && "code" in error
         ? String(error.code)
         : "unknown";
-    req.log.error({ smtpErrorCode: code }, "Contact enquiry email delivery failed");
+    req.log.error({ deliveryErrorCode: code }, "Contact enquiry email delivery failed");
     res.status(502).json(
       errorResponse(
         "Email could not be sent. Please try again or contact us by phone or WhatsApp.",

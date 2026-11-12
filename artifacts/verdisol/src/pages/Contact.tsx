@@ -157,6 +157,7 @@ function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (loading) return;
     setSubmitError("");
 
     const service = form.service;
@@ -174,9 +175,13 @@ function ContactForm() {
       };
       await submitContactEnquiry(enquiry);
       setSubmitted(true);
-    } catch {
+    } catch (error) {
+      const status = error && typeof error === "object" && "status" in error
+        ? error.status : undefined;
       setSubmitError(
-        "Your enquiry wasn't sent. Please try again or contact us by phone or WhatsApp.",
+        status === 429
+          ? "We are receiving too many enquiries right now. Please try again later or email verdisolagro@gmail.com directly."
+          : "We couldn't confirm that your enquiry was sent. Your details are still here. Please try again or email verdisolagro@gmail.com directly.",
       );
     } finally {
       setLoading(false);
@@ -226,11 +231,13 @@ function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="enquiry-name" className="block text-sm font-medium text-gray-700 mb-1.5">
             Full Name <span className="text-red-500">*</span>
           </label>
           <input
+            id="enquiry-name"
             name="fullName"
+            maxLength={120}
             type="text"
             required
             value={form.fullName}
@@ -240,11 +247,14 @@ function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="enquiry-phone" className="block text-sm font-medium text-gray-700 mb-1.5">
             Phone Number <span className="text-red-500">*</span>
           </label>
           <input
+            id="enquiry-phone"
             name="phone"
+            minLength={5}
+            maxLength={40}
             type="tel"
             required
             value={form.phone}
@@ -256,11 +266,13 @@ function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="enquiry-email" className="block text-sm font-medium text-gray-700 mb-1.5">
           Email Address
         </label>
         <input
+          id="enquiry-email"
           name="email"
+          maxLength={254}
           type="email"
           value={form.email}
           onChange={handleChange}
@@ -270,11 +282,13 @@ function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="enquiry-location" className="block text-sm font-medium text-gray-700 mb-1.5">
           Farm / Project Location <span className="text-red-500">*</span>
         </label>
         <input
+          id="enquiry-location"
           name="location"
+          maxLength={200}
           type="text"
           required
           value={form.location}
@@ -285,10 +299,11 @@ function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="enquiry-service" className="block text-sm font-medium text-gray-700 mb-1.5">
           Service Required <span className="text-red-500">*</span>
         </label>
         <select
+          id="enquiry-service"
           name="service"
           required
           value={form.service}
@@ -305,11 +320,13 @@ function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="enquiry-message" className="block text-sm font-medium text-gray-700 mb-1.5">
           Message / Project Details <span className="text-red-500">*</span>
         </label>
         <textarea
+          id="enquiry-message"
           name="message"
+          maxLength={5000}
           required
           rows={5}
           value={form.message}
@@ -406,7 +423,7 @@ function ContactDetails() {
         {
           icon: Mail,
           label: "Email",
-          value: "www.verdisolagro@.com",
+          value: "verdisolagro@gmail.com",
           sub: null,
         },
         {
@@ -425,7 +442,11 @@ function ContactDetails() {
               {label}
             </div>
             <div className="text-gray-900 font-semibold text-sm whitespace-pre-line">
-              {value}
+              {label === "Email" ? (
+                <a href="mailto:verdisolagro@gmail.com" className="hover:underline">
+                  {value}
+                </a>
+              ) : value}
             </div>
             {sub && <div className="text-gray-400 text-xs mt-0.5">{sub}</div>}
           </div>
