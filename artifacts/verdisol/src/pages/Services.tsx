@@ -30,7 +30,6 @@ import slopeAnalysisImage from "@assets/Screenshot_2026-11-10_090326_17942966200
 import droneSurveyPhoto from "@assets/IMG-20261110-WA0047_1794316876878.jpg";
 import droneEquipmentPhoto from "@assets/IMG-20261110-WA0055_1794317256769.jpg";
 import droneFieldPhoto from "@assets/IMG-20261110-WA0057_1794317256775.jpg";
-import aerialMappingPhoto from "@assets/IMG-20261110-WA0020_1794300453163.jpg";
 import landUseMap from "@assets/Screenshot_2026-11-10_111855_1794305199445.png";
 import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1794301414063.jpeg";
 import additionalFarmAssessmentPhoto from "@assets/farm-assessment-additional-photo.jpg";
@@ -550,8 +549,7 @@ const SERVICES: ServiceDetailProps[] = [
       "Topographic surveys for development planning",
       "Map deliverables in multiple GIS and PDF formats",
     ],
-    image: aerialMappingPhoto,
-    portraitImage: true,
+    videoEmbed: "https://drive.google.com/file/d/1DFBEcY8MfaI3T796lkCb3kE8o696ar1C/preview",
     flipped: false,
   },
   {
