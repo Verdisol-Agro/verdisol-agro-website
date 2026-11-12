@@ -37,7 +37,6 @@ import landUseMap from "@assets/Screenshot_2026-11-10_111855_1794305199445.png";
 import farmAssessmentPhoto from "@assets/WhatsApp_Image_2026-11-09_at_16.03.04_1794301414063.jpeg";
 import boundaryPeggingMap from "@assets/Screenshot_2026-11-12_083758_1794465701455.png";
 import consultancyPhoto from "@assets/IMG-20261109-WA0016_1794303441655.jpg";
-import soilAnalysisVideo from "@assets/VID-20261110-WA0044_1794314697264.mp4";
 import irrigationPlanningPhoto from "@assets/generated_images/irrigation-planning-drip-system.jpg";
 
 /* ─── Animation helpers ─────────────────────────────────────────────────── */
@@ -158,6 +157,7 @@ interface ServiceDetailProps {
   bullets: string[];
   image?: string;
   video?: string;
+  videoEmbed?: string;
   imageFit?: "cover" | "contain";
   imagePosition?: string;
   portraitImage?: boolean;
@@ -184,6 +184,7 @@ function ServiceDetail({
   bullets,
   image,
   video,
+  videoEmbed,
   imageFit = "cover",
   imagePosition = "center",
   portraitImage = false,
@@ -278,7 +279,7 @@ function ServiceDetail({
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.65, ease: "easeOut" }}
       className={`overflow-hidden rounded-2xl shadow-xl ${
-        video
+        video || videoEmbed
           ? "aspect-[9/16] w-full max-w-[360px] mx-auto bg-black"
           : media
           ? `border border-[#1F5D3A]/10 bg-[#123d2c] ring-1 ring-white/60 ${portraitImage ? "w-full max-w-[360px] mx-auto" : ""}`
@@ -289,7 +290,16 @@ function ServiceDetail({
               : "aspect-[4/3]"
       }`}
     >
-      {video ? (
+      {videoEmbed ? (
+        <iframe
+          src={videoEmbed}
+          title={`${title} field video`}
+          className="h-full w-full border-0"
+          allow="autoplay; fullscreen; encrypted-media"
+          allowFullScreen
+          loading="lazy"
+        />
+      ) : video ? (
         <video
           controls
           playsInline
@@ -624,7 +634,7 @@ const SERVICES: ServiceDetailProps[] = [
       "Field zoning and soil variability mapping",
       "Clear reports to support crop and investment decisions",
     ],
-    video: soilAnalysisVideo,
+    videoEmbed: "https://drive.google.com/file/d/1VheozogNZdhzIEPmqNtq93JQ0BkAzq_0/preview",
     flipped: true,
   },
   {
