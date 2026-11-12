@@ -10,7 +10,7 @@
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck",
     "check:assets": "node scripts/check-website-assets.mjs",
-    "test": "pnpm --filter @workspace/api-server run test",
+    "test": "pnpm --filter @workspace/api-server run test && pnpm --filter @workspace/verdisol run test",
     "verify": "pnpm run typecheck && pnpm run check:assets && pnpm run test && pnpm --filter @workspace/api-server run build && pnpm --filter @workspace/verdisol run build"
   },
   "private": true,

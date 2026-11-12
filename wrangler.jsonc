@@ -1,0 +1,9 @@
+{
+  "name": "verdisol-agro-website",
+  "pages_build_output_dir": "./artifacts/verdisol/dist/public",
+  "compatibility_date": "2026-11-12",
+  "services": [{ "binding": "ENQUIRY_API", "service": "verdisol-enquiries" }],
+  "env": {
+    "preview": { "services": [] }
+  }
+}

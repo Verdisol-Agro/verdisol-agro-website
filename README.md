@@ -59,10 +59,16 @@ The website sends enquiries to **verdisolagro@gmail.com** through Replit's manag
 Gmail connector. The sender is the connected VerdiSol Gmail account. The visitor's
 email, when supplied, is used as Reply-To.
 
-**Gmail authorization is not stored in GitHub and does not move with a clone.**
+For Cloudflare Pages, use the independent direct-Gmail Worker and Pages Function
+included in this repository. Follow [CLOUDFLARE_SETUP.md](CLOUDFLARE_SETUP.md) to
+authorize Google OAuth, deploy the Worker and bind it to Pages. Pushing source
+code alone does not finish that external setup.
+
+**Replit Gmail authorization is not stored in GitHub and does not move with a clone.**
 The managed connector must remain connected in the Replit runtime. Hosting outside
 that runtime needs a separately configured server-side email provider/authentication
-adapter; that external setup is not included. Never put Gmail tokens, passwords or
+adapter; the Cloudflare adapter is included but requires independent authorization.
+Never put Gmail tokens, passwords or
 other credentials into source code or GitHub.
 
 Google Drive media must remain publicly viewable by link. Google controls video
@@ -70,12 +76,10 @@ availability and playback. Imported local images are under `attached_assets/`;
 include the required assets when committing. `pnpm run check:assets` detects missing
 or ignored website images.
 
-The Soil Analysis and Farm Valuation Assessment videos are served directly from
-Replit App Storage through `/api/media/soil-analysis.mp4` and
-`/api/media/farm-valuation.mp4`, with byte-range support for playback and seeking.
-They are H.264/AAC web-optimized copies of the supplied Drive videos, not Drive iframes.
-App Storage authorization and the video object do not transfer with a GitHub clone;
-external hosting needs the video migrated to suitable storage and this route adapted.
+The Soil Analysis and Farm Valuation Assessment cards use the requested Google
+Drive players directly. Legacy native-video endpoints remain in the Replit API
+but are not called by the current frontend. Their App Storage authorization does
+not transfer to external hosting.
 
 The enquiry endpoint validates and trims input, uses a fixed recipient, reports
 provider failures and caps submissions at 30 per 15 minutes per server instance.

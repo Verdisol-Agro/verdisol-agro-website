@@ -1,10 +1,8 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
-import {
-  submitContactEnquiry,
-  type ContactEnquiryInput,
-} from "@workspace/api-client-react";
+import { type ContactEnquiryInput } from "@workspace/api-client-react";
+import { sendEnquiry } from "@/lib/enquiries";
 import {
   MapPin,
   Phone,
@@ -145,6 +143,7 @@ function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const submission = useRef<{ payload: string; id: string } | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -173,7 +172,11 @@ function ContactForm() {
         service,
         email: form.email.trim() || undefined,
       };
-      await submitContactEnquiry(enquiry);
+      const payload = JSON.stringify(enquiry);
+      if (submission.current?.payload !== payload) {
+        submission.current = { payload, id: crypto.randomUUID() };
+      }
+      await sendEnquiry(enquiry, submission.current.id);
       setSubmitted(true);
     } catch (error) {
       const status = error && typeof error === "object" && "status" in error
@@ -181,7 +184,9 @@ function ContactForm() {
       setSubmitError(
         status === 429
           ? "We are receiving too many enquiries right now. Please try again later or email verdisolagro@gmail.com directly."
-          : "We couldn't confirm that your enquiry was sent. Your details are still here. Please try again or email verdisolagro@gmail.com directly.",
+          : status === 409
+            ? "We couldn't safely retry your enquiry. Your details are still here. Please email verdisolagro@gmail.com directly to avoid a duplicate."
+            : "We couldn't confirm that your enquiry was sent. Your details are still here. Please try again or email verdisolagro@gmail.com directly.",
       );
     } finally {
       setLoading(false);
@@ -200,11 +205,12 @@ function ContactForm() {
         </div>
         <h3 className="text-2xl font-bold text-gray-900 mb-3">Request Sent!</h3>
         <p className="text-gray-500 max-w-sm">
-          Your enquiry was emailed to VerdiSol Agro. We typically respond within
-          24 hours.
+          Your enquiry was accepted for email delivery to VerdiSol Agro. We
+          typically respond within 24 hours.
         </p>
         <button
           onClick={() => {
+            submission.current = null;
             setSubmitted(false);
             setSubmitError("");
             setForm({

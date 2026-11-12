@@ -1,0 +1,20 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "verdisol-enquiries",
+  "main": "worker.ts",
+  "compatibility_date": "2026-11-12",
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "ALLOWED_ORIGIN": "https://verdisol-agro-website.pages.dev"
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "ENQUIRY_GUARD", "class_name": "EnquiryGuard" }]
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["EnquiryGuard"] }
+  ]
+}

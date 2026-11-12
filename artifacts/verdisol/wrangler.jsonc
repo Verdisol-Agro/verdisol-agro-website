@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "verdisol-agro-website",
+  "pages_build_output_dir": "./dist/public",
+  "compatibility_date": "2026-11-12",
+  "services": [{ "binding": "ENQUIRY_API", "service": "verdisol-enquiries" }],
+  "env": {
+    "preview": { "services": [] }
+  }
+}

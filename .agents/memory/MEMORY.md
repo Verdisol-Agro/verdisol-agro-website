@@ -3,3 +3,4 @@
 - [International Standards photos](international-photos.md) — use a large slideshow aligned with the adjacent text box.
 - [GitHub media inclusion](github-media-inclusion.md) — workspace-wide ignore rules can hide newly uploaded website images from GitHub copies.
 - [Video playback verification](video-playback-verification.md) — a public Google Drive preview response does not prove its embedded video can play.
+- [Cloudflare enquiries](cloudflare-enquiries.md) — the frontend is on Cloudflare Pages; the user chose direct Gmail rather than a domain email provider.

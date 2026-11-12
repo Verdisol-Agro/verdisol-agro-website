@@ -38,6 +38,10 @@ export const HealthCheckResponse = zod.object({
 
 
 /**
+ * Cloudflare hosting uses the direct Gmail Worker adapter. Send an
+ * Idempotency-Key header containing a stable UUID v4 for each enquiry;
+ * reuse it when retrying identical details. The existing Replit adapter
+ * accepts the same header but retains its original delivery behavior.
  * @summary Send a contact enquiry to VerdiSol Agro
  */
 export const submitContactEnquiryBodyFullNameMax = 120;

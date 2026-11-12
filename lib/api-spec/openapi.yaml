@@ -97,6 +97,11 @@ paths:
       operationId: submitContactEnquiry
       tags: [contact]
       summary: Send a contact enquiry to VerdiSol Agro
+      description: |
+        Cloudflare hosting uses the direct Gmail Worker adapter. Send an
+        Idempotency-Key header containing a stable UUID v4 for each enquiry;
+        reuse it when retrying identical details. The existing Replit adapter
+        accepts the same header but retains its original delivery behavior.
       requestBody:
         required: true
         content:
@@ -112,6 +117,36 @@ paths:
                 $ref: "#/components/schemas/ContactEnquiryResponse"
         "400":
           description: Invalid enquiry details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Website origin is not allowed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "405":
+          description: HTTP method is not allowed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "409":
+          description: Duplicate submission is pending, uncertain or conflicts with different details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "413":
+          description: Request exceeds the allowed body size
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "415":
+          description: Request content type or encoding is unsupported
           content:
             application/json:
               schema:

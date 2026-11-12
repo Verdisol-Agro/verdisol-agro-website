@@ -24,3 +24,4 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm run verify
+      - run: pnpm --filter @workspace/verdisol run cf:check

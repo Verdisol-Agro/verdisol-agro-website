@@ -288,6 +288,10 @@ export const getSubmitContactEnquiryUrl = () => {
 }
 
 /**
+ * Cloudflare hosting uses the direct Gmail Worker adapter. Send an
+ * Idempotency-Key header containing a stable UUID v4 for each enquiry;
+ * reuse it when retrying identical details. The existing Replit adapter
+ * accepts the same header but retains its original delivery behavior.
  * @summary Send a contact enquiry to VerdiSol Agro
  */
 export const submitContactEnquiry = async (contactEnquiryInput: ContactEnquiryInput, options?: Parameters<typeof customFetch>[1]): Promise<ContactEnquiryResponse> => {
@@ -353,7 +357,13 @@ const {mutation: mutationOptions, request: requestOptions} = options ?
     export type SubmitContactEnquiryMutationError = ErrorType<ErrorResponse>
     export type SubmitContactEnquiryMutationVariables = {data: BodyType<ContactEnquiryInput>}
 
-    /** @summary Send a contact enquiry to VerdiSol Agro */
+    /**
+ * Cloudflare hosting uses the direct Gmail Worker adapter. Send an
+ * Idempotency-Key header containing a stable UUID v4 for each enquiry;
+ * reuse it when retrying identical details. The existing Replit adapter
+ * accepts the same header but retains its original delivery behavior.
+ * @summary Send a contact enquiry to VerdiSol Agro
+ */
 export const useSubmitContactEnquiry = <TError = ErrorType<ErrorResponse>,
     TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof submitContactEnquiry>>, TError,SubmitContactEnquiryMutationVariables, TContext>, request?: SecondParameter<typeof customFetch>}
  ): UseMutationResult<
