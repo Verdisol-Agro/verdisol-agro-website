@@ -810,7 +810,7 @@ function DroneVideoSection() {
           <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#8CC63F]/60 via-white/10 to-[#C7A85A]/50 blur-xl" />
           <div className="relative overflow-hidden rounded-[1.75rem] border border-white/20 bg-black p-2 shadow-2xl shadow-black/40">
             <iframe
-              src="https://drive.google.com/file/d/1fH6dXESdWeLmzCrTHFw0BqCedilw29aq/preview"
+              src="https://drive.google.com/file/d/1JsXY038B3CSDAb9a0Xojyo-lP1XBLJe9/preview"
               title="VerdiSol field operations video"
               className="aspect-[9/16] w-full rounded-[1.2rem] border-0 bg-black"
               allow="autoplay; fullscreen; encrypted-media"
