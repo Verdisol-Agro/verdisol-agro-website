@@ -115,7 +115,7 @@ function Hero() {
 
           <p className="flex items-center justify-center gap-3 text-xl sm:text-2xl font-semibold text-[#F1D78C] tracking-wide mb-5 drop-shadow-md">
             <span aria-hidden="true" className="h-px w-8 bg-[#F1D78C]/70" />
-            Redefining Farming
+            Redifining Farming
             <span aria-hidden="true" className="h-px w-8 bg-[#F1D78C]/70" />
           </p>
 
@@ -793,7 +793,7 @@ function DroneVideoSection() {
             ))}
           </div>
           <p className="mt-10 text-sm font-semibold tracking-[0.2em] text-[#8CC63F]">
-            REDEFINING FARMING
+            REDIFINING FARMING
           </p>
         </motion.div>
 
@@ -811,7 +811,6 @@ function DroneVideoSection() {
               title="VerdiSol field operations video"
               className="aspect-[9/16] w-full rounded-[1.2rem] border-0 bg-black"
               allow="autoplay; fullscreen; encrypted-media"
-              allowFullScreen
               loading="lazy"
             />
           </div>

@@ -365,7 +365,6 @@ function ProjectCard({ project }: { project: Project }) {
             title={`${project.title} video`}
             className="h-full w-full border-0 bg-black"
             allow="autoplay; fullscreen; encrypted-media"
-            allowFullScreen
             loading="lazy"
           />
         ) : (

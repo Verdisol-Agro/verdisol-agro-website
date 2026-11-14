@@ -297,7 +297,6 @@ function ServiceDetail({
           title={`${title} field video`}
           className="h-full w-full border-0"
           allow="autoplay; fullscreen; encrypted-media"
-          allowFullScreen
           loading="lazy"
         />
       ) : video ? (
@@ -324,7 +323,6 @@ function ServiceDetail({
                 title={activeMedia.title}
                 className="h-full w-full border-0 bg-black"
                 allow="autoplay; fullscreen; encrypted-media"
-                allowFullScreen
                 loading="lazy"
               />
             ) : activeMedia.type === "video" ? (
