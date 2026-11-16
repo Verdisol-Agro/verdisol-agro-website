@@ -53,7 +53,7 @@ export async function handleEnquiry(
   if (request.method !== "POST") {
     return apiJson({ error: "Please submit the enquiry form using POST." }, 405, { Allow: "POST" });
   }
-  if (![env.GOOGLE_CLIENT_ID, env.GOOGLE_CLIENT_SECRET, env.GOOGLE_REFRESH_TOKEN,
+  if (![env.GMAIL_CLIENT_ID, env.GMAIL_CLIENT_SECRET, env.GMAIL_REFRESH_TOKEN,
     env.ALLOWED_ORIGIN, env.ENQUIRY_GUARD].every(Boolean)) {
     return apiJson({ error: "Email delivery is not configured. Please email verdisolagro@gmail.com directly." }, 503);
   }

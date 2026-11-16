@@ -4,9 +4,9 @@ export const MAILBOX = "verdisolagro@gmail.com";
 export const ACCEPTED_MESSAGE = "Your enquiry was accepted for email delivery.";
 
 export interface GmailEnv {
-  GOOGLE_CLIENT_ID: string;
-  GOOGLE_CLIENT_SECRET: string;
-  GOOGLE_REFRESH_TOKEN: string;
+  GMAIL_CLIENT_ID: string;
+  GMAIL_CLIENT_SECRET: string;
+  GMAIL_REFRESH_TOKEN: string;
   ALLOWED_ORIGIN: string;
 }
 
@@ -60,9 +60,9 @@ export async function sendWithGmail(
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
-        client_id: env.GOOGLE_CLIENT_ID,
-        client_secret: env.GOOGLE_CLIENT_SECRET,
-        refresh_token: env.GOOGLE_REFRESH_TOKEN,
+        client_id: env.GMAIL_CLIENT_ID,
+        client_secret: env.GMAIL_CLIENT_SECRET,
+        refresh_token: env.GMAIL_REFRESH_TOKEN,
         grant_type: "refresh_token",
       }),
       signal: AbortSignal.timeout(10_000),

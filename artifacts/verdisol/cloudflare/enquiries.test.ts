@@ -23,9 +23,9 @@ function fixture(): { env: EnquiryEnv; guard: GuardClient } {
   };
   return { guard, env: {
     // Deliberately fake fixtures, never actual credentials.
-    GOOGLE_CLIENT_ID: "test-client",
-    GOOGLE_CLIENT_SECRET: "test-secret",
-    GOOGLE_REFRESH_TOKEN: "test-refresh",
+    GMAIL_CLIENT_ID: "test-client",
+    GMAIL_CLIENT_SECRET: "test-secret",
+    GMAIL_REFRESH_TOKEN: "test-refresh",
     ALLOWED_ORIGIN: origin,
     ENQUIRY_GUARD: { getByName: () => guard },
   } };
@@ -50,7 +50,11 @@ test("valid enquiry refreshes OAuth then uses the Gmail API and confirms accepta
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
     calls.push(String(url));
     if (String(url).includes("oauth2")) {
-      assert.equal(new URLSearchParams(String(init?.body)).get("grant_type"), "refresh_token");
+      const params = new URLSearchParams(String(init?.body));
+      assert.equal(params.get("grant_type"), "refresh_token");
+      assert.equal(params.get("client_id"), "test-client");
+      assert.equal(params.get("client_secret"), "test-secret");
+      assert.equal(params.get("refresh_token"), "test-refresh");
       return Response.json({ access_token: "fake-access-token" });
     }
     assert.equal(new Headers(init?.headers).get("Authorization"), "Bearer fake-access-token");
@@ -79,7 +83,7 @@ test("MIME is UTF-8 safe, keeps every detail and cannot redirect the recipient",
 
 test("missing configuration and Pages bindings fail closed without sending", async () => {
   const { env } = fixture();
-  assert.equal((await handleEnquiry(request(), { ...env, GOOGLE_REFRESH_TOKEN: "" }, noNetwork)).status, 503);
+  assert.equal((await handleEnquiry(request(), { ...env, GMAIL_REFRESH_TOKEN: "" }, noNetwork)).status, 503);
   const response = await onRequest({ request: request(), env: {} });
   assert.equal(response.status, 503);
   assert.match(response.headers.get("content-type")!, /json/);
